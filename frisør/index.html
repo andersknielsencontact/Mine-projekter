@@ -1,1 +1,197 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nord Studio - moderne frisorsalon med nem booking og inspirerende galleri." />
+  <title>Nord Studio | Frisorsalon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Prata&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <div class="logo">NORD STUDIO</div>
+      <nav class="nav-links">
+        <a href="#services">Priser</a>
+        <a href="#gallery">Galleri</a>
+        <a href="#booking" class="btn btn-small">Book tid</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-top-image">
+        <img
+          src="../img/frisørhero.png"
+          alt=""
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1800&q=80';"
+        />
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h1><span>DIT HÅR.</span><span>DIN STIL.</span></h1>
+            <p>Book din tid i dag og få en præcis klipning, der passer til din hverdag og personlige stil.</p>
+            <div class="hero-actions">
+              <a class="btn" href="#booking">Book tid her</a>
+              <a class="btn btn-ghost" href="#services">Se ydelser</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section">
+      <div class="container">
+        <div class="trust-grid">
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">&#128197;</div>
+            <div class="trust-copy">
+              <h3>Nem tidsbestilling</h3>
+              <p>Book online på under ét minut</p>
+            </div>
+          </article>
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">&#9733;</div>
+            <div class="trust-copy">
+              <h3>Top anmeldelser</h3>
+              <p>Høj kundetilfredshed og stærke anbefalinger</p>
+            </div>
+          </article>
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">&#10003;</div>
+            <div class="trust-copy">
+              <h3>Kvalitetsgaranti</h3>
+              <p>Professionel service fra start til slut</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <div class="section-heading">
+        <h2>Priser</h2>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>Signaturklip</h3>
+          <div class="meta"><span>45 min</span><strong>399 kr.</strong></div>
+        </article>
+        <article class="service-card">
+          <h3>Farveopfriskning</h3>
+          <div class="meta"><span>90 min</span><strong>899 kr.</strong></div>
+        </article>
+        <article class="service-card">
+          <h3>Fade & skæg</h3>
+          <div class="meta"><span>40 min</span><strong>449 kr.</strong></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="booking" class="section booking-section">
+      <div class="container booking-grid">
+        <div>
+          <h2>Book tid</h2>
+        </div>
+        <form class="booking-form" action="#" method="post">
+          <label>
+            Behandling
+            <select>
+              <option>Vælg behandling</option>
+              <option>Signaturklip</option>
+              <option>Farveopfriskning</option>
+              <option>Fade & skæg</option>
+            </select>
+          </label>
+          <label>
+            Dato
+            <input type="date" />
+          </label>
+          <label>
+            Tid
+            <input type="time" />
+          </label>
+          <button type="submit" class="btn btn-block">Reserver</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="gallery" class="section container">
+      <div class="section-heading">
+        <h2>Noget for enhver stil</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=400&q=80" alt="Kort herreklip" />
+          <figcaption>
+            <h3>Tekstureret crop</h3>
+            <p class="price">Fra 399 kr.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1523263685509-57c1d050d19b?auto=format&fit=crop&w=400&q=80" alt="Dameklip bobcut" />
+          <figcaption>
+            <h3>Lagdelt bob</h3>
+            <p class="price">Fra 449 kr.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=400&q=80" alt="Farvebehandling" />
+          <figcaption>
+            <h3>Balayage glød</h3>
+            <p class="price">Fra 899 kr.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=400&q=80" alt="Styling finish" />
+          <figcaption>
+            <h3>Klassisk styling</h3>
+            <p class="price">Fra 349 kr.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=400&q=80" alt="Moderne fade" />
+          <figcaption>
+            <h3>Moderne fade</h3>
+            <p class="price">Fra 399 kr.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section reviews">
+      <div class="container">
+        <h2>Det siges der</h2>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Præcist arbejde og super fokuseret. Kommer helt sikkert tilbage."</p>
+            <cite>— Maria K.</cite>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Roligt rum, professionel behandling. Nøjagtigt hvad jeg søgte."</p>
+            <cite>— Henrik L.</cite>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Stilet lige som forventet. Sjælden at finde sådan præcision."</p>
+            <cite>— Anna R.</cite>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>NORD STUDIO · Buchwaldsgade 48 · 5000 Odense C</p>
+      <a href="tel:63141748">63 14 17 48</a>
+    </div>
+  </footer>
+</body>
+</html>
 
