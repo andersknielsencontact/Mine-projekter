@@ -1,1 +1,476 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anders Nielsen | Portfolio</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b0b0b;
+      color: white;
+      line-height: 1.6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Modern Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: transparent;
+      z-index: 1000;
+      padding: 2rem 0 0 0;
+      width: 100vw;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2.5rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #00c3ff;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+
+
+    /* Hero */
+
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4.5rem;
+      padding: 7rem 0 3rem 0;
+      background: radial-gradient(ellipse at 20% 40%,#00c3ff22 0%,#18191c 80%);
+    }
+
+    .hero-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      max-width: 600px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.25rem;
+      max-width: 520px;
+      margin: 0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 1.8rem;
+      border-radius: 16px;
+      font-weight: 500;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: white;
+      color: black;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Sections */
+
+    section {
+      padding: 7rem 0;
+    }
+
+    .section-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #121212;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 2rem;
+    }
+
+    .project-content h3 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .project-content p {
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Services */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: #121212;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 2rem;
+      transition: 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: #1a1a1a;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+    }
+
+    /* About */
+
+    .about {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .about p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+    }
+
+    /* Contact */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      padding: 2rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section-title {
+        font-size: 2.3rem;
+      }
+
+      .hero-image img {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <!-- Hero Section -->
+  <div class="container">
+    <section class="hero" style="display:flex;align-items:center;gap:4.5rem;min-height:90vh;padding:7rem 0 3rem 0;background:radial-gradient(ellipse at 20% 40%,#00c3ff22 0%,#18191c 80%);">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;">
+        <img src="Potræt.png" alt="Portræt af Anders Nielsen" style="width:320px;height:320px;object-fit:cover;border-radius:50%;border:4px solid #23242a;background:#222;box-shadow:0 4px 32px rgba(0,195,255,0.10);" />
+      </div>
+      <div style="flex:2;display:flex;flex-direction:column;gap:2.5rem;align-items:flex-start;">
+        <div style="text-transform:uppercase;font-size:1.05rem;letter-spacing:2px;color:#00c3ff;font-weight:600;">Webudvikler & Designer</div>
+        <h1 style="font-size:3.5rem;line-height:1.1;font-weight:800;margin:0;letter-spacing:-1.5px;max-width:600px;">Agency-level webudvikling<br>tilgængelig for alle</h1>
+        <p style="font-size:1.25rem;color:rgba(255,255,255,0.85);max-width:520px;margin:0;">Mit mål er at designe og udvikle hjemmesider, som både du og dine kunder elsker.</p>
+        <a href="#contact" class="btn btn-primary" style="font-size:1.15rem;padding:1.2rem 2.5rem;border-radius:32px;background:linear-gradient(90deg,#00c3ff 0%,#0077ff 100%);color:#fff;font-weight:700;box-shadow:0 2px 12px rgba(0,195,255,0.10);border:none;transition:transform 0.18s;display:inline-flex;align-items:center;gap:0.7em;">
+          Kontakt mig
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"><path fill="#fff" d="M13.172 12l-4.95-4.95a1 1 0 1 1 1.414-1.414l6.364 6.364a1 1 0 0 1 0 1.414l-6.364 6.364a1 1 0 1 1-1.414-1.414L13.172 12z"/></svg>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modern Navbar (now below hero) -->
+  <nav style="width:100vw;background:transparent;position:relative;z-index:1000;padding:2rem 0 0 0;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;">
+      <div style="display:flex;gap:2.2rem;align-items:center;">
+        <a href="#about" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Om mig</a>
+        <a href="#projects" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Projekter</a>
+        <a href="#services" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Ydelser</a>
+        <a href="#contact" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects -->
+
+  <section id="projects">
+    <div class="container">
+
+      <div class="section-subtitle">Portfolio</div>
+      <h2 class="section-title">Udvalgte projekter</h2>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="1748-preview.png" alt="Music School">
+
+          <div class="project-content">
+            <h3>Musikskole</h3>
+
+            <p>
+              Moderne landing page-koncept for en fiktiv musikskole med fokus på atmosfære og responsivt design.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="https://andersknielsencontact.github.io/Mine-projekter/music/#kurser" class="btn btn-primary">Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="Firsør-preview.png" alt="Firsør">
+
+          <div class="project-content">
+            <h3>Firsør koncept</h3>
+
+            <p>
+              Premium frisør side, med fokus på moderne design, branding og booking.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="https://andersknielsencontact.github.io/Mine-projekter/fris%C3%B8r/" class="btn btn-primary">Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="shelter-preview.png" alt="Shelters">
+
+          <div class="project-content">
+            <h3>Shelter koncept</h3>
+
+            <p>
+              Moderne shelter koncept med fokus på at guide kunden og fremhæve produkter.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="https://andersknielsencontact.github.io/Mine-projekter/Shelter-demo/" class="btn btn-primary">Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+
+  <section class="services" id="services" style="background:linear-gradient(90deg,#18191c 60%,#23242a 100%);border-radius:22px;box-shadow:0 2px 24px rgba(0,0,0,0.10);margin-top:3rem;margin-bottom:3rem;">
+    <div style="max-width:1200px;margin:0 auto;padding:3.5rem 1.5rem;display:flex;align-items:center;gap:3.5rem;">
+      <h2 class="section-title" style="min-width:200px;margin:0;display:flex;align-items:center;font-size:2.2rem;letter-spacing:-1px;line-height:1.1;font-weight:700;background:linear-gradient(90deg,#fff 60%,#00c3ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-fill-color:transparent;">Hvad jeg tilbyder</h2>
+      <ul style="display:flex;gap:2.5rem;align-items:center;list-style:none;padding:0;margin:0;">
+        <li style="min-width:180px;max-width:240px;">
+          <h3 style="margin:0 0 0.5em 0;font-size:1.15rem;font-weight:600;">Landingssider</h3>
+          <p style="margin:0;color:rgba(255,255,255,0.7);font-size:1rem;">Unikke, brugervenlige og moderne hjemmesider skræddersyet til din virksomhed.</p>
+        </li>
+        <li style="min-width:180px;max-width:240px;">
+          <h3 style="margin:0 0 0.5em 0;font-size:1.15rem;font-weight:600;">Responsive hjemmesider</h3>
+          <p style="margin:0;color:rgba(255,255,255,0.7);font-size:1rem;">Alle løsninger fungerer perfekt på både mobil, tablet og desktop.</p>
+        </li>
+        <li style="min-width:180px;max-width:240px;">
+          <h3 style="margin:0 0 0.5em 0;font-size:1.15rem;font-weight:600;">UI Redesigns</h3>
+          <p style="margin:0;color:rgba(255,255,255,0.7);font-size:1rem;">Stærk visuel identitet og branding, der får din virksomhed til at skille sig ud.</p>
+        </li>
+        <li style="min-width:180px;max-width:240px;">
+          <h3 style="margin:0 0 0.5em 0;font-size:1.15rem;font-weight:600;">Frontend udvikling</h3>
+          <p style="margin:0;color:rgba(255,255,255,0.7);font-size:1rem;">Moderne frontend udvikling med fokus på performance og brugervenlighed.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- About -->
+
+  <section class="about" id="about">
+    <h2 class="section-title">Om</h2>
+    <div style="display:flex;align-items:center;gap:2.5rem;justify-content:center;flex-wrap:wrap;">
+      <img src="Potræt.png" alt="Portræt af Anders Nielsen" style="width:140px;height:140px;object-fit:cover;border-radius:50%;box-shadow:0 2px 16px rgba(0,0,0,0.12);border:2px solid rgba(255,255,255,0.12);background:#222;" />
+      <div style="max-width:420px;">
+        <p>
+          Jeg er en passioneret webudvikler med fokus på at skabe smukke og funktionelle hjemmesider, der hjælper virksomheder med at vokse online.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+
+  <section class="contact" id="contact">
+    <h2 class="section-title">Kontakt</h2>
+    <p>Har du et projekt i tankerne? Kontakt mig for en uforpligtende snak!</p>
+    <ul class="contact-info">
+      <li><strong>Email:</strong> <a href="mailto:kontakt@eksempel.dk">anders.k.nielsen.contact@gmail.com</a></li>
+    </ul>
+    
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/anders-krog-nielsen-7b9336198" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.4em;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.034 0 3.595 1.997 3.595 4.59v5.606z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Anders Nielsen. Alle rettigheder forbeholdes.
+  </footer>
+
+  <!-- <script src="lang.js"></script> -->
+
+</body>
+</html>
