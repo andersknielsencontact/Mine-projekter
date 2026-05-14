@@ -86,6 +86,49 @@
       box-sizing: border-box;
     }
 
+    .project-card {
+      background: #fff;
+      border: 1px solid #e6f3f7;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.3s cubic-bezier(.4,0,.2,1);
+      box-shadow: 0 2px 16px rgba(0,195,255,0.04);
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+    }
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,195,255,0.13);
+      border-color: #00c3ff44;
+    }
+    .project-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      filter: brightness(0.97) contrast(1.08);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .project-content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-content h3 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #00c3ff;
+      letter-spacing: -0.5px;
+    }
+    .project-content p {
+      color: #23242a;
+      margin-bottom: 1.5rem;
+      font-size: 1.08rem;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: #f7fafc;
@@ -175,7 +218,7 @@
     /* Hero */
     .hero {
       min-height: 44vh;
-      padding: 2.5rem 0 1.5rem 0;
+      padding: 2.5rem 0 8.5rem 0;
       width: 100%;
       max-width: 100%;
       border-radius: 0 0 32px 32px;
@@ -234,28 +277,36 @@
       font-weight: 500;
       transition: 0.3s cubic-bezier(.4,0,.2,1);
       display: inline-block;
-      box-shadow: 0 2px 12px rgba(0,195,255,0.10);
-      border: none;
       font-size: 1.1rem;
+      border: none;
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
     }
     .btn-primary {
       background: #1abc9c;
       color: #fff;
       font-weight: 700;
       border: none;
+      box-shadow: 0 2px 12px rgba(26,188,156,0.10);
     }
     .btn-primary:hover {
-      transform: translateY(-3px) scale(1.04);
-      box-shadow: 0 4px 24px rgba(26,188,156,0.18);
       background: #159c82;
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(26,188,156,0.18);
+      transform: translateY(-3px) scale(1.04);
     }
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.2);
-      background: transparent;
+      background: #0070f3;
       color: #fff;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 2px 12px rgba(0,112,243,0.10);
     }
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
+      background: #005bb5;
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(0,112,243,0.18);
+      transform: translateY(-3px) scale(1.04);
     }
 
     /* Projects */
@@ -967,22 +1018,15 @@
     <div class="hero-content">
       <div style="text-transform:uppercase;font-size:1.05rem;letter-spacing:2px;color:#1abc9c;font-weight:600;">Webudvikler & Designer</div>
       <h1 style="font-size:2.7rem;font-weight:800;line-height:1.1;margin-bottom:0.2em;">Websites der vinder kunder</h1>
-      <div class="hero-tags">
-        <span class="hero-tag">Branding</span>
-        <span class="hero-tag">UI/UX</span>
-        <span class="hero-tag">Responsivt design</span>
-        <span class="hero-tag">Performance</span>
-      </div>
       <p style="margin-bottom:1.2em;">Mit fokus er at skabe hjemmesider, der både imponerer dig og giver dine kunder en god oplevelse.</p>
-      <a href="#contact" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.7em;">
-        Kontakt mig
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"><path fill="#fff" d="M13.172 12l-4.95-4.95a1 1 0 1 1 1.414-1.414l6.364 6.364a1 1 0 0 1 0 1.414l-6.364 6.364a1 1 0 1 1-1.414-1.414L13.172 12z"/></svg>
-      </a>
     </div>
-    <!-- Scroll cue arrow -->
-    <div class="scroll-cue" aria-hidden="true">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="#1abc9c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="hero-tags">
+      <span class="hero-tag">Branding</span>
+      <span class="hero-tag">UI/UX</span>
+      <span class="hero-tag">Responsivt design</span>
+      <span class="hero-tag">Performance</span>
     </div>
+   
   </section>
 
   <!-- Modern Navbar (now below hero) -->
@@ -1006,59 +1050,41 @@
       <h2 class="section-title">Udvalgte cases</h2>
 
       <div class="projects-grid">
-
         <div class="project-card">
-          <img src="1748-preview.png" alt="Music School">
-
+          <img src="1748-preview.png" alt="Musikskole preview">
           <div class="project-content">
             <h3>Musikskole</h3>
-
-            <p>
-              Moderne landing page-koncept for en fiktiv musikskole med fokus på atmosfære og responsivt design.
-            </p>
-
+            <p>Moderne landing page-koncept for en fiktiv musikskole med fokus på atmosfære og responsivt design.</p>
             <div class="hero-buttons">
               <a href="https://andersknielsencontact.github.io/Mine-projekter/music/#kurser" class="btn btn-primary">Live Demo</a>
               <a href="#musicschool-more" class="btn btn-secondary">Læs mere</a>
             </div>
           </div>
         </div>
-
         <div class="project-card">
-          <img src="Firsør-preview.png" alt="Firsør">
-
+          <img src="Firsør-preview.png" alt="Firsør koncept preview">
           <div class="project-content">
             <h3>Firsør koncept</h3>
-
-            <p>
-              Premium frisør side, med fokus på moderne design, branding og booking.
-            </p>
-
+            <p>Premium frisør side, med fokus på moderne design, branding og booking.</p>
             <div class="hero-buttons">
               <a href="https://andersknielsencontact.github.io/Mine-projekter/fris%C3%B8r/" class="btn btn-primary">Live Demo</a>
               <a href="#haircut-more" class="btn btn-secondary">Læs mere</a>
             </div>
           </div>
         </div>
-
         <div class="project-card">
-          <img src="shelter-preview.png" alt="Shelters">
-
+          <img src="shelter-preview.png" alt="Shelter koncept preview">
           <div class="project-content">
             <h3>Shelter koncept</h3>
-
-            <p>
-              Moderne shelter koncept med fokus på at guide kunden og fremhæve produkter.
-            </p>
-
+            <p>Moderne shelter koncept med fokus på at guide kunden og fremhæve produkter.</p>
             <div class="hero-buttons">
               <a href="https://andersknielsencontact.github.io/Mine-projekter/Shelter-demo/" class="btn btn-primary">Live Demo</a>
               <a href="#shelter-more" class="btn btn-secondary">Læs mere</a>
             </div>
           </div>
         </div>
-
       </div>
+
     </div>
   </section>
 
