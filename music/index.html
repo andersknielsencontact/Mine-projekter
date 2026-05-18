@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="1748 musik- og kulturhus i Odense.">
+  <meta name="description" content="North Note musik- og kulturhus i Odense.">
   <meta name="theme-color" content="#efe5d4">
-  <title>1748 Musik- og Kulturhus</title>
+  <title>North Note Musik- og Kulturhus</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:opsz@9..40&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
   <link rel="stylesheet" href="styles.css">
@@ -34,7 +34,7 @@
         ["FAQ", "#faq"],
         ["Info", "#find-os"],
         ["Kontakt", "#kontakt"],
-        ["English", "https://1748.dk/"],
+        ["English", "#"],
       ];
 
       React.useEffect(() => {
@@ -49,7 +49,7 @@
           <header className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${isScrolled ? "border-b border-[#7b5a3a]/10 bg-[#efe5d4]/90 backdrop-blur" : "bg-transparent"}`}>
             <div className="max-w-7xl mx-auto px-4 lg:px-5 py-3 flex items-center justify-between gap-4">
               <a href="#top" className={`text-lg font-bold tracking-tight transition-colors duration-300 lg:-ml-16 ${isScrolled ? "text-stone-900" : "text-white"}`}>
-                1748.dk <span className={`font-medium transition-colors duration-300 ${isScrolled ? "text-[#9f5c28]" : "text-[#e5bf82]"}`}>Musikskole</span>
+                North Note <span className={`font-medium transition-colors duration-300 ${isScrolled ? "text-[#9f5c28]" : "text-[#e5bf82]"}`}>Musikskole</span>
               </a>
 
               <nav className="hidden lg:flex items-center gap-2 text-sm">
@@ -67,7 +67,7 @@
               </nav>
 
               <a
-                href="tel:63141748"
+                href="tel:12345678"
                 className={`hidden lg:inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold border transition-colors duration-200 ease-out ${isScrolled ? "border-[#7b5a3a]/20 text-stone-800 hover:border-[#b86b2d]/60 hover:bg-[#e9d6b6]/70" : "border-white/35 text-white hover:border-white/55 hover:bg-white/12"}`}
               >
                 Ring
@@ -106,7 +106,7 @@
 
           <section id="top" className="relative overflow-hidden border-b border-[#7b5a3a]/10 text-white">
             <img
-              src="img/bassehero2.jpg"
+              src="musikheroimg.avif"
               alt="Nærværende musikundervisning i mindre hold"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
@@ -118,7 +118,7 @@
               <div className="max-w-3xl">
                 <div className="mb-7">
                   <p className="text-[2.5rem] lg:text-[3.4rem] font-black leading-none tracking-[-0.03em] text-white" style={{ fontFamily: "'DM Serif Display', serif" }}>
-                    1748<span className="text-[#e5bf82]">.dk</span>
+                    North Note
                   </p>
                   <div className="mt-2 h-[2px] w-44 bg-gradient-to-r from-[#e5bf82] via-[#d4b08a]/80 to-transparent" />
                   <p className="mt-2 text-xs uppercase tracking-[0.24em] text-slate-200">Musik- og Kulturhus i Odense</p>
@@ -170,18 +170,18 @@
 
               <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-2">
                 {[
-                { tag: "STRENGE", title: "GUITAR", href: "https://1748.dk/kurser/guitar", image: "https://1748.dk/media/1027/guitar.jpg" },
-                { tag: "VOKAL", title: "SANG", href: "https://1748.dk/kurser/sang", image: "https://1748.dk/media/1033/sang.jpg" },
-                { tag: "STRENGE", title: "BAS", href: "https://1748.dk/kurser/bas", image: "https://1748.dk/media/1022/bas.jpg" },
-                { tag: "BLÆSE", title: "BLÆSERE", href: "https://1748.dk/kurser/blaesere", image: "https://1748.dk/media/1023/blaesere.jpg" },
-                { tag: "STRENGE", title: "STRYGERE", href: "https://1748.dk/kurser/strygere", image: "https://1748.dk/media/1034/strygere.jpg" },
-                { tag: "TANGENT", title: "KLAVER", href: "https://1748.dk/kurser/klaver", image: "https://1748.dk/media/1028/klaver.jpg" },
-                { tag: "TRADITION", title: "FOLKEMUSIK", href: "https://1748.dk/kurser/folkemusik", image: "https://1748.dk/media/1026/folkemusik.jpg" },
-                { tag: "RYTME", title: "TROMMER", href: "https://1748.dk/kurser/trommer", image: "https://1748.dk/media/1037/trommer.jpg" },
-                { tag: "VOKAL", title: "KOR", href: "https://1748.dk/kurser/kor", image: "https://1748.dk/media/1029/kor.jpg" },
-                { tag: "ENSEMBLE", title: "SAMMENSPIL", href: "https://1748.dk/kurser/band-s", image: "https://1748.dk/media/1064/sammenspil.jpg" },
-                { tag: "SCENE", title: "TEATER & DANS", href: "https://1748.dk/kurser/teater-dans", image: "https://1748.dk/media/1066/dans.jpg" },
-                { tag: "ARRANGEMENT", title: "EVENTS", href: "https://1748.dk/kurser/events", image: "https://1748.dk/media/1117/img_9194.jpg" },
+                  { tag: "STRENGE", title: "GUITAR", href: "#", image: "../img/musikheroimg.avif" },
+                  { tag: "VOKAL", title: "SANG", href: "#", image: "song.avif" },
+                  { tag: "STRENGE", title: "BAS", href: "#", image: "bass.avif" },
+                  { tag: "BLÆSE", title: "BLÆSERE", href: "#", image: "trompet.avif" },
+                  { tag: "STRENGE", title: "STRYGERE", href: "#", image: "violin.avif" },
+                  { tag: "TANGENT", title: "KLAVER", href: "#", image: "piano.avif" },
+                  { tag: "TRADITION", title: "FOLKEMUSIK", href: "#", image: "folkmusic.avif" },
+                  { tag: "RYTME", title: "TROMMER", href: "#", image: "drums.avif" },
+                  { tag: "VOKAL", title: "KOR", href: "#", image: "choir.avif" },
+                  { tag: "ENSEMBLE", title: "SAMMENSPIL", href: "#", image: "band.avif" },
+                  { tag: "SCENE", title: "TEATER & DANS", href: "#", image: "dance.avif" },
+                  { tag: "ARRANGEMENT", title: "EVENTS", href: "#", image: "events.avif" },
                 ].map((item) => (
                   <article
                     key={item.title}
@@ -192,7 +192,7 @@
                       alt={item.title}
                       className="absolute inset-0 h-full w-full object-cover brightness-115 contrast-105 saturate-110 transition-transform duration-300 ease-out group-hover:scale-[1.02]"
                     />
-                    <div className="absolute inset-0 bg-black/18 group-hover:bg-black/14 transition-colors duration-200 ease-out" />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-200 ease-out" />
 
                     <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 py-6">
                       <span className="mb-2 px-2.5 py-0.5 rounded-full bg-white/15 border border-white/30 text-white text-[0.6rem] uppercase tracking-[0.18em] font-semibold">{item.tag}</span>
@@ -220,7 +220,7 @@
                 aria-hidden="true"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = "https://1748.dk/media/1064/sammenspil.jpg?anchor=center&mode=crop&width=1600&height=1000";
+                  e.currentTarget.src = "../img/band.avif";
                 }}
                 className="h-full w-full object-cover object-center"
               />
@@ -230,11 +230,11 @@
             <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28 grid lg:grid-cols-2 gap-16 items-center">
               <div className="hidden md:block">
                 <img
-                  src="img/sammenholdimg.png"
+                  src="../img/sammenholdimg.png"
                   alt="Sammenspil og fællesskab på tværs af niveauer"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = "https://1748.dk/media/1064/sammenspil.jpg?anchor=center&mode=crop&width=1600&height=1000";
+                    e.currentTarget.src = "../img/band.avif";
                   }}
                   className="rounded-[32px] w-full h-[460px] object-cover object-center border border-[#7b5a3a]/15"
                 />
@@ -246,12 +246,12 @@
                 </p>
 
                 <h2 className="text-5xl lg:text-6xl font-black leading-none tracking-tight mb-6 text-white md:text-stone-900" style={{ fontFamily: "'DM Serif Display', serif" }}>
-                  Hvorfor 1748?
+                  Hvorfor North Note?
                 </h2>
 
                 <div className="text-slate-100 md:text-stone-700 text-lg leading-relaxed">
                   <p>
-                    Hos 1748 handler undervisning om mere end teknik. Du bliver en del af et kreativt fællesskab,
+                    Hos Nort Note handler undervisning om mere end teknik. Du bliver en del af et kreativt fællesskab,
                     hvor sammenspil, sceneerfaring og personlig udvikling går hånd i hånd.
                   </p>
                 </div>
@@ -272,9 +272,9 @@
               <article className="h-full pt-3 border-t border-[#7b5a3a]/15 flex flex-col">
                 <p className="text-[#9f5c28] uppercase tracking-[0.2em] text-xs mb-3">Andre tilbud</p>
                 <h3 className="text-4xl font-black mb-4 leading-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>FLOW og samarbejder</h3>
-                <p className="text-stone-700 mb-6">1748 er også FLOW, et samarbejde med VUC, som kombinerer kreativ undervisning med videre uddannelse.</p>
+                <p className="text-stone-700 mb-6">Nort Note har også FLOW, som er et samarbejde med VUC, hvor vi kombinerer kreativ undervisning med en videregående uddannelse.</p>
                 <div className="mt-auto flex flex-wrap gap-3">
-                  <a href="http://www.flow1748.dk/" target="_blank" rel="noreferrer" className="px-5 py-2 bg-[#b86b2d] hover:bg-[#c77a3a] transition-colors duration-200 ease-out rounded-full font-semibold text-white">FLOW</a>
+                  <a href="#" target="_blank" rel="noreferrer" className="px-5 py-2 bg-[#b86b2d] hover:bg-[#c77a3a] transition-colors duration-200 ease-out rounded-full font-semibold text-white">FLOW</a>
                   <a href="http://www.moedecenter.dk/" target="_blank" rel="noreferrer" className="px-5 py-2 border border-[#7b5a3a]/20 hover:bg-[#e9d6b6]/70 transition-colors duration-200 ease-out rounded-full font-semibold">Mødecenter Odense</a>
                 </div>
               </article>
@@ -285,8 +285,8 @@
                 <p className="text-stone-700 mb-2">Telefonerne er åbne mandag til torsdag fra 10.00 til 14.00.</p>
                 <p className="text-stone-700 mb-6">Henvendelse efter aftale. Vi svarer gerne på dine spørgsmål.</p>
                 <div className="mt-auto flex flex-wrap gap-3">
-                  <a href="tel:63141748" className="px-5 py-2 bg-[#b86b2d] hover:bg-[#c77a3a] transition-colors duration-200 ease-out rounded-full font-semibold text-white">63 14 17 48</a>
-                  <a href="mailto:mail@1748.dk" className="px-5 py-2 border border-[#7b5a3a]/20 hover:bg-[#e9d6b6]/70 transition-colors duration-200 ease-out rounded-full font-semibold">Skriv besked</a>
+                  <a href="tel:12345678" className="px-5 py-2 bg-[#b86b2d] hover:bg-[#c77a3a] transition-colors duration-200 ease-out rounded-full font-semibold text-white">12 34 56 78</a>
+                  <a href="mailto:Note-info@gmail.com" className="px-5 py-2 border border-[#7b5a3a]/20 hover:bg-[#e9d6b6]/70 transition-colors duration-200 ease-out rounded-full font-semibold">Skriv besked</a>
                 </div>
               </article>
             </div>
@@ -316,7 +316,7 @@
               <div className="lg:sticky lg:top-28 self-start">
                 <p className="text-[#9f5c28] uppercase tracking-[0.2em] text-xs mb-3">FAQ</p>
                 <h3 className="text-4xl lg:text-5xl font-black leading-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>Ofte stillede spørgsmål</h3>
-                <p className="mt-4 text-stone-500 text-sm leading-relaxed">Kan du ikke finde svar her, er du altid velkommen til at ringe på <a href="tel:63141748" className="underline underline-offset-2 hover:text-[#9f5c28]">63 14 17 48</a>.</p>
+                <p className="mt-4 text-stone-500 text-sm leading-relaxed">Kan du ikke finde svar her, er du altid velkommen til at ringe på <a href="tel:12345678" className="underline underline-offset-2 hover:text-[#9f5c28]">12 34 56 78</a>.</p>
               </div>
               <div className="lg:col-span-2 flex flex-col gap-0 text-stone-700">
                 <details className="border-t border-[#7b5a3a]/10 pt-3">
@@ -329,27 +329,27 @@
                 </details>
                 <details className="border-t border-[#7b5a3a]/10 pt-3">
                   <summary className="cursor-pointer font-semibold">Skal hele beløbet betales på én gang?</summary>
-                  <p className="mt-2 text-sm text-stone-600">Nej, vi kan sagtens dele betalingen op i rater, men det koster dog lidt ekstra.</p>
+                  <p className="mt-2 text-sm text-stone-600">Ja, hele beløbet skal betales ved tilmelding.</p>
                 </details>
                 <details className="border-t border-[#7b5a3a]/10 pt-3">
                   <summary className="cursor-pointer font-semibold">Kan man købe en halv sæson?</summary>
-                  <p className="mt-2 text-sm text-stone-600">Nej, desværre. Men du kan starte senere på en sæson, hvis der er ledige pladser på det hold, du ønsker.</p>
+                  <p className="mt-2 text-sm text-stone-600">Nej, du tilmelder som udgangspunkt hele sæsonen, men kontakt os for at høre om mulighederne.</p>
                 </details>
                 <details className="border-t border-[#7b5a3a]/10 pt-3">
                   <summary className="cursor-pointer font-semibold">Er man bundet til mere end én sæson?</summary>
-                  <p className="mt-2 text-sm text-stone-600">Nej. Vores sæsoner er på ca. 15 uger, og man er kun bundet til den sæson, som man er tilmeldt.</p>
+                  <p className="mt-2 text-sm text-stone-600">Nej. Du tilmelder dig 1 sæson ad gangen.</p>
                 </details>
                 <details className="border-t border-[#7b5a3a]/10 pt-3">
                   <summary className="cursor-pointer font-semibold">Hvad sker der, hvis jeg melder afbud til en mødegang?</summary>
-                  <p className="mt-2 text-sm text-stone-600">Hvis du melder afbud, er den mødegang desværre mistet. Men hvis underviseren aflyser, vil mødegangen blive efterlæst.</p>
+                  <p className="mt-2 text-sm text-stone-600">Så mister du den mødegang</p>
                 </details>
                 <details className="border-t border-[#7b5a3a]/10 pt-3">
                   <summary className="cursor-pointer font-semibold">Hvordan/hvor finder jeg mit hold og lokale?</summary>
-                  <p className="mt-2 text-sm text-stone-600">Du er altid velkommen til at spørge os på kontoret. Ellers er der infoskærme ved begge indgange, hvor du kan finde dit hold og lokale.</p>
+                  <p className="mt-2 text-sm text-stone-600">Du kan finde dit hold og lokale ved at tjekke vores hjemmeside eller kontakte os direkte for information.</p>
                 </details>
                 <details className="border-t border-[#7b5a3a]/10 pt-3">
                   <summary className="cursor-pointer font-semibold">Er der parkering ved skolen?</summary>
-                  <p className="mt-2 text-sm text-stone-600">Ja. Alt du skal gøre er at registrere din parkering på iPad'en i caféen ved hovedindgangen. Er der ikke ledige pladser, kan du holde to timer på Skibhus Torvets parkeringsplads eller længere med betaling i Thrige Firkanten få minutters gang fra os.</p>
+                  <p className="mt-2 text-sm text-stone-600">Ja, der er parkeringspladser til rådighed ved skolen.</p>
                 </details>
               </div>
             </div>
@@ -361,7 +361,7 @@
               </h2>
               <p className="text-stone-700 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
                 Uanset om du er nybegynder eller erfaren,
-                finder du et kreativt fællesskab hos 1748.
+                finder du et kreativt fællesskab hos North Note.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="#kurser" className="px-8 py-4 bg-[#b86b2d] hover:bg-[#c77a3a] transition-colors duration-200 ease-out rounded-2xl font-semibold text-lg text-white">
@@ -378,7 +378,7 @@
             <div className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-3 gap-8 items-start">
               <div>
                 <p className="text-[#9f5c28] uppercase tracking-[0.2em] text-xs mb-3">Find os</p>
-                <h3 className="text-2xl font-black mb-3" style={{ fontFamily: "'DM Serif Display', serif" }}>1748 Musik- og Kulturhus</h3>
+                <h3 className="text-2xl font-black mb-3" style={{ fontFamily: "'DM Serif Display', serif" }}>North Note Musik- og Kulturhus</h3>
                 <p className="text-stone-700">Buchwaldsgade 48<br />5000 Odense C</p>
               </div>
               <div>
@@ -391,13 +391,13 @@
                 <p className="text-stone-600 mt-5 mb-2">Følg os</p>
                 <div className="flex gap-4 text-sm">
                   <a href="https://www.instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#9f5c28] transition-colors duration-200 ease-out">Instagram</a>
-                  <a href="https://www.facebook.com/1748-161093427415963/" target="_blank" rel="noreferrer" className="hover:text-[#9f5c28] transition-colors duration-200 ease-out">Facebook</a>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" className="hover:text-[#9f5c28] transition-colors duration-200 ease-out">Facebook</a>
                 </div>
               </div>
               <div className="lg:justify-end">
                 <iframe
-                  title="Kort over 1748 Musik- og Kulturhus"
-                  src="https://www.google.com/maps?q=Buchwaldsgade+48,+5000+Odense+C&output=embed"
+                  title="Kort over North Note Musik- og Kulturhus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.567441419737!2d10.38091331607944!3d55.40399898055386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c3a9b8e5b8b9%3A0x6c8e7a9b8e5b8b9%3A0x6c8e7a9b8e5b8b9!2sNort%20Note%20Musik-%20og%20Kulturhus!5e0!3m2!1sen!2sdk!4v1700000000000"
                   className="w-full lg:w-[280px] h-[170px] rounded-xl border border-[#7b5a3a]/15"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -409,7 +409,7 @@
           <footer className="border-t border-[#7b5a3a]/10 py-10 px-6">
             <div className="max-w-7xl mx-auto text-stone-500 text-sm">
               <div>
-                © 2026 1748 Musik- og Kulturhus - Odense
+                © 2026 North Note Musik- og Kulturhus - Odense
               </div>
             </div>
           </footer>
