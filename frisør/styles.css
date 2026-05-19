@@ -338,6 +338,8 @@ p {
 
 .hero-text h1 {
   color: white;
+  display:flex;
+  flex-direction: column;
 
   margin-bottom: 1rem;
 }
