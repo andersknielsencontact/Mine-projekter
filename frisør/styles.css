@@ -152,13 +152,13 @@ p {
     1rem 1.5rem;
 
   border:
-    1px solid var(--accent);
+    1px solid;
 
-  border-radius: 999px;
+  border-radius: 4px;
 
-  background: var(--accent);
+  background: white;
 
-  color: white;
+  color: black;
 
   font-weight: 700;
 
@@ -177,12 +177,14 @@ p {
 .btn-small {
   padding:
     .7rem 1.1rem;
+    background-color: black;
+    color:white;
 
   font-size: .9rem;
 }
 
 .btn-ghost {
-  background: transparent;
+  background: black;
 
   color: white;
 
