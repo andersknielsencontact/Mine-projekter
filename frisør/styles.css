@@ -491,18 +491,19 @@ p {
 }
 
 .stylist-photo {
-  width: 120px;
-  height: 120px;
+  width: 320px;
+  height: 520px;
+  object-fit: cover;
+   object-position: center;
 
   margin-inline: auto;
   margin-bottom: 1.5rem;
 
-  border-radius: 50%;
+  border-radius: 4px;
 
   object-fit: cover;
 
-  border:
-    4px solid var(--accent);
+ 
 }
 
 .stylist-info {
@@ -587,19 +588,21 @@ p {
 .gallery-image {
   overflow: hidden;
 
-  height: 500px;
+  height: 800px;
 }
 
 .gallery-image.large {
   grid-column: span 2;
+  object-fit: cover;
 
-  height: 700px;
+  height: 900px;
 }
 
 .gallery-image img {
   height: 100%;
 
   object-fit: cover;
+  object-position: top, center;
 
   transition: .4s ease;
 }
