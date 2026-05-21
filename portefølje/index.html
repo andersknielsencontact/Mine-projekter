@@ -311,9 +311,9 @@
 
     /* Projects */
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
     }
     .project-card {
       background: #fff;
@@ -324,7 +324,9 @@
       box-shadow: 0 2px 16px rgba(0,195,255,0.04);
       display: flex;
       flex-direction: column;
-      min-height: 420px;
+      min-height: 540px;
+      max-width: 700px;
+      margin: 0 auto;
     }
     .project-card:hover {
       transform: translateY(-8px) scale(1.03);
@@ -333,7 +335,7 @@
     }
     .project-card img {
       width: 100%;
-      height: 240px;
+      height: 320px;
       object-fit: cover;
       filter: brightness(0.97) contrast(1.08);
       border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -570,7 +572,7 @@
         padding: 7rem 0 3rem 0;
         background:
           linear-gradient(rgba(24,25,28,0.92), rgba(24,25,28,0.92)),
-          url('Dithårdinstil.png') center center/cover no-repeat,
+          url('imghero.avif') center center/cover no-repeat,
           #18191c;
         border-radius: 0 0 32px 32px;
         box-shadow: 0 8px 32px rgba(26,188,156,0.07);
@@ -956,6 +958,9 @@
     .contact {
       text-align: center;
     }
+    .Text-guide-mig {
+        font-size: 1.4rem;
+    }
 
     .contact p {
       color: rgba(255,255,255,0.7);
@@ -1006,6 +1011,7 @@
       .hero-image img {
         height: 400px;
       }
+      
     }
   </style>
 </head>
@@ -1018,7 +1024,7 @@
     <div class="hero-content">
       <div style="text-transform:uppercase;font-size:1.05rem;letter-spacing:2px;color:#1abc9c;font-weight:600;">Webudvikler & Designer</div>
       <h1 style="font-size:2.7rem;font-weight:800;line-height:1.1;margin-bottom:0.2em;">Websites der vinder kunder</h1>
-      <p style="margin-bottom:1.2em;">Mit fokus er at skabe hjemmesider, der både imponerer dig og giver dine kunder en god oplevelse.</p>
+      <p style="margin-bottom:1.2em;">MJeg designer moderne landingpages og frontend-løsninger til virksomheder, der ønsker en stærkere online tilstedeværelse.</p>
     </div>
     <div class="hero-tags">
       <span class="hero-tag">Branding</span>
@@ -1051,7 +1057,7 @@
 
       <div class="projects-grid">
         <div class="project-card">
-          <img src="northnoteimg.png" alt="Musikskole preview">
+          <img src="1748-preview.png" alt="Musikskole preview">
           <div class="project-content">
             <h3>Musikskole</h3>
             <p>Moderne landing page-koncept for en fiktiv musikskole med fokus på atmosfære og responsivt design.</p>
@@ -1061,24 +1067,22 @@
           </div>
         </div>
         <div class="project-card">
-          <img src="Dithårdinstil.png" alt="Firsør koncept preview">
+          <img src="Firsør-preview.png" alt="Firsør koncept preview">
           <div class="project-content">
             <h3>Firsør koncept</h3>
             <p>Premium frisør side, med fokus på moderne design, branding og booking.</p>
             <div class="hero-buttons">
               <a href="https://andersknielsencontact.github.io/Mine-projekter/fris%C3%B8r/" class="btn btn-primary">Live Demo</a>
-             
             </div>
           </div>
         </div>
         <div class="project-card">
-          <img src="shelterheroimg.png" alt="Shelter koncept preview">
+          <img src="shelter-preview.png" alt="Shelter koncept preview">
           <div class="project-content">
             <h3>Shelter koncept</h3>
             <p>Moderne shelter koncept med fokus på at guide kunden og fremhæve produkter.</p>
             <div class="hero-buttons">
               <a href="https://andersknielsencontact.github.io/Mine-projekter/Shelter-demo/" class="btn btn-primary">Live Demo</a>
-             
             </div>
           </div>
         </div>
@@ -1092,6 +1096,9 @@
   <section class="services" id="services" style="background:linear-gradient(90deg,#e6f3f7 60%,#fff 100%);border-radius:22px;box-shadow:0 2px 24px rgba(0,0,0,0.10);margin-top:3rem;margin-bottom:3rem;">
     <div style="max-width:900px;margin:0 auto;padding:3.5rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:2.5rem;">
       <h2 class="section-title" style="margin:0 0 2.5rem 0;font-size:2.2rem;letter-spacing:-1px;line-height:1.1;font-weight:700;">Det kan jeg hjælpe dig med</h2>
+      <p class="Text-guide-mig">Jeg arbejder primært med frontend layout og design. Dette indebærer at skabe moderne, brugervenlige og visuelt tiltalende hjemmesider, der er optimeret til forskellige enheder og skærmstørrelser.
+        Mit fokus er også, at forsiden skal se moderniseret ud, og være med til, at give kunderne et godt førstehåndsindtryk, og guide dem til at tage kontakt eller købe et produkt. Jeg kan også hjælpe med at analysere og forbedre eksisterende hjemmesider, så de bliver mere effektive og brugervenlige.
+      </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.2rem;width:100%;">
         <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
           <h3 style="color:#1abc9c;font-size:1.18rem;font-weight:700;margin:0;">Design & UI/UX</h3>
@@ -1099,7 +1106,7 @@
             <li>Moderne, brugervenlige layouts</li>
             <li>Farvepaletter & typografi</li>
             <li>Branding og visuel identitet</li>
-            <li>Wireframes & prototyper</li>
+            
           </ul>
         </div>
         <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
@@ -1108,7 +1115,6 @@
             <li>Responsivt design (mobil, tablet, desktop)</li>
             <li>Hurtige, optimerede sider</li>
             <li>HTML, CSS, JavaScript</li>
-            <li>SEO best practices</li>
           </ul>
         </div>
         <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
@@ -1117,7 +1123,6 @@
             <li>Analyse af eksisterende hjemmeside</li>
             <li>Forbedringsforslag & sparring</li>
             <li>Teknisk support</li>
-            <li>Undervisning & guides</li>
           </ul>
         </div>
       </div>
