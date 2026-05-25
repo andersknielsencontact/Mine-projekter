@@ -1,1 +1,470 @@
+<!DOCTYPE html>
+<html lang="da">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Salon Heidi | Frisørsalon</title>
+
+  <meta
+    name="description"
+    content="Salon Heidi - moderne frisørsalon med booking, styling og kvalitetsbehandlinger."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="site-header">
+
+    <div class="container header-wrap">
+
+
+      <div>
+        <a href="#" class="logo">
+          <img src="logo.png" alt="Salon Heidi logo">
+        </a>
+      </div>
+
+      <button
+        class="burger"
+        aria-label="Åbn menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links">
+
+        <a href="#om-os">
+          Om os
+        </a>
+
+        <a href="#services">
+          Priser & Produkter
+        </a>
+
+        <a href="#gallery">
+          Personale
+        </a>
+
+        <a href="#kontakt">
+          Kontakt & Find os
+        </a>
+
+        <a href="#booking" class="btn btn-small">
+          Book tid
+        </a>
+        
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="hero-image-wrapper">
+
+        <img
+          class="hero-image"
+          src="lokale2.jpg"
+          alt="Frisørsalon interiør"
+        >
+
+        <div class="hero-overlay"></div>
+
+      </div>
+
+      <div class="container hero-content">
+
+        <div class="hero-text">
+
+          <h1>
+            <span>Salon Heidi</span>
+          </h1>
+
+          <p>
+            Book din tid i dag og få en præcis klipning,
+            der passer til din hverdag og personlige stil.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#booking" class="btn">
+              Bestil tid
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="services section" id="services">
+
+      <div class="container">
+
+        <div class="section-intro">
+
+          <p class="small-heading">
+            Ydelser
+          </p>
+
+          <h2>
+            Udvalgte behandlinger
+          </h2>
+
+        </div>
+
+        <div class="service-list">
+
+          <div class="service-item">
+            <span>Dameklip</span>
+            <span>550 kr.</span>
+          </div>
+
+          <div class="service-item">
+            <span>Herreklip</span>
+            <span>350 kr.</span>
+          </div>
+
+          <div class="service-item">
+            <span>Farvebehandling</span>
+            <span>Fra 900 kr.</span>
+          </div>
+
+          <div class="service-item">
+            <span>Balayage</span>
+            <span>Fra 1295 kr.</span>
+          </div>
+
+          <div class="service-item">
+            <span>Styling</span>
+            <span>450 kr.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         STYLISTS
+    ========================== -->
+
+    <section class="stylists-section section">
+
+      <div class="container">
+
+        <div class="section-intro">
+
+          <p class="small-heading">
+            Team
+          </p>
+
+          <h2>
+            Mød vores stylister
+          </h2>
+
+        </div>
+
+        <div class="stylists-grid">
+
+          <!-- CARD -->
+
+          <article class="stylist-card">
+
+            <img
+              src="resume1.avif"
+              alt="Camilla Jensen"
+              class="stylist-photo"
+            >
+
+            <div class="stylist-info">
+
+              <h3>
+                Camilla Jensen
+              </h3>
+
+              <p>
+                Speciale: Dame- og herreklip
+              </p>
+
+              <p class="stylist-bio">
+                Camilla har 12 års erfaring og elsker
+                moderne, naturlige looks.
+              </p>
+
+              <div class="stylist-availability">
+                Næste ledige tid: Onsdag 14:00
+              </div>
+
+              <a href="#booking" class="btn btn-small">
+                Book tid
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- CARD -->
+
+          <article class="stylist-card">
+
+            <img
+              src="resume2.avif"
+              alt="Mads Larsen"
+              class="stylist-photo"
+            >
+
+            <div class="stylist-info">
+
+              <h3>
+                Mads Larsen
+              </h3>
+
+              <p>
+                Speciale: Herreklip & skæg
+              </p>
+
+              <p class="stylist-bio">
+                Mads er ekspert i klassiske og moderne herrelooks.
+              </p>
+
+              <div class="stylist-availability">
+                Næste ledige tid: Fredag 10:30
+              </div>
+
+              <a href="#booking" class="btn btn-small">
+                Book tid
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- CARD -->
+
+          <article class="stylist-card">
+
+            <img
+              src="resume3.avif"
+              alt="Sofie Holm"
+              class="stylist-photo"
+            >
+
+            <div class="stylist-info">
+
+              <h3>
+                Sofie Holm
+              </h3>
+
+              <p>
+                Speciale: Farve & styling
+              </p>
+
+              <p class="stylist-bio">
+                Sofie elsker kreative farveforvandlinger.
+              </p>
+
+              <div class="stylist-availability">
+                Næste ledige tid: Mandag 16:00
+              </div>
+
+              <a href="#booking" class="btn btn-small">
+                Book tid
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         TESTIMONIAL
+    ========================== -->
+
+    <section class="testimonial-section section">
+
+      <div class="container testimonial-content">
+
+        <p class="quote">
+          “Bedste frisøroplevelse jeg har haft i Odense.”
+        </p>
+
+        <span class="author">
+          — Maria
+        </span>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+
+   <section class="gallery" id="gallery">
+  <div class="gallery-wrap">
+
+    <figure class="gallery-item">
+      <img src="Hairstyle1.avif" alt="">
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="Hairstyle2.avif" alt="">
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="Hairstyle3.avif" alt="">
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="Hairstyle4.avif" alt="">
+    </figure>
+
+  </div>
+</section>
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta-section section" id="booking">
+
+      <div class="container cta-content">
+
+        <p class="small-heading">
+          Booking
+        </p>
+
+        <h2>
+          Klar til din næste tid?
+        </h2>
+
+        <a href="#" class="btn">
+          Book online
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-wrap">
+
+      <p>
+        NORD STUDIO · Buchwaldsgade 48 · 5000 Odense C
+      </p>
+
+      <a href="tel:63141748">
+        63 14 17 48
+      </a>
+
+    </div>
+
+  </footer>
+
+  <!-- =========================
+       JS
+  ========================== -->
+
+  <script>
+
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+
+      nav.classList.toggle('open');
+
+      burger.setAttribute(
+        'aria-expanded',
+        nav.classList.contains('open')
+      );
+
+    });
+
+    document.querySelectorAll('.nav-links a')
+      .forEach(link => {
+
+        link.addEventListener('click', () => {
+
+          nav.classList.remove('open');
+
+          burger.setAttribute('aria-expanded', 'false');
+
+        });
+
+      });
+
+  </script>
+
+</body>
+<script>
+  // Make navbar sticky with background when scrolling down
+  const header = document.querySelector('.site-header');
+  function handleStickyNav() {
+    if (window.scrollY > 10) {
+      header.classList.add('sticky-nav');
+    } else {
+      header.classList.remove('sticky-nav');
+    }
+  }
+  window.addEventListener('scroll', handleStickyNav);
+  // Initial state
+  handleStickyNav();
+</script>
+</html>
