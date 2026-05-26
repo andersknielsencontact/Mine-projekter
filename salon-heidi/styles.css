@@ -524,125 +524,7 @@ p {
   color: var(--accent);
 }
 
-/* =========================
-   STYLISTS
-========================= */
 
-.stylists-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 2rem;
-}
-
-.stylist-card {
-  display: flex;
-
-  flex-direction: column;
-
-  padding: 2rem;
-
-  border-radius:
-    var(--radius);
-
-  background:
-    var(--card);
-
-  box-shadow:
-    var(--shadow);
-
-  transition:
-    .25s ease;
-}
-
-.stylist-card:hover {
-  transform:
-    translateY(-6px);
-}
-
-.stylist-photo {
-  width: 320px;
-  height: 520px;
-  object-fit: cover;
-   object-position: center;
-
-  margin-inline: auto;
-  margin-bottom: 1.5rem;
-
-  border-radius: 4px;
-
-  object-fit: cover;
-
- 
-}
-
-.stylist-info {
-  display: flex;
-
-  flex-direction: column;
-
-  flex: 1;
-}
-
-.stylist-info h3 {
-  margin-bottom: .4rem;
-
-  text-align: center;
-}
-
-.stylist-info p {
-  text-align: center;
-}
-
-.stylist-bio {
-  margin-top: 1rem;
-}
-
-.stylist-availability {
-  margin-top: auto;
-  margin-bottom: 1.5rem;
-
-  color: var(--accent);
-
-  font-weight: 700;
-
-  text-align: center;
-}
-
-/* =========================
-   TESTIMONIAL
-========================= */
-
-.testimonial-section {
-  background: var(--card);
-
-  text-align: center;
-}
-
-.testimonial-content {
-  max-width: 800px;
-}
-
-.quote {
-  margin-bottom: 2rem;
-
-  font-family:
-    "Prata",
-    serif;
-
-  font-size:
-    clamp(2rem, 5vw, 4rem);
-
-  line-height: 1.2;
-
-  color: var(--ink);
-}
-
-.author {
-  color: var(--muted);
-}
 
 /* =========================
    GALLERY
@@ -723,7 +605,7 @@ p {
 ========================= */
 
 .cta-section {
-  background: #111;
+  background: lab(61.02% 0.37 0.12);
 
   color: white;
 
