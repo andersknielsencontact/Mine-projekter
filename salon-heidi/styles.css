@@ -232,6 +232,12 @@ p {
   font-weight: 600;
   font-size: 0.98rem;
   transition: .18s cubic-bezier(.4,0,.2,1);
+  padding:
+    .7rem 1.1rem;
+    background-color: rgb(224, 201, 160);
+    color:white;
+
+  font-size: .9rem;
 }
 
 .btn:hover {
@@ -263,7 +269,9 @@ p {
 ========================= */
 
 .site-header {
-  position: absolute;
+  position: fixed;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
   top: 0;
   left: 0;
 
@@ -271,13 +279,30 @@ p {
 
   z-index: 1000;
 
-  padding: 1.5rem 0;
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease,
+    border-color 0.3s ease;
 
   background: transparent;
+
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.scrolled {
+  background: rgba(181, 181, 181, 0.82);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+
 }
 
 .nav-links a {
   color: white;
+   transition: color 0.3s ease;
 }
 
 .header-wrap {
@@ -290,10 +315,6 @@ p {
   font-family:
     "Prata",
     serif;
-
-  font-size: 1rem;
-
-  font-weight: 700;
 
   letter-spacing: .12em;
   position: relative;
