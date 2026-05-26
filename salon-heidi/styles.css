@@ -1,12 +1,41 @@
 /* =========================
+   OM SALONEN
+========================= */
+
+.about-salon-section {
+  background: #dadada;
+  border-bottom: 1px solid var(--line);
+  padding: 2rem 0 2.5rem 0;
+  text-align: center;
+}
+
+.about-salon-content {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.about-salon-content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.about-salon-content p {
+  color: #6d655c;
+  font-size: 1.08rem;
+  font-style: normal;
+  margin-top: 0.5rem;
+}
+/* =========================
    FØLG OS
 ========================= */
 
 .follow-section {
   background: #ebe7e0;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 3rem 0;
+  border-bottom: 2.5px solid #e0dbd2;
+  padding: 3rem 0 6rem 0;
   text-align: center;
 }
 
@@ -494,35 +523,6 @@ p {
   margin: 0;
 }
 
-/* =========================
-   SERVICES
-========================= */
-
-.service-list {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 1.5rem;
-}
-
-.service-item {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  padding-bottom: 1rem;
-
-  border-bottom:
-    1px solid var(--line);
-
-  font-size: 1.2rem;
-}
-
-.service-item span:last-child {
-  color: var(--accent);
-}
 
 
 
