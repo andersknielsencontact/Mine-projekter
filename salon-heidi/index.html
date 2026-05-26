@@ -33,49 +33,31 @@
 
   <header class="site-header">
 
-    <div class="container header-wrap">
+  <div class="container header-wrap">
 
-      <a href="#" class="logo">
-        <img src="logo.png" alt="Salon Heidi Logo">
-      </a>
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Salon Heidi Logo">
+    </a>
 
-      <button
-        class="burger"
-        aria-label="Åbn menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <a href="tel:+4512345678" class="mobile-cta">Ring</a>
 
-      <nav class="nav-links">
+    <button class="burger" aria-label="Åbn menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-         <a href="#gallery">
-          Salon Heidi
-        </a>
+    <nav class="nav-links">
+      <a href="#gallery">Salon Heidi</a>
+      <a href="#services">Priser & Produkter</a>
+      <a href="#gallery">Personale</a>
+      <a href="#contact">Kontakt & Find os</a>
+      <a href="#booking" class="btn btn-small">Bestil tid</a>
+    </nav>
 
-        <a href="#services">
-          Priser & Produkter
-        </a>
+  </div>
 
-        <a href="#gallery">
-          Personale
-        </a>
-
-         <a href="#contact">
-          Kontakt & Find os
-        </a>
-
-        <a href="#booking" class="btn btn-small">
-          Book tid
-        </a>
-
-      </nav>
-
-    </div>
-
-  </header>
+</header>
 
   <!-- =========================
        MAIN
@@ -111,7 +93,7 @@
           </h1>
 
           <p>
-          Vi sætter faglig dygtighed og rådgivning højt. Hos os er du i centrum.
+          Vi sætter faglig dygtighed og rådgivning højt. <br>Hos os er du i centrum.
           </p>
 
           <div class="hero-actions">
@@ -136,7 +118,7 @@
     <section class="follow-section">
       <div class="container">
         <div class="follow-content">
-          <h3 class="h3-følg-os">Følg os</h3>
+          <h3>Følg os</h3>
           <div class="follow-links">
             <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="follow-link">
               <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:32px;height:32px;">
@@ -157,15 +139,12 @@
         <h3>Om Salon Heidi</h3>
         <p>
           <!-- Skriv lidt om salonen her, fx: -->
-         Midt i Skibhuskvarteret i Odense finder du Salon Heidi.<br> Her finder du en rolig og personlig salon med fokus på nærvær, kvalitet og god service.
-
-Siden 1993 har salonen skabt frisøroplevelser med tid til den enkelte i afslappede omgivelser.
+          Salon Heidi har været en del af Odense siden 1993. Vi tilbyder moderne klipninger, farvninger og styling i hyggelige omgivelser, hvor kvalitet og personlig service er i fokus.
         </p>
       </div>
     </section>
 
    
-
    
     <!-- =========================
          GALLERY
@@ -211,7 +190,7 @@ Siden 1993 har salonen skabt frisøroplevelser med tid til den enkelte i afslapp
         </h2>
 
         <a href="#" class="btn">
-          Book online
+          Bestil tid
         </a>
 
       </div>
@@ -277,17 +256,15 @@ Siden 1993 har salonen skabt frisøroplevelser med tid til den enkelte i afslapp
 
       });
 
-       const header = document.querySelector('.site-header');
+      window.addEventListener("scroll", function () {
+  const header = document.querySelector(".site-header");
 
-  window.addEventListener('scroll', () => {
-
-    if(window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-
-  });
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
 
   </script>
 
