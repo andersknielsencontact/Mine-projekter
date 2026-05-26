@@ -35,12 +35,9 @@
 
     <div class="container header-wrap">
 
-
-      <div>
-        <a href="#" class="logo">
-          <img src="logo.png" alt="Salon Heidi logo">
-        </a>
-      </div>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Salon Heidi Logo">
+      </a>
 
       <button
         class="burger"
@@ -54,8 +51,8 @@
 
       <nav class="nav-links">
 
-        <a href="#om-os">
-          Om os
+         <a href="#gallery">
+          Salon Heidi
         </a>
 
         <a href="#services">
@@ -66,14 +63,13 @@
           Personale
         </a>
 
-        <a href="#kontakt">
+         <a href="#contact">
           Kontakt & Find os
         </a>
 
         <a href="#booking" class="btn btn-small">
           Book tid
         </a>
-        
 
       </nav>
 
@@ -97,7 +93,7 @@
 
         <img
           class="hero-image"
-          src="lokale2.jpg"
+          src="lokale4.jpg"
           alt="Frisørsalon interiør"
         >
 
@@ -111,18 +107,19 @@
 
           <h1>
             <span>Salon Heidi</span>
+            
           </h1>
 
           <p>
-            Book din tid i dag og få en præcis klipning,
-            der passer til din hverdag og personlige stil.
+          Vi sætter faglig dygtighed og rådgivning højt. Hos os er du i centrum.
           </p>
 
           <div class="hero-actions">
 
-            <a href="#booking" class="btn">
+            <a href="#booking" class="hero-cta">
               Bestil tid
             </a>
+
 
           </div>
 
@@ -132,7 +129,25 @@
 
     </section>
 
-    
+    <!-- =========================
+         FØLG OS
+    ========================== -->
+
+    <section class="follow-section">
+      <div class="container">
+        <div class="follow-content">
+          <h3>Følg os</h3>
+          <div class="follow-links">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="follow-link">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:32px;height:32px;">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="follow-link">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:32px;height:32px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- =========================
          SERVICES
@@ -453,18 +468,4 @@
   </script>
 
 </body>
-<script>
-  // Make navbar sticky with background when scrolling down
-  const header = document.querySelector('.site-header');
-  function handleStickyNav() {
-    if (window.scrollY > 10) {
-      header.classList.add('sticky-nav');
-    } else {
-      header.classList.remove('sticky-nav');
-    }
-  }
-  window.addEventListener('scroll', handleStickyNav);
-  // Initial state
-  handleStickyNav();
-</script>
 </html>
