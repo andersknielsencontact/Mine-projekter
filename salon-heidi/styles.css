@@ -1,109 +1,3 @@
-/* =========================
-   OM SALONEN
-========================= */
-
-.about-salon-section {
-  background: #f5f1eb;
-  border-bottom: 1px solid var(--line);
-  padding: 7rem 0;
-  text-align: center;
-  
-}
-
-.about-salon-content {
-  max-width: 700px;
-  margin-inline: auto;
-  max-width: 560px;
-  line-height: 2;
-  
-}
-
-.about-salon-content h3 {
-  margin-bottom: 0.5rem;
-  color: var(--muted);
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.about-salon-content p {
-  color: #6d655c;
-  font-size: 1.08rem;
-  font-style: normal;
-  margin-top: 0.5rem;
-}
-/* =========================
-   FØLG OS
-========================= */
-
-.follow-section {
-  background: #ebe7e0;
-  border-top: 1px solid var(--line);
-  border-bottom: 2.5px solid #e0dbd2;
-  padding: 2rem 0;
-  text-align: center;
-  
-}
-
-.follow-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.follow-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.follow-link img {
-  width: 40px;
-  height: 40px;
-  filter: grayscale(0.2) brightness(0.8);
-  transition: filter 0.2s, transform 0.2s;
-}
-
-.follow-link img:hover {
-  filter: none;
-  transform: scale(1.1);
-}
-.hero-actions .btn {
-  margin-inline: auto;
-  
-}
-
-
-
-
-/* =========================
-   VARIABLES
-========================= */
-
-:root {
-  --bg: #f5f1eb;
-  --card: #fffdf9;
-
-  --ink: #191816;
-  --muted: #625b52;
-
-  --accent: #ad7742;
-  --accent-dark: #8d5f33;
-
-  --line: rgba(0, 0, 0, 0.08);
-
-  --radius: 24px;
-
-  --shadow:
-    0 10px 30px rgba(0,0,0,.08);
-
-  --container:
-    min(1100px, 92%);
-}
-
-/* =========================
-   RESET
-========================= */
 
 *,
 *::before,
@@ -203,7 +97,7 @@ p {
 .small-heading {
   margin-bottom: 1rem;
 
-  color: var(--accent);
+  color: black;
 
   font-size: .75rem;
   font-weight: 700;
@@ -225,8 +119,8 @@ p {
   align-items: center;
   justify-content: center;
   padding: 0.55rem 1.1rem;
-  border: 1.5px solid var(--accent);
-  border-radius: 3px;
+  border: none white;
+  border-radius: 4px;
   background: transparent;
   color: var(--accent);
   font-weight: 600;
@@ -263,10 +157,136 @@ p {
   border-color:
     rgba(255,255,255,.35);
 }
+/* =========================
+   OM SALONEN
+========================= */
+
+.about-salon-section {
+  background: #f5f1eb;
+  border-bottom: 1px solid var(--line);
+  padding: 7rem 0;
+  text-align: center;
+  
+}
+
+.about-salon-content {
+  max-width: 700px;
+  margin-inline: auto;
+  max-width: 560px;
+  line-height: 2;
+  
+}
+
+.about-salon-content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.about-salon-content p {
+  color: #6d655c;
+  font-size: 1.08rem;
+  font-style: normal;
+  margin-top: 0.5rem;
+}
+/* =========================
+   FØLG OS
+========================= */
+
+.follow-section {
+  background: #ebe7e0;
+  border-top: 1px solid var(--line);
+  border-bottom: 2.5px solid #e0dbd2;
+  padding: 2rem 0;
+  text-align: center;
+  
+}
+
+.follow-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  width: 100%;
+}
+
+.follow-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.follow-content h3,
+.follow-content p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.follow-link img {
+  width: 40px;
+  height: 40px;
+  filter: grayscale(0.2) brightness(0.8);
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.follow-link img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+.hero-actions .btn {
+  margin-inline: auto;
+  
+}
+
+
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+  --bg: #f5f1eb;
+  --card: #fffdf9;
+
+  --ink: #191816;
+  --muted: #625b52;
+
+  --accent: #ad7742;
+  --accent-dark: #8d5f33;
+
+  --line: rgba(0, 0, 0, 0.08);
+
+  --radius: 24px;
+
+  --shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+  --container:
+    min(1100px, 92%);
+}
+
+/* =========================
+   RESET
+========================= */
+
+
 
 /* =========================
    HEADER
 ========================= */
+
+.mobile-cta {
+  display: none;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
 
 .site-header {
   position: fixed;
@@ -303,23 +323,24 @@ p {
 .nav-links a {
   color: white;
    transition: color 0.3s ease;
+   
 }
 
 .header-wrap {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  gap: 2rem;
 }
 
 .logo {
-  font-family:
-    "Prata",
-    serif;
-
+  font-family: "Prata", serif;
   letter-spacing: .12em;
-  position: relative;
-  left: -200px;
+  position: static;
 }
+
+
 
 /* =========================
    NAVIGATION
@@ -328,10 +349,10 @@ p {
 .nav-links {
   display: flex;
   align-items: center;
-  justify-content: end;
   gap: 2.5rem;
-  position: relative;
-  left: 300px;
+  position: static;
+
+   margin-left: auto;
 }
 
 .nav-links a {
@@ -439,19 +460,13 @@ p {
   margin-bottom: 2rem;
 }
 
+.hero-text h1 {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  line-height: 1.1;
+}
+
 .hero-text p {
-  max-width: 38ch;
-  display: flex;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  
-  
-  align-items: center;
-
-  color:
-    rgba(255,255,255,.82);
-
-  font-size: 1.1rem;
+  color: white;
 }
 
 .hero-actions {
@@ -762,4 +777,46 @@ p {
     flex-direction: column;
   }
 
+}
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: .85rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-links a {
+    font-size: .8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo {
+    display: none;
+  }
+
+  .mobile-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none; /* hvis du vil gøre header clean på mobil */
+  }
+
+  .header-wrap {
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
 }
