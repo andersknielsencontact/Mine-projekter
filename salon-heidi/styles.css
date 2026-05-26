@@ -3,15 +3,19 @@
 ========================= */
 
 .about-salon-section {
-  background: #dadada;
+  background: #f5f1eb;
   border-bottom: 1px solid var(--line);
-  padding: 2rem 0 2.5rem 0;
+  padding: 7rem 0;
   text-align: center;
+  
 }
 
 .about-salon-content {
   max-width: 700px;
   margin-inline: auto;
+  max-width: 560px;
+  line-height: 2;
+  
 }
 
 .about-salon-content h3 {
@@ -35,15 +39,17 @@
   background: #ebe7e0;
   border-top: 1px solid var(--line);
   border-bottom: 2.5px solid #e0dbd2;
-  padding: 3rem 0 6rem 0;
+  padding: 2rem 0;
   text-align: center;
+  
 }
 
 .follow-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .follow-links {
@@ -66,6 +72,8 @@
   margin-inline: auto;
   
 }
+
+
 
 
 /* =========================
@@ -214,34 +222,22 @@ p {
 
 .btn {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
-  padding:
-    1rem 1.5rem;
-
-  border:
-    1px solid;
-
-  border-radius: 4px;
-
-  background: white;
-
-  color: black;
-
-  font-weight: 700;
-
-  transition:
-    .25s ease;
+  padding: 0.55rem 1.1rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: .18s cubic-bezier(.4,0,.2,1);
 }
 
 .btn:hover {
-  transform:
-    translateY(-2px);
-
-  background:
-    var(--accent-dark);
+  transform: scale(1.04);
+  background: var(--accent);
+  color: white;
 }
 
 .btn-small {
@@ -267,30 +263,27 @@ p {
 ========================= */
 
 .site-header {
-  position: sticky;
-
+  position: absolute;
   top: 0;
+  left: 0;
+
+  width: 100%;
 
   z-index: 1000;
 
-  background:
-    rgba(245,241,235,.9);
+  padding: 1.5rem 0;
 
-  backdrop-filter:
-    blur(10px);
+  background: transparent;
+}
 
-  border-bottom:
-    1px solid var(--line);
+.nav-links a {
+  color: white;
 }
 
 .header-wrap {
   display: flex;
-
-  align-items: center;
   justify-content: space-between;
-
-  padding:
-    1rem 0;
+  align-items: center;
 }
 
 .logo {
@@ -400,6 +393,9 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
+  max-width: 680px;
+
+  
 }
 
 .hero-text {
@@ -409,7 +405,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
 .hero-text h1 {
@@ -418,15 +414,15 @@ p {
   flex-direction: column;
   align-items: center;
   font-size: clamp(6.5rem, 6vw, 4.5rem);
-  
-
-  margin-bottom: 1rem;
+   line-height: 1.1;
+  margin-bottom: 2rem;
 }
 
 .hero-text p {
   max-width: 38ch;
   display: flex;
   text-align: center;
+  margin-bottom: 2.5rem;
   
   
   align-items: center;
@@ -444,84 +440,50 @@ p {
 
   flex-wrap: wrap;
 
-  gap: 1rem;
-  
-  margin-top: 2rem;
+  background-color: rgb(224, 201, 160);
+    color:white;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-size: .9rem;
+  margin-top: 3rem;
 }
 
 .hero-cta {
-  border: none rgb(250, 250, 250);
-  background-color: rgb(224, 201, 160);
-  display:flex;
-  padding: 1rem 3.5rem;
-  color:white;
-  font-weight: 700;
-  border-radius: 8px;
-  font-size: large;
+ display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 2.4rem;
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(8px);
+
+  color: white;
+
+  border-radius: 999px;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition: all 0.3s ease;
   
 }
 
-/* =========================
-   TRUST
-========================= */
 
-.trust-section {
-  background: #ebe7e0;
+.hero-cta:hover {
+   background: white;
+  color: black;
 
-  border-top:
-    1px solid var(--line);
-
-  border-bottom:
-    1px solid var(--line);
+  transform: translateY(-2px);
 }
 
-.trust-grid {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-}
 
-.trust-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 0.8rem;
-  max-width: 320px;
-  width: 100%;
-  margin-inline: 0;
-}
-
-.trust-card:not(:last-child) {
-  border-right: 1px solid var(--line);
-}
-
-.trust-card:last-child {
-  border-right: none;
-}
-
-.trust-icon {
-  width: 48px;
-  height: 48px;
-
-  display: grid;
-
-  place-items: center;
-
-  border-radius: 50%;
-
-  background: white;
-
-  font-size: 1.1rem;
-}
-
-.trust-card h3 {
-  margin-bottom: .2rem;
-}
-
-.trust-card p {
-  margin: 0;
-}
 
 
 
@@ -777,10 +739,6 @@ p {
 
   .hero-actions {
     flex-direction: column;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
   }
 
 }
