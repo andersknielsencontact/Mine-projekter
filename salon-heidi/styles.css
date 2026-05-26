@@ -131,7 +131,7 @@ p {
     background-color: rgb(224, 201, 160);
     color:white;
 
-  font-size: .9rem;
+  font-size: 1.4rem;
 }
 
 .btn:hover {
@@ -478,6 +478,7 @@ p {
 
   background-color: rgb(224, 201, 160);
     color:white;
+ 
   border-radius: 8px;
   font-size: .9rem;
   margin-top: 3rem;
@@ -530,8 +531,9 @@ p {
 
 
 .gallery {
-  padding: 8rem 0;
   background: #f5f1eb;
+   padding-top: 14rem;
+   padding-bottom: 8rem;
 }
 
 .gallery-wrap {
@@ -549,6 +551,7 @@ p {
   border-radius: 18px;
   height: 420px;
   background: #ddd;
+  
 }
 
 /* image - IMPORTANT FIX */
@@ -558,7 +561,11 @@ p {
   object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: rise 0.8s ease forwards;
 }
+
 
 /* hover */
 .gallery-item:hover img {
