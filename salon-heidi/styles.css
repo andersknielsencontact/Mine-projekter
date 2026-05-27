@@ -199,9 +199,20 @@ p {
 .about-salon-section {
   background: #f5f1eb;
   border-bottom: 1px solid var(--line);
-  padding: 7rem 0;
+  padding: 9rem 0;
   text-align: center;
-  
+  position: relative;
+   background:
+    linear-gradient(
+      rgba(245,241,235,0.88),
+      rgba(245,241,235,0.88)
+    ),
+    url("lokale3.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  background-attachment: fixed;
 }
 
 .about-salon-content {
@@ -220,7 +231,7 @@ p {
 }
 
 .about-salon-content p {
-  color: #6d655c;
+  color: #22201e;
   font-size: 1.08rem;
   font-style: normal;
   margin-top: 0.5rem;
@@ -233,7 +244,7 @@ p {
   background: #ebe7e0;
   border-top: 1px solid var(--line);
   border-bottom: 2.5px solid #e0dbd2;
-  padding: 2rem 0;
+  padding: 4rem 0 7rem;
   text-align: center;
   
 }
@@ -567,7 +578,7 @@ p {
 
 .gallery {
   background: #f5f1eb;
-   padding-top: 14rem;
+   margin-top: 14rem;
    padding-bottom: 8rem;
 }
 
