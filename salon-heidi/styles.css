@@ -1,3 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
 /* =========================
    FOOTER COLUMNS
 ========================= */
@@ -34,34 +47,21 @@
   }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-
-  background:
-    radial-gradient(
-      circle at top left,
-      #fff7ea 0%,
-      var(--bg) 45%
-    );
-
-  color: var(--ink);
-
-  font-family:
-    "Manrope",
-    sans-serif;
-
-  line-height: 1.6;
-}
+  /* image - IMPORTANT FIX */
+  .gallery-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: rise 0.8s ease forwards;
+  }
+  
 
 img {
   display: block;
@@ -228,7 +228,10 @@ p {
   color: var(--muted);
   font-size: 1.1rem;
   font-weight: 600;
+  line-height: 2rem;
 }
+
+
 
 .about-salon-content p {
   color: #22201e;
@@ -448,17 +451,19 @@ p {
 
 .hero-image-wrapper {
   position: relative;
-
-  height:
-    clamp(500px, 85vh, 900px);
-
+  width: 100%;
+  height: clamp(500px, 85vh, 900px);
+  min-height: 350px;
+  max-height: 100vh;
   overflow: hidden;
 }
 
 .hero-image {
+  width: 100%;
   height: 100%;
-
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .hero-overlay {
@@ -534,35 +539,28 @@ p {
  display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0.55rem 1.1rem;
+  border: none white;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: .18s cubic-bezier(.4,0,.2,1);
+  padding:
+    1.0rem 2.5rem;
+    background-color: rgb(224, 201, 160);
+    color:white;
 
-  padding: 1rem 2.4rem;
-
-  border: 1px solid rgba(255,255,255,0.35);
-
-  background: rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(8px);
-
-  color: white;
-
-  border-radius: 999px;
-
-  font-size: 0.88rem;
-  font-weight: 500;
-
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  transition: all 0.3s ease;
+  font-size: 1.4rem;
   
 }
 
 
 .hero-cta:hover {
-   background: white;
-  color: black;
-
-  transform: translateY(-2px);
+   transform: scale(1.04);
+  background: var(--accent);
+  color: white;
 }
 
 
@@ -588,6 +586,7 @@ p {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.5rem;
+ 
 }
 
 /* base cards */
@@ -621,22 +620,37 @@ p {
 /* layout variations */
 .gallery-item:nth-child(1) {
   grid-column: span 7;
-  height: 580px;
+  height: 680px;
+  width:90%;
 }
 
 .gallery-item:nth-child(2) {
   grid-column: span 5;
-  height: 520px;
+  height: 660px;
+  width: 100%;
 }
 
 .gallery-item:nth-child(3) {
   grid-column: span 5;
-  height: 450px;
+  height: 480px;
 }
 
 .gallery-item:nth-child(4) {
   grid-column: span 7;
-  height: 420px;
+  height: 580px;
+  width: 100%;
+}
+
+.gallery-item:nth-child(5) {
+  grid-column: span 5;
+  height: 580px;
+  width: 100%;
+}
+
+.gallery-item:nth-child(6) {
+  grid-column: span 7;
+  height: 580px;
+  width: 100%;
 }
 
 /* mobile */
@@ -649,6 +663,20 @@ p {
     grid-column: auto !important;
     height: 320px !important;
   }
+}
+
+
+.contact-note {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: #f5f1eb;
+  padding-bottom: 8rem;
+}
+
+.contact-note p {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: #5f574e;
 }
 /* =========================
    CTA
