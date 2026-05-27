@@ -1,1182 +1,281 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anders Nielsen | Portfolio</title>
 
+  <title>Salon Heidi | Frisørsalon</title>
+
+  <meta
+    name="description"
+    content="Salon Heidi - moderne frisørsalon med booking, styling og kvalitetsbehandlinger."
+  />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap"
+    rel="stylesheet"
+  />
 
-    .hero-tags {
-      display: flex;
-      gap: 0.7em;
-      margin: 0.7rem 0 1.2rem 0;
-      flex-wrap: wrap;
-    }
-    .hero-tag {
-      background: #e0f7f3;
-      color: #1abc9c;
-      font-weight: 600;
-      font-size: 1.02rem;
-      padding: 0.32em 1.1em;
-      border-radius: 16px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 1px 6px rgba(26,188,156,0.07);
-      border: 1px solid #b6e6fa;
-      transition: background 0.2s, color 0.2s;
-    }
-    .hero-tag:hover {
-      background: #1abc9c;
-      color: #fff;
-    }
-
-    .hero-portrait-wrap {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-    }
-    .hero-portrait {
-      width: 320px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #23242a;
-      background: #222;
-      box-shadow: 0 4px 32px rgba(0,195,255,0.13);
-      margin-bottom: 1.2rem;
-      position: relative;
-      z-index: 2;
-      /* Overlap effect */
-      margin-top: 0;
-      margin-bottom: -60px;
-      box-shadow: 0 12px 48px 0 rgba(0,195,255,0.10);
-    }
-    @media (max-width: 600px) {
-      .hero-portrait {
-        width: 160px;
-        height: 160px;
-        margin-bottom: -30px;
-      }
-    }
-
-    .scroll-cue {
-      position: absolute;
-      left: 50%;
-      bottom: 24px;
-      transform: translateX(-50%);
-      z-index: 10;
-      animation: bounce 1.7s infinite;
-      opacity: 0.7;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(12px); }
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    .project-card {
-      background: #fff;
-      border: 1px solid #e6f3f7;
-      border-radius: 28px;
-      overflow: hidden;
-      transition: 0.3s cubic-bezier(.4,0,.2,1);
-      box-shadow: 0 2px 16px rgba(0,195,255,0.04);
-      display: flex;
-      flex-direction: column;
-      min-height: 420px;
-    }
-    .project-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(0,195,255,0.13);
-      border-color: #00c3ff44;
-    }
-    .project-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      filter: brightness(0.97) contrast(1.08);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .project-content {
-      padding: 2rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .project-content h3 {
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #00c3ff;
-      letter-spacing: -0.5px;
-    }
-    .project-content p {
-      color: #23242a;
-      margin-bottom: 1.5rem;
-      font-size: 1.08rem;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f7fafc;
-      color: #23242a;
-      line-height: 1.6;
-      letter-spacing: 0.01em;
-      transition: background 0.3s, color 0.3s;
-      border: 2.5px solid #e0e0e0;
-      border-radius: 28px;
-      max-width: 1200px;
-      margin: 32px auto 32px auto;
-      box-shadow: 0 6px 48px 0 rgba(60,60,60,0.07);
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-    @media (max-width: 1300px) {
-      body {
-        margin: 0.5rem;
-        border-radius: 0;
-        max-width: 100vw;
-        border-width: 1.5px;
-      }
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.2s, box-shadow 0.2s;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Section separation */
-    section:not(:first-of-type) {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      margin-top: 4rem;
-      padding-top: 5rem;
-    }
-
-    /* Modern Navbar */
-    nav {
-      position: relative;
-      background: rgba(255,255,255,0.92);
-      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
-      z-index: 1000;
-      padding: 1.2rem 0 0 0;
-      width: 100vw;
-      max-width: 1200px;
-      margin: 0 auto 2.5rem auto;
-      border-radius: 0 0 18px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2.5rem;
-    }
-
-    .nav-links a {
-      color: #1abc9c;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      opacity: 0.85;
-      transition: opacity 0.2s, color 0.2s, box-shadow 0.2s;
-      padding: 0.2em 0.7em;
-      border-radius: 8px;
-    }
-    .nav-links a:hover {
-      color: #fff;
-      background: #1abc9c;
-      box-shadow: 0 2px 8px #1abc9c22;
-      opacity: 1;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 44vh;
-      padding: 2.5rem 0 8.5rem 0;
-      width: 100%;
-      max-width: 100%;
-      border-radius: 0 0 32px 32px;
-      box-shadow: 0 8px 32px rgba(26,188,156,0.07);
-      position: relative;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background:
-        linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)),
-        url('imghero.avif') center center/cover no-repeat,
-        #e6f3f7;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    .hero-content {
-      max-width: 540px;
-      width: 100%;
-      padding: 3.5rem 1.5rem 2rem 1.5rem;
-      gap: 1.1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1.1rem;
-      text-align: center;
-      width: 100%;
-      color: #0b3a2d;
-      text-shadow: 0 2px 16px rgba(26,188,156,0.10), 0 1px 0 #fff;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-    .hero p {
-      color: #137a5a;
-      text-shadow: 0 1px 8px #fff, 0 1px 0 #e0f7f3;
-      font-weight: 600;
-    }
-    .hero img, .hero-portrait {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 1rem 1.8rem;
-      border-radius: 16px;
-      font-weight: 500;
-      transition: 0.3s cubic-bezier(.4,0,.2,1);
-      display: inline-block;
-      font-size: 1.1rem;
-      border: none;
-      margin-right: 0.5em;
-      margin-bottom: 0.5em;
-    }
-    .btn-primary {
-      background: #1abc9c;
-      color: #fff;
-      font-weight: 700;
-      border: none;
-      box-shadow: 0 2px 12px rgba(26,188,156,0.10);
-    }
-    .btn-primary:hover {
-      background: #159c82;
-      color: #fff;
-      box-shadow: 0 4px 24px rgba(26,188,156,0.18);
-      transform: translateY(-3px) scale(1.04);
-    }
-    .btn-secondary {
-      background: #0070f3;
-      color: #fff;
-      font-weight: 700;
-      border: none;
-      box-shadow: 0 2px 12px rgba(0,112,243,0.10);
-    }
-    .btn-secondary:hover {
-      background: #005bb5;
-      color: #fff;
-      box-shadow: 0 4px 24px rgba(0,112,243,0.18);
-      transform: translateY(-3px) scale(1.04);
-    }
-
-    /* Projects */
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-    }
-    .project-card {
-      background: #fff;
-      border: 1px solid #e6f3f7;
-      border-radius: 28px;
-      overflow: hidden;
-      transition: 0.3s cubic-bezier(.4,0,.2,1);
-      box-shadow: 0 2px 16px rgba(0,195,255,0.04);
-      display: flex;
-      flex-direction: column;
-      min-height: 540px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .project-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(0,195,255,0.13);
-      border-color: #00c3ff44;
-    }
-    .project-card img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      filter: brightness(0.97) contrast(1.08);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .project-content {
-      padding: 2rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .project-content h3 {
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #00c3ff;
-      letter-spacing: -0.5px;
-    }
-    .project-content p {
-      color: #23242a;
-      margin-bottom: 1.5rem;
-      font-size: 1.08rem;
-    }
-
-    /* Services */
-    .services {
-      background: linear-gradient(90deg,#e6f3f7 60%,#fff 100%);
-      border-radius: 22px;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-    .service-card {
-      background: #fff;
-      border: 1px solid #e6f3f7;
-      border-radius: 24px;
-      padding: 2rem;
-      transition: 0.3s cubic-bezier(.4,0,.2,1);
-      box-shadow: 0 2px 12px rgba(0,195,255,0.04);
-    }
-    .service-card:hover {
-      background: #1a1a1a;
-      box-shadow: 0 4px 24px rgba(0,195,255,0.13);
-      border-color: #00c3ff44;
-    }
-    .service-card h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00c3ff;
-      margin-bottom: 0.5em;
-    }
-    .service-card p {
-      color: #23242a;
-      font-size: 1rem;
-    }
-
-    /* About */
-    .about {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 3.5rem;
-      max-width: 900px;
-      margin: 0 auto 6rem auto;
-      padding: 0 1.5rem;
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-    }
-    .about-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 180px;
-      position: relative;
-    }
-    .about-portrait {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2.5px solid #1abc9c44;
-      background: #fff;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-      margin-top: 0.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .about-photo-stack {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      position: relative;
-      margin-top: 0.5rem;
-      margin-left: -60px;
-      /* Move stack left */
-    }
-    .about-photo-stack img {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 28px;
-      box-shadow: 0 8px 36px rgba(0,0,0,0.10);
-      border: 3px solid #fff;
-      background: #fff;
-      position: relative;
-      margin-top: -54px;
-      margin-bottom: 0;
-      z-index: 1;
-      transition: transform 0.18s;
-    }
-    .about-photo-stack img:first-child {
-      margin-top: 0;
-      z-index: 3;
-      transform: scale(1.08) translateX(-44px);
-    }
-    .about-photo-stack img:nth-child(2) {
-      z-index: 2;
-      transform: scale(1.03) translateX(44px);
-    }
-    .about-photo-stack img:last-child {
-      z-index: 1;
-      transform: scale(0.98) translateX(-28px);
-    }
-    @media (max-width: 800px) {
-      .about-photo-stack img {
-        width: 110px;
-        height: 110px;
-        margin-top: -28px;
-      }
-      .about-photo-stack {
-        margin-left: -24px;
-      }
-    }
-    .about-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      min-width: 220px;
-    }
-    .about-divider {
-      width: 48px;
-      height: 3px;
-      background: #1abc9c;
-      border-radius: 2px;
-      margin: 1.5rem 0 2.5rem 0;
-      opacity: 0.7;
-    }
-    .about p {
-      color: #23242a;
-      font-size: 1.13rem;
-      margin: 0 0 1.5rem 0;
-      line-height: 1.8;
-      font-weight: 400;
-    }
-    @media (max-width: 800px) {
-      .about {
-        flex-direction: column;
-        align-items: center;
-        gap: 2.5rem;
-      }
-      .about-right {
-        align-items: center;
-        text-align: center;
-      }
-      .about-divider {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-
-    /* Contact */
-    .contact {
-      text-align: center;
-      padding: 4rem 0 2rem 0;
-    }
-    .contact p {
-      color: #23242a;
-      margin-bottom: 2rem;
-    }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .contact-links a {
-      color: #1abc9c;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.2s, box-shadow 0.2s;
-      padding: 0.3em 1em;
-      border-radius: 8px;
-    }
-    .contact-links a:hover {
-      color: #fff;
-      background: #1abc9c;
-      box-shadow: 0 2px 8px #1abc9c22;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid #e6f3f7;
-      text-align: center;
-      padding: 2rem 0 1rem 0;
-      color: #23242a99;
-      font-size: 0.98rem;
-      background: #f7fafc;
-      margin-top: 4rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        gap: 2.5rem;
-        padding: 4rem 0 2rem 0;
-      }
-      .hero {
-        min-height: 90vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 2.5rem;
-        padding: 7rem 0 3rem 0;
-        background:
-          linear-gradient(rgba(24,25,28,0.92), rgba(24,25,28,0.92)),
-          url('imghero.avif') center center/cover no-repeat,
-          #18191c;
-        border-radius: 0 0 32px 32px;
-        box-shadow: 0 8px 32px rgba(26,188,156,0.07);
-        position: relative;
-      }
-      }
-      .section-title {
-        font-size: 1.5rem;
-      }
-      .hero img {
-        height: 180px;
-        width: 180px;
-      }
-      .about img {
-        height: 90px;
-        width: 90px;
-      }
-      .container {
-        width: 98%;
-      }
-      .project-card img {
-        height: 120px;
-      }
-      .project-content {
-        padding: 1rem;
-      }
-    
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f7fafc;
-      color: #23242a;
-      line-height: 1.6;
-      letter-spacing: 0.01em;
-      transition: background 0.3s, color 0.3s;
-      border: 2.5px solid #e0e0e0;
-      border-radius: 28px;
-      max-width: 1200px;
-      margin: 32px auto 32px auto;
-      box-shadow: 0 6px 48px 0 rgba(60,60,60,0.07);
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Modern Navbar */
-    nav {
-      position: sticky;
-      top: 0;
-      background: transparent;
-      z-index: 1000;
-      padding: 2rem 0 0 0;
-      width: 100vw;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2.5rem;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00c3ff;
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.2rem;
-      align-items: center;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-
-
-    /* Hero */
-
-    /* Removed duplicate .hero definition with radial gradient. The correct .hero with background image is above. */
-
-    .hero-subtitle {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1.1rem;
-      text-align: center;
-      width: 100%;
-      color: #0b3a2d;
-      text-shadow: 0 2px 16px rgba(26,188,156,0.10), 0 1px 0 #fff;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      color: #137a5a;
-      text-shadow: 0 1px 8px #fff, 0 1px 0 #e0f7f3;
-      font-weight: 600;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 1rem 1.8rem;
-      border-radius: 16px;
-      font-weight: 500;
-      transition: 0.3s ease;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: white;
-      color: black;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 550px;
-      object-fit: cover;
-      border-radius: 32px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    /* Sections */
-
-    section {
-      padding: 7rem 0;
-    }
-
-    .section-subtitle {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 1rem;
-      font-size: 0.85rem;
-    }
-
-    .section-title {
-      font-size: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    /* Projects */
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: #121212;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      overflow: hidden;
-      transition: 0.3s ease;
-      box-shadow: 0 2px 16px rgba(0,195,255,0.07);
-      display: flex;
-      flex-direction: column;
-      min-height: 420px;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-    }
-
-    .project-content {
-      padding: 2rem;
-    }
-
-    .project-content h3 {
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-    }
-
-    .project-content p {
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 1.5rem;
-    }
-
-    /* Services */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .service-card {
-      background: #121212;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 2rem;
-      transition: 0.3s ease;
-      box-shadow: 0 2px 12px rgba(0,195,255,0.07);
-    }
-
-    .service-card:hover {
-      background: #1a1a1a;
-    }
-
-    .service-card h3 {
-      font-size: 1.5rem;
-    }
-
-    /* About */
-
-    .about {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 3.5rem;
-      max-width: 900px;
-      margin: 0 auto 6rem auto;
-      padding: 0 1.5rem;
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-    }
-    .about-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 180px;
-      position: relative;
-    }
-    .about-portrait {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2.5px solid #1abc9c44;
-      background: #fff;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-      margin-top: 0.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .about-photo-stack {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      position: relative;
-      margin-top: 0.5rem;
-      margin-left: -60px;
-      /* Move stack left */
-    }
-    .about-photo-stack img {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 28px;
-      box-shadow: 0 8px 36px rgba(0,0,0,0.10);
-      border: 3px solid #fff;
-      background: #fff;
-      position: relative;
-      margin-top: -54px;
-      margin-bottom: 0;
-      z-index: 1;
-      transition: transform 0.18s;
-    }
-    .about-photo-stack img:first-child {
-      margin-top: 0;
-      z-index: 3;
-      transform: scale(1.08) translateX(-44px);
-    }
-    .about-photo-stack img:nth-child(2) {
-      z-index: 2;
-      transform: scale(1.03) translateX(44px);
-    }
-    .about-photo-stack img:last-child {
-      z-index: 1;
-      transform: scale(0.98) translateX(-28px);
-    }
-    @media (max-width: 800px) {
-      .about-photo-stack img {
-        width: 110px;
-        height: 110px;
-        margin-top: -28px;
-      }
-      .about-photo-stack {
-        margin-left: -24px;
-      }
-    }
-    .about-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      min-width: 220px;
-    }
-    .about-divider {
-      width: 48px;
-      height: 3px;
-      background: #1abc9c;
-      border-radius: 2px;
-      margin: 1.5rem 0 2.5rem 0;
-      opacity: 0.7;
-    }
-    .about p {
-      color: #23242a;
-      font-size: 1.13rem;
-      margin: 0 0 1.5rem 0;
-      line-height: 1.8;
-      font-weight: 400;
-    }
-    @media (max-width: 800px) {
-      .about {
-        flex-direction: column;
-        align-items: center;
-        gap: 2.5rem;
-      }
-      .about-right {
-        align-items: center;
-        text-align: center;
-      }
-      .about-divider {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-
-    /* Contact */
-
-    .contact {
-      text-align: center;
-    }
-    .Text-guide-mig {
-        font-size: 1.4rem;
-    }
-
-    .contact p {
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 2rem;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    footer {
-      border-top: 1px solid #e6f3f7;
-      text-align: center;
-      padding: 2rem;
-      color: rgba(255,255,255,0.4);
-    }
-
-
-
-    /* Responsive */
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-
-      .section-title {
-        font-size: 2.3rem;
-      }
-
-      .hero-image img {
-        height: 400px;
-      }
-      
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================== -->
 
+  <header class="site-header">
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <div style="text-transform:uppercase;font-size:1.05rem;letter-spacing:2px;color:#1abc9c;font-weight:600;">Webudvikler & Designer</div>
-      <h1 style="font-size:2.7rem;font-weight:800;line-height:1.1;margin-bottom:0.2em;">Websites der vinder kunder</h1>
-      <p style="margin-bottom:1.2em;">Jeg designer moderne landingpages og frontend-løsninger til virksomheder, der ønsker en stærkere online tilstedeværelse.</p>
-    </div>
-    <div class="hero-tags">
-      <span class="hero-tag">Branding</span>
-      <span class="hero-tag">UI/UX</span>
-      <span class="hero-tag">Responsivt design</span>
-      <span class="hero-tag">Performance</span>
-    </div>
-   
-  </section>
+  <div class="container header-wrap">
 
-  <!-- Modern Navbar (now below hero) -->
-  <nav style="width:100vw;background:transparent;position:relative;z-index:1000;padding:2rem 0 0 0;">
-    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;">
-      <div style="display:flex;gap:2.2rem;align-items:center;">
-        <a href="#about" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Om mig</a>
-        <a href="#projects" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Cases</a>
-        <a href="#services" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Ydelser</a>
-        <a href="#contact" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Kontakt</a>
-      </div>
-    </div>
-  </nav>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Salon Heidi Logo">
+    </a>
 
-  <!-- Cases-->
+    <button class="burger" aria-label="Åbn menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <section id="projects">
-    <div class="container">
+    <nav class="nav-links">
+      <a href="http://www.salonheidiodense.dk/da-DK/Salon-Heidi.aspx" target="_blank" rel="noopener">Salon Heidi</a>
+      <a href="http://www.salonheidiodense.dk/da-DK/Priser-Produkter.aspx" target="_blank" rel="noopener">Priser & Produkter</a>
+      <a href="http://www.salonheidiodense.dk/da-DK/Personale.aspx" target="_blank" rel="noopener">Personale</a>
+      <a href="http://www.salonheidiodense.dk/da-DK/Kontakt-Find-os.aspx" target="_blank" rel="noopener">Kontakt & Find os</a>
+      <a href="http://www.salonheidiodense.dk/book-tid.html" target="_blank" rel="noopener" class="btn btn-small">Bestil tid</a>
+    </nav>
 
-      <div class="section-subtitle">Portfolio</div>
-      <h2 class="section-title">Udvalgte cases</h2>
+  </div>
 
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="northnoteimg.png" alt="Musikskole preview">
-          <div class="project-content">
-            <h3>Musikskole</h3>
-            <p>Moderne landing page-koncept for en fiktiv musikskole med fokus på atmosfære og responsivt design.</p>
-            <div class="hero-buttons">
-              <a href="https://andersknielsencontact.github.io/Mine-projekter/music/#kurser" class="btn btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="Dithårdinstil.png" alt="Firsør koncept preview">
-          <div class="project-content">
-            <h3>Frisør koncept</h3>
-            <p>Premium frisør side, med fokus på moderne design, branding og booking.</p>
-            <div class="hero-buttons">
-              <a href="https://andersknielsencontact.github.io/Mine-projekter/fris%C3%B8r/" class="btn btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="shelterheroimg.png" alt="Shelter koncept preview">
-          <div class="project-content">
-            <h3>Shelter koncept</h3>
-            <p>Moderne shelter koncept med fokus på at guide kunden og fremhæve produkter.</p>
-            <div class="hero-buttons">
-              <a href="https://andersknielsencontact.github.io/Mine-projekter/Shelter-demo/" class="btn btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </div>
+</header>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="hero-image-wrapper">
+
+        <img
+          class="hero-image"
+          src="lokale6.jpeg"
+          alt="Frisørsalon interiør"
+        >
+
+        <div class="hero-overlay"></div>
+
       </div>
 
-    </div>
-  </section>
+      <div class="container hero-content">
 
-  <!-- Services -->
+        <div class="hero-text">
 
-  <section class="services" id="services" style="background:linear-gradient(90deg,#e6f3f7 60%,#fff 100%);border-radius:22px;box-shadow:0 2px 24px rgba(0,0,0,0.10);margin-top:3rem;margin-bottom:3rem;">
-    <div style="max-width:900px;margin:0 auto;padding:3.5rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:2.5rem;">
-      <h2 class="section-title" style="margin:0 0 2.5rem 0;font-size:2.2rem;letter-spacing:-1px;line-height:1.1;font-weight:700;">Det kan jeg hjælpe dig med</h2>
-      <p class="Text-guide-mig">Jeg arbejder primært med frontend layout og design. Dette indebærer at skabe moderne, brugervenlige og visuelt tiltalende hjemmesider, der er optimeret til forskellige enheder og skærmstørrelser.
-        Mit fokus er også, at forsiden skal se moderniseret ud, og være med til, at give kunderne et godt førstehåndsindtryk, og guide dem til at tage kontakt eller købe et produkt. Jeg kan også hjælpe med at analysere og forbedre eksisterende hjemmesider, så de bliver mere effektive og brugervenlige.
-      </p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.2rem;width:100%;">
-        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
-          <h3 style="color:#1abc9c;font-size:1.18rem;font-weight:700;margin:0;">Design & UI/UX</h3>
-          <ul style="margin:0 0 0 1.1em;padding:0;line-height:1.7;font-size:1.04rem;color:#137a5a;">
-            <li>Moderne, brugervenlige layouts</li>
-            <li>Farvepaletter & typografi</li>
-            <li>Branding og visuel identitet</li>
+          <h1>
+            <span>Salon Heidi</span>
             
-          </ul>
+          </h1>
+
+          <p>
+          Vi sætter faglig dygtighed og rådgivning højt. <br>Hos os er du i centrum.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#booking" class="hero-cta">
+              Bestil tid
+            </a>
+
+
+          </div>
+
         </div>
-        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
-          <h3 style="color:#1abc9c;font-size:1.18rem;font-weight:700;margin:0;">Webudvikling</h3>
-          <ul style="margin:0 0 0 1.1em;padding:0;line-height:1.7;font-size:1.04rem;color:#137a5a;">
-            <li>Responsivt design (mobil, tablet, desktop)</li>
-            <li>Hurtige, optimerede sider</li>
-            <li>HTML, CSS, JavaScript</li>
-          </ul>
-        </div>
-        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
-          <h3 style="color:#1abc9c;font-size:1.18rem;font-weight:700;margin:0;">Rådgivning & Support</h3>
-          <ul style="margin:0 0 0 1.1em;padding:0;line-height:1.7;font-size:1.04rem;color:#137a5a;">
-            <li>Analyse af eksisterende hjemmeside</li>
-            <li>Forbedringsforslag & sparring</li>
-            <li>Teknisk support</li>
-          </ul>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         FØLG OS
+    ========================== -->
+
+    <section class="follow-section">
+      <div class="container">
+        <div class="follow-content">
+          <h3>Følg os</h3>
+          <div class="follow-links">
+            <a href="https://www.facebook.com/salonheidiodense" target="_blank" aria-label="Facebook" class="follow-link">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:32px;height:32px;">
+            </a>
+            <a href="https://www.instagram.com/salonheidi_odense/" target="_blank" aria-label="Instagram" class="follow-link">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:32px;height:32px;">
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About -->
+    <!-- =========================
+         OM SALONEN
+    ========================== -->
+    <section class="about-salon-section">
+      <div class="container about-salon-content">
+        <h3>Om Salon Heidi</h3>
+        <p>
+          <!-- Skriv lidt om salonen her, fx: -->
+          <p>Salon Heidi ligger i hjertet af det hyggelige Skibhuskvarter i Odense.
+En salon med god stemning og et godt arbejdsmiljø, hvor der er tid til den enkelte og plads til alle. Vi tilbyder moderne klipninger, farvninger og styling i hyggelige omgivelser, hvor kvalitet og personlig service er i fokus.</p>
+  
+         
 
-  <section class="about" id="about">
-    <div class="about-left">
-      <img src="Potræt.png" alt="Portræt af Anders Nielsen" class="about-portrait" />
-      <div class="about-photo-stack">
-        <img src="fishingimg.avif" alt="Fiskeri" title="Fiskeri" />
-        <img src="guitarimg.avif" alt="Musik" title="Musik" />
-        <img src="mushroomsimg.avif" alt="Natur" title="Naturen" />
+        </p>
+      </div>
+    </section>
+
+   
+   
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+
+   <section class="gallery" id="gallery">
+  <div class="gallery-wrap">
+
+    <figure class="gallery-item">
+      <img src="galleri6.jpg" alt="Galleri billede 1">
+    </figure>
+    <figure class="gallery-item">
+      <img src="galleri8.jpg" alt="Galleri billede 2">
+    </figure>
+    <figure class="gallery-item">
+      <img src="galleri9.jpg" alt="Galleri billede 3">
+    </figure>
+    <figure class="gallery-item">
+      <img src="galleri10.jpg" alt="Galleri billede 4">
+    </figure>
+    <figure class="gallery-item">
+      <img src="galleri11.jpg" alt="Galleri billede 5">
+    </figure>
+    <figure class="gallery-item">
+      <img src="galleri2.jpg" alt="Galleri billede 6">
+    </figure>
+
+
+  </div>
+</section>
+
+<section class="contact-note">
+  <p class="small-heading">Har du spørgsmål?</p>
+
+  <h3>
+    Uden for åbningstid er du altid velkommen til at kontakte Heidi direkte.
+  </h3>
+
+  <a href="tel:+4526512651">26 51 26 51</a>
+</section>
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta-section section" id="booking">
+
+      <div class="container cta-content">
+
+        <p class="small-heading">
+          Booking
+        </p>
+
+        <h2>
+          Vi glæder os til at se dig.
+        </h2>
+
+        <a href="#" class="btn">
+          Bestil tid
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-wrap">
+      <div class="footer-col">
+        <p>Salon Heidi · Skibhusvej 99 · 5000 Odense C <span class="footer-gap"></span>Tlf. <a href="tel:66149098">66 14 90 98</a></p>
+      </div>
+      <div class="footer-col">
+        <p><em>Gratis parkering bag salonen</em></p>
       </div>
     </div>
-    <div class="about-right">
-      <h2 class="section-title" style="font-size:2.2rem;margin-bottom:0.2em;">Om mig</h2>
-      <div class="about-divider"></div>
-      <p>
-        Hej! Jeg hedder Anders og arbejder som freelance webudvikler med base i Danmark – men jeg elsker friheden til at arbejde, hvor jeg vil.
-      </p>
-      <p>
-        Jeg brænder for at skabe moderne, brugervenlige hjemmesider, der hjælper virksomheder med at vokse online. Min tilgang er enkel: design skal være smukt, hurtigt og nemt at bruge – både for dig og dine kunder.
-      </p>
-      <p>
-        Når jeg ikke koder, finder du mig ofte ude i naturen, på fisketur, til koncert eller på eventyr med min kæreste. Jeg tror på, at et balanceret liv giver de bedste idéer og løsninger.
-      </p>
-    </div>
-  </section>
 
-  <!-- Contact -->
-
-  <section class="contact" id="contact">
-    <h2 class="section-title">Kontakt</h2>
-    <p>Har du et projekt i tankerne? Kontakt mig for en uforpligtende snak!</p>
-    <ul class="contact-info">
-      <li><strong>Email:</strong> <a href="mailto:kontakt@eksempel.dk">anders.k.nielsen.contact@gmail.com</a></li>
-    </ul>
-    
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/anders-krog-nielsen-7b9336198" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.4em;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.034 0 3.595 1.997 3.595 4.59v5.606z"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 Anders Nielsen. Alle rettigheder forbeholdes.
   </footer>
 
-  <!-- <script src="lang.js"></script> -->
+  <!-- =========================
+       JS
+  ========================== -->
+
+  <script>
+
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+
+      nav.classList.toggle('open');
+
+      burger.setAttribute(
+        'aria-expanded',
+        nav.classList.contains('open')
+      );
+
+    });
+
+    document.querySelectorAll('.nav-links a')
+      .forEach(link => {
+
+        link.addEventListener('click', () => {
+
+          nav.classList.remove('open');
+
+          burger.setAttribute('aria-expanded', 'false');
+
+        });
+
+      });
+
+      window.addEventListener("scroll", function () {
+  const header = document.querySelector(".site-header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+  </script>
 
 </body>
 </html>
