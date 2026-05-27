@@ -458,8 +458,8 @@ p {
   background:
     linear-gradient(
       to right,
-      rgba(143, 143, 143, 0.72),
-      rgba(135, 135, 135, 0.2)
+      rgba(70, 70, 70, 0.72),
+      rgba(102, 101, 101, 0.2)
     );
 }
 
@@ -751,7 +751,7 @@ p {
 
     padding: 2rem;
 
-    background: white;
+    background: rgb(119, 108, 108);
 
     border-bottom:
       1px solid var(--line);
