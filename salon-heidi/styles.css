@@ -694,7 +694,41 @@ p {
   font-size: 1rem;
   font-weight: 600;
 }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
 
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  max-width: 260px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 auto 1rem;
+}
+
+.team-member h3 {
+  margin-bottom: 0.2rem;
+}
+
+.team-member .role {
+  font-size: 0.9rem;
+  color: #8b8177;
+  margin-bottom: 0.8rem;
+}
+
+.team-member .desc {
+  font-size: 0.95rem;
+  color: #5f574e;
+  line-height: 1.6;
+}
 @media (max-width: 700px) {
 
   .team-grid {
