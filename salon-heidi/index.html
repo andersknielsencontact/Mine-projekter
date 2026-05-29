@@ -39,19 +39,20 @@
       <img src="logo.png" alt="Salon Heidi Logo">
     </a>
 
-    <button class="burger" aria-label="Åbn menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="nav-links">
-      <a href="http://www.salonheidiodense.dk/da-DK/Salon-Heidi.aspx" target="_blank" rel="noopener">Salon Heidi</a>
-      <a href="http://www.salonheidiodense.dk/da-DK/Priser-Produkter.aspx" target="_blank" rel="noopener">Priser & Produkter</a>
-      <a href="http://www.salonheidiodense.dk/da-DK/Personale.aspx" target="_blank" rel="noopener">Personale</a>
-      <a href="http://www.salonheidiodense.dk/da-DK/Kontakt-Find-os.aspx" target="_blank" rel="noopener">Kontakt & Find os</a>
-      <a href="http://www.salonheidiodense.dk/book-tid.html" target="_blank" rel="noopener" class="btn btn-small">Bestil tid</a>
-    </nav>
+     <div class="burger-menu-wrap">
+       <button class="burger" id="burgerBtn" aria-label="Åbn menu" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+       </button>
+       <nav class="nav-links" id="navLinks">
+         <a href="http://www.salonheidiodense.dk/da-DK/Salon-Heidi.aspx" target="_blank" rel="noopener">Salon Heidi</a>
+         <a href="http://www.salonheidiodense.dk/da-DK/Priser-Produkter.aspx" target="_blank" rel="noopener">Priser & Produkter</a>
+         <a href="http://www.salonheidiodense.dk/da-DK/Personale.aspx" target="_blank" rel="noopener">Personale</a>
+         <a href="http://www.salonheidiodense.dk/da-DK/Kontakt-Find-os.aspx" target="_blank" rel="noopener">Kontakt & Find os</a>
+         <a href="http://www.salonheidiodense.dk/book-tid.html" target="_blank" rel="noopener" class="btn btn-small">Bestil tid</a>
+       </nav>
+     </div>
 
   </div>
 
@@ -148,35 +149,36 @@ En salon med god stemning og et godt arbejdsmiljø, hvor der er tid til den enke
 
    
    
-    <!-- =========================
-         GALLERY
-    ========================== -->
+    <section class="team-section">
 
+  <div class="container">
 
-   <section class="gallery" id="gallery">
-  <div class="gallery-wrap">
+    <div class="team-intro">
 
-    <figure class="gallery-item">
-      <img src="galleri6.jpg" alt="Galleri billede 1">
-    </figure>
-    <figure class="gallery-item">
-      <img src="galleri8.jpg" alt="Galleri billede 2">
-    </figure>
-    <figure class="gallery-item">
-      <img src="galleri9.jpg" alt="Galleri billede 3">
-    </figure>
-    <figure class="gallery-item">
-      <img src="galleri10.jpg" alt="Galleri billede 4">
-    </figure>
-    <figure class="gallery-item">
-      <img src="galleri11.jpg" alt="Galleri billede 5">
-    </figure>
-    <figure class="gallery-item">
-      <img src="galleri2.jpg" alt="Galleri billede 6">
-    </figure>
+      <h2>Personlig rådgivning og rolig atmosfære</h2>
 
+      <p>
+        Hos Salon Heidi er der fokus på nærvær,
+        kvalitet og tid til den enkelte kunde.
+      </p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="profile1_Nero_AI_Image_Upscaler_Photo_Face.jpeg" alt="Heidi">
+        <h3>Heidi, Indehaver.</h3>
+      </div>
+
+      <div class="team-member">
+        <img src="profile2_Nero_AI_Image_Upscaler_Photo_Face.jpeg" alt="Kristina">
+        <h3>Kristina, Assistent.</h3>
+      </div>
+
+    </div>
 
   </div>
+
 </section>
 
 <section class="contact-note">
@@ -232,50 +234,35 @@ En salon med god stemning og et godt arbejdsmiljø, hvor der er tid til den enke
 
   </footer>
 
-  <!-- =========================
+  
+ <!-- =========================
        JS
   ========================== -->
 
   <script>
+    // Burger menu toggle (clean version)
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navLinks = document.getElementById('navLinks');
 
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-
-    burger.addEventListener('click', () => {
-
-      nav.classList.toggle('open');
-
-      burger.setAttribute(
-        'aria-expanded',
-        nav.classList.contains('open')
-      );
-
+    burgerBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+      burgerBtn.classList.toggle('open');
+      const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
+      burgerBtn.setAttribute('aria-expanded', !expanded);
     });
 
-    document.querySelectorAll('.nav-links a')
-      .forEach(link => {
-
-        link.addEventListener('click', () => {
-
-          nav.classList.remove('open');
-
-          burger.setAttribute('aria-expanded', 'false');
-
-        });
-
-      });
-
-      window.addEventListener("scroll", function () {
-  const header = document.querySelector(".site-header");
-
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});
-
+    // Header scroll effect
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector(".site-header");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
   </script>
 
 </body>
+
+
 </html>
