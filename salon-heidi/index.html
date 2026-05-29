@@ -1,1019 +1,271 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="da">
 
-body {
-  margin: 0;
-  padding: 0;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Salon Heidi | Frisørsalon</title>
+
+  <meta
+    name="description"
+    content="Salon Heidi - moderne frisørsalon med booking, styling og kvalitetsbehandlinger."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="site-header">
+
+  <div class="container header-wrap">
+
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Salon Heidi Logo">
+    </a>
+
+     <div class="burger-menu-wrap">
+       <button class="burger" id="burgerBtn" aria-label="Åbn menu" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+       </button>
+       <nav class="nav-links" id="navLinks">
+         <a href="http://www.salonheidiodense.dk/da-DK/Salon-Heidi.aspx" target="_blank" rel="noopener">Salon Heidi</a>
+         <a href="http://www.salonheidiodense.dk/da-DK/Priser-Produkter.aspx" target="_blank" rel="noopener">Priser & Produkter</a>
+         <a href="http://www.salonheidiodense.dk/da-DK/Personale.aspx" target="_blank" rel="noopener">Personale</a>
+         <a href="http://www.salonheidiodense.dk/da-DK/Kontakt-Find-os.aspx" target="_blank" rel="noopener">Kontakt & Find os</a>
+         <a href="http://www.salonheidiodense.dk/book-tid.html" target="_blank" rel="noopener" class="btn btn-small">Bestil tid</a>
+       </nav>
+     </div>
+
+  </div>
+
+</header>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="hero-image-wrapper">
+
+        <img
+          class="hero-image"
+          src="lokale6.jpeg"
+          alt="Frisørsalon interiør"
+        >
+
+        <div class="hero-overlay"></div>
+
+      </div>
+
+      <div class="container hero-content">
+
+        <div class="hero-text">
+
+          <h1>
+            <span>Salon Heidi</span>
+            
+          </h1>
+
+          <p>
+          Vi sætter faglig dygtighed og rådgivning højt. <br>Hos os er du i centrum.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#booking" class="hero-cta">
+              Bestil tid
+            </a>
 
 
+          </div>
 
-/* =========================
-   FOOTER COLUMNS
-========================= */
+        </div>
 
-.footer-wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
+      </div>
 
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  min-width: 180px;
-}
+    </section>
 
-.footer-col a {
-  color: white;
-  text-decoration: underline;
-  font-weight: 600;
+    <!-- =========================
+         FØLG OS
+    ========================== -->
+
+    <section class="follow-section">
+      <div class="container">
+        <div class="follow-content">
+          <h3>Følg os</h3>
+          <div class="follow-links">
+            <a href="https://www.facebook.com/salonheidiodense" target="_blank" aria-label="Facebook" class="follow-link">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:32px;height:32px;">
+            </a>
+            <a href="https://www.instagram.com/salonheidi_odense/" target="_blank" aria-label="Instagram" class="follow-link">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:32px;height:32px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         OM SALONEN
+    ========================== -->
+    <section class="about-salon-section">
+      <div class="container about-salon-content">
+        <h3>Om Salon Heidi</h3>
+        <p>
+          <!-- Skriv lidt om salonen her, fx: -->
+          <p>Salon Heidi ligger i hjertet af det hyggelige Skibhuskvarter i Odense.
+En salon med god stemning og et godt arbejdsmiljø, hvor der er tid til den enkelte og plads til alle. Vi tilbyder moderne klipninger, farvninger og styling i hyggelige omgivelser, hvor kvalitet og personlig service er i fokus.</p>
   
-}
+         
 
-@media (max-width: 700px) {
-  .footer-wrap {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-col {
-    min-width: unset;
-  }
-}
+        </p>
+      </div>
+    </section>
 
-  /* image - IMPORTANT FIX */
-  .gallery-item img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.5s ease;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: rise 0.8s ease forwards;
-  }
-  
-
-img {
-  display: block;
-  width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-}
-
-/* =========================
-   GLOBALS
-========================= */
-
-.container {
-  width: var(--container);
-  margin-inline: auto;
-}
-
-.section {
-  padding: 7rem 0;
-}
-
-/* =========================
-   TYPOGRAPHY
-========================= */
-
-h1,
-h2,
-h3 {
-  margin-top: 0;
-
-  line-height: 1.1;
-}
-
-h1,
-h2 {
-  font-family:
-    "Prata",
-    serif;
-}
-
-h1 {
-  font-size:
-    clamp(3rem, 8vw, 5.5rem);
-}
-
-h2 {
-  font-size:
-    clamp(2rem, 5vw, 4rem);
-
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-p {
-  color: var(--muted);
-}
-
-.small-heading {
-  margin-bottom: 1rem;
-
-  color: black;
-
-  font-size: .75rem;
-  font-weight: 700;
-
-  text-transform: uppercase;
-  letter-spacing: .2em;
-}
-
-.section-intro {
-  margin-bottom: 4rem;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 1.1rem;
-  border: none white;
-  border-radius: 4px;
-  background: transparent;
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.98rem;
-  transition: .18s cubic-bezier(.4,0,.2,1);
-  padding:
-    .7rem 1.1rem;
-    background-color: rgb(224, 201, 160);
-    color:white;
-
-  font-size: 1.4rem;
-}
-
-.btn:hover {
-  transform: scale(1.04);
-  background: var(--accent);
-  color: white;
-}
-
-.btn-small {
-  padding:
-    .7rem 1.1rem;
-    background-color: rgb(224, 201, 160);
-    color:white;
-
-  font-size: .9rem;
-}
-
-.btn-ghost {
-  background: black;
-
-  color: white;
-
-  border-color:
-    rgba(255,255,255,.35);
-}
-/* =========================
-   OM SALONEN
-========================= */
-
-.about-salon-section {
-  background: #f5f1eb;
-  border-bottom: 1px solid var(--line);
-  padding: 9rem 0;
-  text-align: center;
-  position: relative;
-   background:
-    linear-gradient(
-      rgba(245,241,235,0.88),
-      rgba(245,241,235,0.88)
-    ),
-    url("lokale3.jpg");
-
-  background-size: cover;
-  background-position: center;
-
-  background-attachment: fixed;
-}
-
-.about-salon-content {
-  max-width: 700px;
-  margin-inline: auto;
-  max-width: 560px;
-  line-height: 2;
-  
-}
-
-.about-salon-content h3 {
-  margin-bottom: 0.5rem;
-  color: var(--muted);
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 2rem;
-}
-
-
-
-.about-salon-content p {
-  color: #22201e;
-  font-size: 1.08rem;
-  font-style: normal;
-  margin-top: 0.5rem;
-}
-/* =========================
-   FØLG OS
-========================= */
-
-.follow-section {
-  background: #ebe7e0;
-  border-top: 1px solid var(--line);
-  border-bottom: 2.5px solid #e0dbd2;
-  padding: 4rem 0 7rem;
-  text-align: center;
-  
-}
-
-.follow-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  width: 100%;
-}
-
-.follow-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.follow-content h3,
-.follow-content p {
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-.follow-link img {
-  width: 36px;
-  height: 36px;
-  filter: grayscale(0.2) brightness(0.8);
-  transition: filter 0.2s, transform 0.2s;
-}
-
-.follow-link img:hover {
-  filter: none;
-  transform: scale(1.1);
-}
-.hero-actions .btn {
-  margin-inline: auto;
-  
-}
-
-
-
-
-/* =========================
-   VARIABLES
-========================= */
-
-:root {
-  --bg: #f5f1eb;
-  --card: #fffdf9;
-
-  --ink: #191816;
-  --muted: #625b52;
-
-  --accent: #ad7742;
-  --accent-dark: #8d5f33;
-
-  --line: rgba(0, 0, 0, 0.08);
-
-  --radius: 24px;
-
-  --shadow:
-    0 10px 30px rgba(0,0,0,.08);
-
-  --container:
-    min(1100px, 92%);
-}
-
-/* =========================
-   RESET
-========================= */
-
-
-
-/* =========================
-   HEADER
-========================= */
-
-.mobile-cta {
-  display: none;
-  background: var(--accent);
-  color: white;
-  padding: 0.6rem 1rem;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.site-header {
-  position: fixed;
-  padding-top: 0.65rem;
-  padding-bottom: 0.65rem;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
-  z-index: 1000;
-
-  transition:
-    background 0.3s ease,
-    backdrop-filter 0.3s ease,
-    border-color 0.3s ease;
-
-  background: transparent;
-
-  border-bottom: 1px solid transparent;
-}
-
-.site-header.scrolled {
-  background: rgba(181, 181, 181, 0.82);
-
-  backdrop-filter: blur(12px);
-
-  -webkit-backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-
-}
-
-.nav-links a {
-  color: white;
-   transition: color 0.3s ease;
    
-}
+   
+  <section class="team-section">
+  <div class="container">
 
-.header-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  gap: 2rem;
-}
+    <div class="team-intro">
+      <h2>Mød os</h2>
+      <p>
+        Velkommen til Salon Heidi. Her møder du Heidi og Kristina, som udgør det faste team i salonen og sikrer en tryg og personlig oplevelse.
+      </p>
+    </div>
 
-.logo {
-  font-family: "Prata", serif;
-  letter-spacing: .12em;
-  position: static;
-}
+    <div class="team-grid">
 
+      <div class="team-member">
+        <img src="profile1_Nero_AI_Image_Upscaler_Photo_Face.jpeg" alt="Heidi">
 
+        <div class="team-text">
+          <h3>Heidi</h3>
+          <p class="role">Indehaver</p>
+        </div>
+      </div>
 
-/* =========================
-   NAVIGATION
-========================= */
+      <div class="team-member">
+        <img src="profile2_Nero_AI_Image_Upscaler_Photo_Face.jpeg" alt="Kristina">
 
-.nav-links {
-  display: none;
-  flex-direction: column;
+        <div class="team-text">
+          <h3>Kristina</h3>
+          <p class="role">Assistent.</p>    
+        </div>
+      </div>
 
-  gap: 0.3rem;
+    </div>
 
+  </div>
+</section>
 
-  position: absolute;
+<section class="contact-note">
+  <p class="small-heading">Har du spørgsmål?</p>
 
-  top: calc(100% + 12px);
-  right: 0;
+  <h3>
+    Uden for åbningstid er du altid velkommen til at kontakte Heidi direkte.
+  </h3>
 
-  min-width: 240px;
+  <a href="tel:+4526512651">26 51 26 51</a>
+</section>
 
-  padding: 1.2rem;
-  padding-bottom:1.8rem;
+    <!-- =========================
+         CTA
+    ========================== -->
 
-  background: rgba(149, 146, 141, 0.72);
+    <section class="cta-section section" id="booking">
 
-  backdrop-filter: blur(18px);
--webkit-backdrop-filter: blur(18px);
+      <div class="container cta-content">
 
-  border: 1px solid rgba(255,255,255,0.25);
+        <p class="small-heading">
+          Booking
+        </p>
 
-  border-radius: 20px;
+        <h2>
+          Vi glæder os til at se dig.
+        </h2>
 
-  line-height: 28px;
-  
+        <a href="#" class="btn">
+          Bestil tid
+        </a>
 
-  box-shadow:
-    0 12px 40px rgba(0,0,0,0.12);
+      </div>
 
-  z-index: 1200;
-}
+    </section>
 
-.nav-links.open {
-  display: flex;
-}
+  </main>
 
-/* --- Burger menu wrap for right alignment --- */
-.burger-menu-wrap {
-  position: relative;
-  z-index: 2000;
-}
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-.burger {
-  width: 52px;
-  height: 52px;
+  <footer class="site-footer">
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    <div class="container footer-wrap">
+      <div class="footer-col">
+        <p>Salon Heidi · Skibhusvej 99 · 5000 Odense C <span class="footer-gap"></span>Tlf. <a href="tel:66149098">66 14 90 98</a></p>
+      </div>
+      <div class="footer-col">
+        <p><em>Gratis parkering bag salonen</em></p>
+      </div>
+    </div>
 
-  gap: 7px;
-
-  border-radius: 50%;
-
-  background: rgba(255,255,255,0.28);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(255,255,255,0.15);
-
-  box-shadow:
-    0 4px 18px rgba(0,0,0,0.08);
-
-  cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
-}
-  
-
-.burger span {
-  width: 22px;
-  height: 2px;
-
-  border-radius: 999px;
-
-  background: #5f574e;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease,
-    background 0.3s ease;
-}
-
-.burger:hover, .burger.open {
-  box-shadow: 0 4px 18px rgba(173, 119, 66, 0.22);
-
-   transform: translateY(-1px);
-
-  background: rgba(255,255,255,0.4);
-
-  border-color: rgba(255,255,255,0.5);
-}
-
-
-.burger:hover span, .burger.open span {
-  background: #fff;
-}
-
-.site-header.scrolled .burger {
-  background: rgba(255,255,255,0.55);
-}
-
-.site-header.scrolled .burger span {
-  background: #2f2925;
-}
-
-.burger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.burger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.burger.open span:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
-}
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  position: relative;
-}
-
-.hero-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: clamp(500px, 85vh, 900px);
-  min-height: 350px;
-  max-height: 100vh;
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.hero-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(56, 56, 56, 0.72),
-      rgba(84, 84, 84, 0.2)
-    );
-}
-
-.hero-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  max-width: 680px;
+  </footer>
 
   
-}
-
-.hero-text {
-  max-width: 650px;
-  z-index: 2;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.hero-text h1 {
-  color: rgb(250, 230, 200);
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: clamp(6.5rem, 6vw, 4.5rem);
-   line-height: 1.1;
-  margin-bottom: 2rem;
-}
-
-.hero-text h1 {
-  font-size: clamp(3rem, 5vw, 4.2rem);
-  line-height: 1.1;
-}
-
-.hero-text p {
-  color: white;
-}
-
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  background-color: rgb(224, 201, 160);
-    color:white;
- 
-  border-radius: 8px;
-  font-size: .9rem;
-  margin-top: 3rem;
-}
-
-.hero-cta {
- display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 1.1rem;
-  border: none white;
-  border-radius: 4px;
-  background: transparent;
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.98rem;
-  transition: .18s cubic-bezier(.4,0,.2,1);
-  padding:
-    1.0rem 2.5rem;
-    background-color: rgb(224, 201, 160);
-    color:white;
-
-  font-size: 1.4rem;
-  
-}
-
-
-.hero-cta:hover {
-   transform: scale(1.04);
-  background: var(--accent);
-  color: white;
-}
-
-
-
-
-
-
-/* =========================
-   OM EJER / SALON
-========================= */
-/* =========================
-   MØD OS
-========================= */
-
-.team-section {
-  padding: 8rem 0;
-  background: #f5f1eb;
-  text-align: center;
-}
-
-.team-intro {
-  max-width: 580px;
-
-  margin: 0 auto 5rem;
-
-  text-align: center;
-}
-
-.team-intro h2 {
-  margin-bottom: 1rem;
-
-  font-size: clamp(2rem, 4vw, 3rem);
-
-  line-height: 1.1;
-}
-
-.team-intro p {
-  line-height: 1.8;
-
-  color: #5f574e;
-}
-
-.team-grid {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 0.5rem;
-
-  width: min(1000px, 92%);
-
-  margin: 0 auto;
-  justify-items: center;
-  align-items: center;
-}
-
-.team-member {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.team-member img {
-  width: 100%;
-  max-width: 280px;
-  height: 340px;
-
-  object-fit: cover;
-
-  border-radius: 18px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.team-member h3 {
-  font-size: 1.2rem;
-
-  margin-bottom: 0.3rem;
-}
-
-.team-member p {
-  font-size: 0.95rem;
-
-  color: #8b8177;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-  .team-section {
-    padding: 6rem 1.5rem;
-    text-align: center;
-  }
-
-  .team-intro {
-    margin-bottom: 3rem;
-  }
-
-  .team-intro h2 {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    justify-items: center;
-    align-items: center;
-  }
-
-  .team-member {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .team-member img {
-    height: 420px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .team-member h3 {
-    font-size: 1.4rem;
-  }
-
-  .team-member .desc {
-    max-width: 32ch;
-    margin: 0 auto;
-  }
-
-}
-
-
-.contact-note {
-  padding: 4rem 1rem;
-  text-align: center;
-  background: #f5f1eb;
-  padding-bottom: 8rem;
-}
-
-.contact-note p {
-  font-size: 1rem;
-  letter-spacing: 0.04em;
-  color: #5f574e;
-}
-/* =========================
-   CTA
-========================= */
-
-.cta-section {
-  background: lab(61.02% 0.37 0.12);
-
-  color: white;
-
-  text-align: center;
-}
-
-.cta-content {
-  max-width: 900px;
-}
-
-.cta-content h2 {
-  margin-bottom: 2rem;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.site-footer {
-  padding: 4rem 0;
-
-  background: #111;
-
-  color: white;
-}
-
-.footer-wrap {
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 1rem;
-}
-
-.footer-wrap p {
-  margin: 0;
-
-  color: white;
-}
-
-.footer-gap {
-  display: inline-block;
-  width: 4em;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes rise {
-
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-.hero-text,
-.trust-card,
-.service-item,
-.stylist-card,
-.gallery-image {
-  animation:
-    rise .6s ease both;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
-  .stylists-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-}
-
-@media (max-width: 700px) {
-
-  .section {
-    padding: 5rem 0;
-  }
-
-  .burger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-    right: 0;
-
-    flex-direction: column;
-
-    padding: 2rem;
-
-    background: rgb(119, 108, 108);
-
-    border-bottom:
-      1px solid var(--line);
-
-    display: none;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .trust-grid,
-  .stylists-grid,
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-image.large {
-    grid-column: auto;
-
-    height: 500px;
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
-  .hero-text {
-    margin-inline: auto;
-  }
-
-  .hero-text p {
-    margin-inline: auto;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .service-item {
-    flex-direction: column;
-
-    gap: .5rem;
-
-    text-align: center;
-  }
-
-  .footer-wrap {
-    flex-direction: column;
-
-    text-align: center;
-  }
-
-}
-
-@media (max-width: 520px) {
-
-  .hero-image-wrapper {
-    height: 80vh;
-  }
-
-  .trust-card {
-    flex-direction: column;
-
-    text-align: center;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-}
-@media (max-width: 900px) {
-  .nav-links {
-    gap: 1.5rem;
-  }
-
-  .nav-links a {
-    font-size: .85rem;
-  }
-}
-
-@media (max-width: 700px) {
-  .nav-links a {
-    font-size: .8rem;
-  }
-}
-
-@media (max-width: 700px) {
-  .hero-text h1 {
-    font-size: 2.8rem;
-  }
-}
-
-@media (max-width: 700px) {
-
-  .logo {
-    display: none;
-  }
-
-  .mobile-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-wrap {
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-
-}
+ <!-- =========================
+       JS
+  ========================== -->
+
+  <script>
+    // Burger menu toggle (clean version)
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    burgerBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+      burgerBtn.classList.toggle('open');
+      const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
+      burgerBtn.setAttribute('aria-expanded', !expanded);
+    });
+
+    // Header scroll effect
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector(".site-header");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+
+
+</html>
