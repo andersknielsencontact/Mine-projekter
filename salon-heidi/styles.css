@@ -396,51 +396,127 @@ p {
 ========================= */
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  position: static;
-
-   margin-left: auto;
-}
-
-.nav-links a {
-  font-size: .9rem;
-
-  font-weight: 600;
-
-  text-transform: uppercase;
-
-  letter-spacing: .05em;
-}
-
-/* =========================
-   BURGER
-========================= */
-
-.burger {
   display: none;
-
   flex-direction: column;
 
-  gap: 5px;
+  gap: 0.3rem;
 
-  border: none;
+  position: absolute;
 
-  background: transparent;
+  top: calc(100% + 12px);
+  right: 0;
 
-  cursor: pointer;
+  min-width: 240px;
+
+  padding: 1rem;
+
+  background-color: rgb(149, 146, 141);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  border-radius: 20px;
+
+  line-height: 20px;
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.12);
+
+  z-index: 1200;
 }
 
+.nav-links.open {
+  display: flex;
+}
+
+/* --- Burger menu wrap for right alignment --- */
+.burger-menu-wrap {
+  position: relative;
+  z-index: 2000;
+}
+
+.burger {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.28);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  box-shadow:
+    0 4px 18px rgba(0,0,0,0.08);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+  
+
 .burger span {
-  width: 28px;
-  height: 3px;
+  width: 22px;
+  height: 2px;
 
   border-radius: 999px;
 
-  background: var(--ink);
+  background: #5f574e;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    background 0.3s ease;
 }
 
+.burger:hover, .burger.open {
+  box-shadow: 0 4px 18px rgba(173, 119, 66, 0.22);
+
+   transform: translateY(-1px);
+
+  background: rgba(255,255,255,0.4);
+
+  border-color: rgba(255,255,255,0.5);
+}
+
+
+.burger:hover span, .burger.open span {
+  background: #fff;
+}
+
+.site-header.scrolled .burger {
+  background: rgba(255,255,255,0.55);
+}
+
+.site-header.scrolled .burger span {
+  background: #2f2925;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
 /* =========================
    HERO
 ========================= */
@@ -569,102 +645,67 @@ p {
 
 
 /* =========================
-   GALLERY
+   OM EJER / SALON
 ========================= */
-
-
-
-.gallery {
+.team-section {
+  padding: 8rem 0;
   background: #f5f1eb;
-   margin-top: 14rem;
-   padding-bottom: 8rem;
 }
 
-.gallery-wrap {
-  width: min(1100px, 92%);
-  margin: 0 auto;
+.team-intro {
+  max-width: 620px;
+  margin: 0 auto 5rem;
+
+  text-align: center;
+}
+
+.team-intro h2 {
+  margin-bottom: 1.5rem;
+}
+
+.team-intro p {
+  line-height: 1.9;
+}
+
+.team-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
- 
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 2rem;
+
+  width: min(900px, 92%);
+  margin: 0 auto;
 }
 
-/* base cards */
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  height: 420px;
-  background: #ddd;
-  
-}
-
-/* image - IMPORTANT FIX */
-.gallery-item img {
+.team-member img {
   width: 100%;
-  height: 100%;
+  height: 520px;
+
   object-fit: cover;
-  object-position: center;
-  transition: transform 0.5s ease;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: rise 0.8s ease forwards;
+
+  border-radius: 18px;
 }
 
+.team-member h3 {
+  margin-top: 1.2rem;
 
-/* hover */
-.gallery-item:hover img {
-  transform: scale(1.05);
+  text-align: center;
+
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-/* layout variations */
-.gallery-item:nth-child(1) {
-  grid-column: span 7;
-  height: 680px;
-  width:90%;
-}
+@media (max-width: 700px) {
 
-.gallery-item:nth-child(2) {
-  grid-column: span 5;
-  height: 660px;
-  width: 100%;
-}
-
-.gallery-item:nth-child(3) {
-  grid-column: span 5;
-  height: 480px;
-}
-
-.gallery-item:nth-child(4) {
-  grid-column: span 7;
-  height: 580px;
-  width: 100%;
-}
-
-.gallery-item:nth-child(5) {
-  grid-column: span 5;
-  height: 580px;
-  width: 100%;
-}
-
-.gallery-item:nth-child(6) {
-  grid-column: span 7;
-  height: 580px;
-  width: 100%;
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  .gallery-wrap {
+  .team-grid {
     grid-template-columns: 1fr;
   }
 
-  .gallery-item {
-    grid-column: auto !important;
-    height: 320px !important;
+  .team-member img {
+    height: 420px;
   }
-}
 
+}
 
 .contact-note {
   padding: 4rem 1rem;
@@ -886,6 +927,7 @@ p {
 }
 
 @media (max-width: 700px) {
+
   .logo {
     display: none;
   }
@@ -896,12 +938,9 @@ p {
     justify-content: center;
   }
 
-  .nav-links {
-    display: none; /* hvis du vil gøre header clean på mobil */
-  }
-
   .header-wrap {
     justify-content: space-between;
     padding: 0 1rem;
   }
+
 }
