@@ -653,16 +653,29 @@ p {
 }
 
 .team-intro {
-  max-width: 620px;
-  margin: 0 auto 4rem;
+  max-width: 650px;
+  margin: 0 auto 3rem;
   text-align: center;
-  
+  line-height: 1.7;
+}
+
+.team-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
 }
 
 
 
 .team-intro h2 {
   margin-bottom: 1.5rem;
+  display:flex;
+ text-align: center;
+ justify-content: center;
 }
 
 .team-intro p {
