@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rosengård Friland gårdbutik.">
+  <meta name="theme-color" content="#2f241a">
+  <title>Rosengård Friland</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:opsz@9..40&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function GardenPage() {
+      const cards = [
+        { title: "Se gårdbutik", icon: "🛒" },
+        { title: "Bestil fjerkræ", icon: "🐔" },
+        { title: "Book ophold", icon: "🏠" }
+      ];
+
+      return (
+        <main>
+          <section className="hero-section">
+            <img
+              src="hero.png"
+              alt="Rosengård Friland"
+              className="hero-bg"
+            />
+            <div className="hero-overlay" />
+            <img
+              src="logo_Nero_AI_Image_Upscaler_Photo_Face-removebg-preview.png"
+              alt="Rosengård Friland logo"
+              className="hero-logo"
+            />
+
+            <div className="hero-content">
+            <h1 className="hero-title">
+              Friland, fjerkræ og ferie på landet
+            </h1>
+
+            <p className="hero-subtitle">
+              Direkte fra gården i Darum Mark – fjerkræ, gårdbutik, ophold og oplevelser i ét samlet univers
+            </p>
+
+            <div className="cards-grid">
+              {cards.map((card) => (
+                <button
+                  key={card.title}
+                  type="button"
+                  className="card-button"
+                >
+                  <div className="card-icon">{card.icon}</div>
+                  <span className="card-text">{card.title}</span>
+                </button>
+              ))}
+            </div>
+            </div>
+          </section>
+
+          <section className="about-section">
+            <div className="about-container">
+              <h2 className="about-title">
+                Om os
+              </h2>
+              <p className="about-text">
+                Vi er en lokal gård med passion for gode råvarer, ansvarlig produktion og en tæt kontakt til vores kunder.
+                Hos Rosengård Friland arbejder vi hver dag for at levere kvalitetsprodukter med omtanke for dyr, natur og smag.
+              </p>
+            </div>
+          </section>
+        </main>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<GardenPage />);
+  </script>
+</body>
+</html>
