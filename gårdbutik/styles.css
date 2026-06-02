@@ -1,13 +1,15 @@
 :root {
-  --bg: #09090b;
+  --bg: #2a241e;
   --card: rgba(255,255,255,0.03);
   --border: rgba(255,255,255,0.1);
-  --text: #ffffff;
-  --muted: #a1a1aa;
-  --orange: #f97316;
-  --orange-hover: #fb923c;
-  --cream-bg: #efe5d4;
-  --stone: #1c1917;
+  --text: #f8f5ef;
+  --muted: #bcae9a;
+  --orange: #8b5e3c;
+  --orange-hover: #a86f45;
+  --cream-bg: #f4eedd;
+  --stone: #2a241e;
+  --forest: #2f4a3a;
+  --wheat: #d9b26a;
 }
 
 * {
@@ -60,17 +62,17 @@ button:hover {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.45);
+  background: linear-gradient(to top, rgba(22, 18, 14, 0.62), rgba(30, 47, 37, 0.45));
 }
 
 .hero-logo {
   position: absolute;
   top: 1.5rem;
-  left: 1.5rem;
+  left: 2.5rem;
   z-index: 20;
   height: 5rem;
   width: auto;
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  filter: brightness(1.02) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
 }
 
 @media (min-width: 768px) {
@@ -95,23 +97,26 @@ button:hover {
 
 .hero-title {
   font-family: 'DM Serif Display', serif;
-  font-size: 2.25rem;
+  font-size: 3.15rem;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 3.75rem;
+    font-size: 4.5rem;
   }
 }
 
 .hero-subtitle {
-  font-size: 1.125rem;
+  font-size: 1rem;
   text-align: center;
-  margin-bottom: 2.5rem;
-  max-width: 42rem;
+  margin-bottom: 2rem;
+  max-width: 48rem;
+  color: rgba(248, 245, 239, 0.9);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
 @media (min-width: 768px) {
@@ -123,8 +128,8 @@ button:hover {
 .cards-grid {
   display: grid;
   width: 100%;
-  max-width: 56rem;
-  gap: 1rem;
+  max-width: 40rem;
+  gap: 1.55rem;
   grid-template-columns: 1fr;
 }
 
@@ -135,36 +140,54 @@ button:hover {
 }
 
 .card-button {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  background-color: rgba(47, 74, 58, 0.28);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  padding-top: 2.1rem;
+  padding-bottom: 2.1rem;
+  min-height: 9.25rem;
   text-align: center;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .card-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  transform: translateY(-2px);
+  filter: brightness(1.18) saturate(1.03);
 }
 
 @media (min-width: 768px) {
-  .card-icon {
-    font-size: 3.75rem;
+  .card-button {
+    min-height: 10rem;
   }
 }
 
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(22, 18, 14, 0.7), rgba(47, 74, 58, 0.35));
+  transition: background 0.2s ease;
+}
+
+.card-button:hover .card-overlay {
+  background: linear-gradient(to top, rgba(22, 18, 14, 0.54), rgba(47, 74, 58, 0.24));
+}
+
 .card-text {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color:white;
+  position: relative;
+  z-index: 1;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* About Section */
@@ -232,7 +255,7 @@ button:hover {
 }
 
 .text-orange-400 {
-  color: var(--orange);
+  color: var(--wheat);
 }
 
 .bg-orange-500 {
