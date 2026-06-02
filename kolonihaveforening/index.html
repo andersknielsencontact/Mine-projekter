@@ -23,9 +23,9 @@
   <script type="text/babel">
     function GardenPage() {
       const cards = [
-        { title: "Gå til Haver / fællesskab / arrangementer", image: "andreas160578-wheelbarrows-2157335_1920.jpg", position: "center 35%" },
-        { title: "Booking af fælleshus / faciliteter", image: "kort2.avif", position: "center 55%" },
-        { title: "Medlemsinfo / køb & regler", image: "kort1.avif", position: "center 75%" }
+        { title: "Haver og fællesskab", image: "andreas160578-wheelbarrows-2157335_1920.jpg", position: "center 40%" },
+        { title: "Booking af fælleshus", image: "kort2.avif", position: "center 50%" },
+        { title: "Medlemsinfo og regler", image: "kort1.avif", position: "center 62%" }
       ];
 
       return (
@@ -35,6 +35,7 @@
               src="hero.png"
               alt="kolonihaveforening"
               className="hero-bg"
+              style={{ objectPosition: "center 30%" }}
             />
             <div className="hero-overlay" />
             <div className="hero-topbar">
@@ -49,7 +50,7 @@
   </h1>
 
   <p className="hero-subtitle">
-    Vælg en kategori for at udforske vores kolonihaveforeningen
+    Et roligt konceptudkast til kolonihaveforeningen med fokus på fællesskab, booking og medlemsinfo
   </p>
 
   <div className="cards-grid">
@@ -70,6 +71,16 @@
   </div>
 </div>
 </section>
+
+          <section className="intro-section">
+            <div className="intro-inner">
+              <p className="intro-kicker">Konceptudkast</p>
+              <h2 className="intro-title">Et sted med fællesskab, booking og grønne rammer</h2>
+              <p className="intro-text">
+                Siden er tænkt som et roligt første indtryk af kolonihaveforeningen, hvor billeder, korte tekster og en tydelig kontaktflade får lov til at fortælle stemningen.
+              </p>
+            </div>
+          </section>
           
         </main>
       );
