@@ -23,7 +23,7 @@
   <script type="text/babel">
     function GardenPage() {
       const cards = [
-        { title: "Se gårdbutik", image: "butik.jpg", position: "center 35%" },
+        { title: "Gå til gårdbutik", image: "butik.jpg", position: "center 35%" },
         { title: "Bestil fjerkræ", image: "høns.jpg", position: "center 55%" },
         { title: "Book ophold", image: "ophold.webp", position: "center 75%" }
       ];
@@ -44,29 +44,32 @@
             />
 
             <div className="hero-content">
-            <h1 className="hero-title">
-              Rosengård Friland
-            </h1>
+  <h1 className="hero-title">
+    Rosengård Friland
+  </h1>
 
-            <p className="hero-subtitle">
-              Bondegårdsferie og aktivitetshus • Ferielejlighed og B&B • Gårdbutik, fjerkræ- og dyresalg
-            </p>
+  <p className="hero-subtitle">
+    Vælg en kategori for at udforske gården – butik, fjerkræ eller ophold.
+  </p>
 
-            <div className="cards-grid">
-              {cards.map((card) => (
-                <button
-                  key={card.title}
-                  type="button"
-                  className="card-button"
-                  style={{ backgroundImage: `url(${card.image})`, backgroundPosition: card.position }}
-                >
-                  <span className="card-overlay" aria-hidden="true" />
-                  <span className="card-text">{card.title}</span>
-                </button>
-              ))}
-            </div>
-            </div>
-            </section>
+  <div className="cards-grid">
+    {cards.map((card) => (
+      <button
+        key={card.title}
+        type="button"
+        className="card-button"
+        style={{
+          backgroundImage: `url(${card.image})`,
+          backgroundPosition: card.position
+        }}
+      >
+        <span className="card-overlay" aria-hidden="true" />
+        <span className="card-text">{card.title}</span>
+      </button>
+    ))}
+  </div>
+</div>
+</section>
           
         </main>
       );
