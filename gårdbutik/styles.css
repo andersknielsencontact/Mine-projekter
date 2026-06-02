@@ -161,7 +161,7 @@ button:hover {
 
 .card-button:hover {
   transform: translateY(-2px);
-  filter: brightness(1.18) saturate(1.03);
+  filter: brightness(1.7) saturate(1.03);
 }
 
 @media (min-width: 768px) {
