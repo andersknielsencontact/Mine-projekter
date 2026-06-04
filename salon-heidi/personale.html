@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personale | Salon Heidi</title>
+  <meta name="description" content="Mød teamet hos Salon Heidi i Odense." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .personale-minimal .inner-page-main {
+      background: #ffffff;
+    }
+
+    .personale-minimal .inner-hero {
+      background: #ffffff;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 4rem 0 2.5rem;
+    }
+
+    .personale-minimal .inner-hero-content {
+      max-width: 680px;
+    }
+
+    .personale-minimal .team-section-inner {
+      background: #ffffff;
+      padding: 3.5rem 0 5rem;
+    }
+
+    .personale-minimal .team-note {
+      margin: 2rem auto 0;
+      padding: 1.25rem 1.5rem;
+      max-width: 640px;
+      text-align: center;
+      display: grid;
+      gap: 0.5rem;
+      background: #f7f2ec;
+      border: 1px solid #d8c8b8;
+      color: #7a4b2b;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .personale-minimal .team-note p {
+      margin: 0;
+    }
+
+    .personale-minimal .team-note h2 {
+      margin-bottom: 0.15rem;
+      font-size: 1rem;
+      color: #111111;
+    }
+
+    .personale-minimal .team-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.5rem;
+      width: min(900px, 92%);
+    }
+
+    .personale-minimal .team-member img {
+      border-radius: 0;
+      box-shadow: none;
+      border: 1px solid #e6e6e6;
+      height: 320px;
+    }
+
+    .personale-minimal .team-member h3,
+    .personale-minimal .team-member p,
+    .personale-minimal .role {
+      color: #111111;
+    }
+
+    .personale-minimal .team-member p {
+      max-width: 34ch;
+      margin: 0.45rem auto 0;
+      line-height: 1.6;
+    }
+
+    .personale-minimal .vacation-note {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.45rem 0.85rem;
+      border: 1px solid #d8c8b8;
+      background: #f7f2ec;
+      color: #7a4b2b;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .personale-minimal .role {
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .personale-minimal .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+      }
+
+      .personale-minimal .team-member img {
+        height: 360px;
+      }
+    }
+  </style>
+</head>
+
+<body class="personale-minimal">
+  <header class="site-header scrolled">
+    <div class="container header-wrap">
+      <a href="Index.html" class="logo">
+        <img src="logo.png" alt="Salon Heidi Logo">
+      </a>
+
+      <div class="burger-menu-wrap">
+        <button class="burger" id="burgerBtn" aria-label="Åbn menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" id="navLinks">
+          <a href="Index.html">Hjem</a>
+          <a href="priser.html">Priser & Produkter</a>
+          <a href="personale.html">Personale</a>
+          <a href="kontakt.html">Kontakt & Find os</a>
+          <a href="http://www.salonheidiodense.dk/book-tid.html" target="_blank" rel="noopener" class="btn btn-small">Bestil tid</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="inner-page-main">
+    <section class="inner-hero">
+      <div class="container inner-hero-content">
+        <h1>Personale</h1>
+        <p>Mød det faste team i salonen.</p>
+      </div>
+    </section>
+
+    <section class="team-section team-section-inner">
+      <div class="container">
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="profile1_Nero_AI_Image_Upscaler_Photo_Face.jpeg" alt="Heidi">
+            <div class="team-text">
+              <h3>Heidi</h3>
+              <p class="role">Indehaver</p>
+              <p>Heidi skaber en rolig oplevelse med fokus på kvalitet, rådgivning og tid til den enkelte.</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="profile2_Nero_AI_Image_Upscaler_Photo_Face.jpeg" alt="Kristina">
+            <div class="team-text">
+              <h3>Kristina</h3>
+              <p class="role">Assistent</p>
+              <p>Kristina bidrager til den gode stemning og en professionel, tryg oplevelse i salonen.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-note">
+          <h2>Praktisk info</h2>
+          <p>Ferie: Heidi uge 29-30 · Kristina uge 31-32</p>
+          <p>Vi tillader os at åbne og lukke salonen efter behov</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-col">
+        <p>Salon Heidi · Skibhusvej 99 · 5000 Odense C <span class="footer-gap"></span>Tlf. <a href="tel:66149098">66 14 90 98</a></p>
+      </div>
+      <div class="footer-col">
+        <p><em>Gratis parkering bag salonen</em></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    burgerBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+      burgerBtn.classList.toggle('open');
+      const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
+      burgerBtn.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+</body>
+
+</html>
