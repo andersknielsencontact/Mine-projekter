@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Salon Heidi</title>
+  <meta name="description" content="Kontakt Salon Heidi og find os i Skibhuskvarteret i Odense." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .kontakt-minimal .map-section {
+      padding-top: 0;
+    }
+
+    .kontakt-minimal .map-card {
+      overflow: hidden;
+    }
+
+    .kontakt-minimal .map-card h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    .kontakt-minimal .map-card p {
+      margin: 0 0 1rem;
+      color: #5f574e;
+    }
+
+    .kontakt-minimal .map-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .kontakt-minimal .contact-notes {
+      padding-top: 0;
+    }
+
+    .kontakt-minimal .contact-notes-card {
+      padding: 0;
+      background: transparent;
+    }
+
+    .kontakt-minimal .contact-notes-card h2 {
+      margin-bottom: 0.9rem;
+    }
+
+    .kontakt-minimal .contact-notes-card p {
+      margin: 0 0 0.9rem;
+      color: #22201e;
+      line-height: 1.7;
+    }
+
+    .kontakt-minimal .contact-notes-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 700px) {
+      .kontakt-minimal .map-card h2 {
+        padding: 0;
+      }
+
+      .kontakt-minimal .map-card p {
+        margin: 0 0 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="kontakt-minimal">
+  <header class="site-header scrolled">
+    <div class="container header-wrap">
+      <a href="Index.html" class="logo">
+        <img src="logo.png" alt="Salon Heidi Logo">
+      </a>
+
+      <div class="burger-menu-wrap">
+        <button class="burger" id="burgerBtn" aria-label="Åbn menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" id="navLinks">
+          <a href="Index.html">Hjem</a>
+          <a href="priser.html">Priser & Produkter</a>
+          <a href="personale.html">Personale</a>
+          <a href="kontakt.html">Kontakt & Find os</a>
+          <a href="http://www.salonheidiodense.dk/book-tid.html" target="_blank" rel="noopener" class="btn btn-small">Bestil tid</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="inner-page-main">
+    <section class="inner-hero">
+      <div class="container inner-hero-content">
+        <h1>Kontakt & Find os</h1>
+        <p>Vi glæder os til at byde dig velkommen i salonen i Skibhuskvarteret.</p>
+      </div>
+    </section>
+
+    <section class="inner-section">
+      <div class="container inner-grid two-col">
+        <article class="info-card">
+          <h2>Kontakt</h2>
+          <p><strong>Telefon:</strong> <a href="tel:66149098">66 14 90 98</a></p>
+          <p><strong>Mobil:</strong> <a href="tel:26512651">26 51 26 51</a></p>
+          <p><strong>Adresse:</strong> Skibhusvej 99, 5000 Odense C</p>
+        </article>
+
+        <article class="info-card">
+          <h2>Åbning & Booking</h2>
+          <p>Du kan kontakte salonen i åbningstiden eller bestille tid online. <br> 
+
+Vi tillader os at åbne og lukke efter behov. </p>
+          <a href="http://www.salonheidiodense.dk/book-tid.html" target="_blank" rel="noopener" class="btn">Bestil tid</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="inner-section contact-notes">
+      
+    </section>
+
+    <section class="inner-section map-section">
+      <div class="container">
+        <article class="map-card">
+          <h2>Find os</h2>
+          <p>Skibhusvej 99, 5000 Odense C</p>
+          <iframe
+            class="map-frame"
+            title="Salon Heidi på Google Maps"
+            src="https://www.google.com/maps?hl=da&q=Skibhusvej+99,+5000+Odense+C&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-col">
+        <p>Salon Heidi · Skibhusvej 99 · 5000 Odense C <span class="footer-gap"></span>Tlf. <a href="tel:66149098">66 14 90 98</a></p>
+      </div>
+      <div class="footer-col">
+        <p><em>Gratis parkering bag salonen</em></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    burgerBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+      burgerBtn.classList.toggle('open');
+      const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
+      burgerBtn.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+</body>
+
+</html>
