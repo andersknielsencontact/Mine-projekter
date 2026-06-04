@@ -1002,6 +1002,7 @@ p {
   display: flex;
 
   justify-content: space-between;
+  align-items: center;
 
   gap: 1rem;
 }
@@ -1012,9 +1013,19 @@ p {
   color: white;
 }
 
+.footer-col {
+  align-items: center;
+  text-align: center;
+}
+
+.footer-col p + p {
+  margin-top: 0.35rem;
+}
+
 .footer-gap {
   display: inline-block;
-  width: 4em;
+  width: 0;
+  height: 0.35rem;
 }
 
 
@@ -1061,6 +1072,70 @@ p {
 
   .section {
     padding: 5rem 0;
+  }
+
+  .inner-page-main {
+    padding-top: 4.75rem;
+  }
+
+  .inner-hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .inner-section {
+    padding: 3.5rem 0 4.75rem;
+  }
+
+  .inner-grid {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .inner-grid.two-col {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .info-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .price-list {
+    gap: 1rem;
+  }
+
+  .price-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .price-list strong {
+    white-space: normal;
+  }
+
+  .info-card-wide {
+    margin-top: 1rem;
+  }
+
+  .notice-card {
+    margin-top: 1.5rem;
+  }
+
+  .brand-logos-section {
+    margin-top: 3rem;
+  }
+
+  .brand-logos-section h2 {
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .brand-logos-text {
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
   }
 
   .burger {
@@ -1129,11 +1204,21 @@ p {
   .footer-wrap {
     flex-direction: column;
 
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    align-items: center;
+  }
+
+  .footer-col p {
     text-align: center;
   }
 
   .brand-logos-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
   }
 
 }
@@ -1152,6 +1237,22 @@ p {
 
   .hero-actions {
     flex-direction: column;
+  }
+
+  .price-list li span,
+  .price-list strong,
+  .note-list p,
+  .contact-notes-card p,
+  .brand-logos-text {
+    font-size: 0.95rem;
+  }
+
+  .brand-logos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-logos-grid img {
+    max-height: 54px;
   }
 
 }
