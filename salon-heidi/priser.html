@@ -6,17 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Priser | Salon Heidi</title>
   <meta name="description" content="Priser og behandlinger hos Salon Heidi i Odense." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta property="og:title" content="Priser | Salon Heidi" />
+  <meta property="og:description" content="Se priser og behandlinger hos Salon Heidi i Odense." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>
   <header class="site-header scrolled">
     <div class="container header-wrap">
       <a href="index.html" class="logo">
-        <img src="logo.png" alt="Salon Heidi Logo">
+        <img src="logo.png" alt="Salon Heidi frisørsalon logo" loading="lazy">
       </a>
 
       <div class="burger-menu-wrap">
@@ -27,7 +40,7 @@
         </button>
         <nav class="nav-links" id="navLinks">
           <a href="index.html">Hjem</a>
-          <a href="priser.html">Priser & Produkter</a>
+          <a href="priser.html" aria-current="page">Priser & Produkter</a>
           <a href="personale.html">Personale</a>
           <a href="kontakt.html">Kontakt & Find os</a>
           <a href="https://salon-heidi-32334.planway.com/" target="_blank" rel="noopener" class="btn btn-small">Bestil tid</a>
@@ -75,17 +88,17 @@
 
       <div class="container inner-grid">
         <article class="info-card info-card-wide">
-          <h2>Praktisk information</h2>
+          <h2>Godt at vide</h2>
           <div class="note-list">
-            <p>* Ved farvebehandlinger i langt hår, kontakt gerne salonen så vi får sat den rigtige tid af.</p>
-            <p>* Brudeopsætning evt. make up. Pris oplyses ved henvendelse i salonen.</p>
+            <p>* Ved langt hår anbefaler vi, at du kontakter salonen ved farvebehandling.</p>
+            <p>* Brudeopsætning og evt. make up: pris oplyses i salonen.</p>
             <p>* Gavekort udstedes efter ønske.</p>
           </div>
         </article>
 
         <article class="info-card notice-card">
           <h2>Bemærk</h2>
-          <p>Afbud skal ske senest 24 timer før din aftale. Ved senere afbud opkræves 50 % af behandlingens pris. <br> Ved udeblivelse opkræves behandlingens fulde pris <br> Afbud på dagen, modtages kun pr. telefon ( udenfor åbningstid på tlf. 26512651 )</p>
+          <p>Afbud senest 24 timer før. Senere afbud faktureres med 50 % af behandlingen. Udeblivelse faktureres fuldt. Afbud på dagen modtages kun pr. telefon: 26 51 26 51.</p>
         </article>
       </div>
 
@@ -97,11 +110,11 @@
           Som hårfarveserie benytter vi Wella.
         </p>
         <div class="brand-logos-grid">
-          <img src="Wella.jpg" alt="" loading="lazy">
-          <img src="Sebastian_logo.jpg" alt="" loading="lazy">
-          <img src="Ghd logo.jpg" alt="" loading="lazy">
-          <img src="NeccinPharmacy.jpg" alt="" loading="lazy">
-          <img src="ariella.jpg" alt="" loading="lazy">
+          <img src="Wella.jpg" alt="Wella hårbrand og produkter" loading="lazy">
+          <img src="Sebastian_logo.jpg" alt="Sebastian Professional hårbrand" loading="lazy">
+          <img src="Ghd logo.jpg" alt="GHD professionelt hårvarme-værktøj" loading="lazy">
+          <img src="NeccinPharmacy.jpg" alt="Neccin Pharmacy hårvordingsprodukt" loading="lazy">
+          <img src="ariella.jpg" alt="Ariella professionelt hårpleje" loading="lazy">
         </div>
       </div>
     </section>
@@ -123,12 +136,77 @@
     const burgerBtn = document.getElementById('burgerBtn');
     const navLinks = document.getElementById('navLinks');
 
+    // Detect touch device
+    const isTouchDevice = () => {
+      return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+    };
+
+    // Toggle menu on burger button click
     burgerBtn.addEventListener('click', function () {
       navLinks.classList.toggle('open');
       burgerBtn.classList.toggle('open');
+      document.body.classList.toggle('menu-open', navLinks.classList.contains('open'));
       const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
       burgerBtn.setAttribute('aria-expanded', !expanded);
     });
+
+    // Close menu when clicking on a link
+    const navItems = navLinks.querySelectorAll('a');
+    navItems.forEach(item => {
+      item.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        burgerBtn.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Mobile: Close menu when clicking outside
+    if (isTouchDevice()) {
+      document.addEventListener('click', function (event) {
+        if (!event.target.closest('.burger-menu-wrap')) {
+          if (navLinks.classList.contains('open')) {
+            navLinks.classList.remove('open');
+            burgerBtn.classList.remove('open');
+            document.body.classList.remove('menu-open');
+            burgerBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    }
+
+    // Desktop: Close menu on hover away (with delay for hover gap tolerance)
+    if (!isTouchDevice()) {
+      const burgerMenuWrap = document.querySelector('.burger-menu-wrap');
+      let closeTimeout;
+      
+      burgerMenuWrap.addEventListener('mouseleave', function () {
+        closeTimeout = setTimeout(() => {
+          navLinks.classList.remove('open');
+          burgerBtn.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          burgerBtn.setAttribute('aria-expanded', 'false');
+        }, 1200);
+      });
+      
+      burgerMenuWrap.addEventListener('mouseenter', function () {
+        if (closeTimeout) clearTimeout(closeTimeout);
+      });
+
+      // Desktop accessibility: close menu with Escape
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          navLinks.classList.remove('open');
+          burgerBtn.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          burgerBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Keep header visible on this inner page
+    const header = document.querySelector(".site-header");
+    header.classList.add("scrolled");
   </script>
 </body>
 
