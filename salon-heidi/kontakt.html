@@ -6,10 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontakt | Salon Heidi</title>
   <meta name="description" content="Kontakt Salon Heidi og find os i Skibhuskvarteret i Odense." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta property="og:title" content="Kontakt | Salon Heidi" />
+  <meta property="og:description" content="Kontakt Salon Heidi og find os i Skibhuskvarteret i Odense." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <style>
     .kontakt-minimal .map-section {
       padding-top: 2.5rem;
@@ -63,6 +76,19 @@
       margin-top: 0.75rem;
     }
 
+    .kontakt-minimal .info-card a[href^="tel:"] {
+      color: #111111;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 0.2em;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .kontakt-minimal .info-card a[href^="tel:"]:hover {
+      color: #1f5dff;
+      text-decoration-color: #1f5dff;
+    }
+
     @media (max-width: 700px) {
       .kontakt-minimal .map-card h2 {
         padding: 0;
@@ -80,7 +106,7 @@
   <header class="site-header scrolled">
     <div class="container header-wrap">
       <a href="index.html" class="logo">
-        <img src="logo.png" alt="Salon Heidi Logo">
+        <img src="logo.png" alt="Salon Heidi frisørsalon logo" loading="lazy">
       </a>
 
       <div class="burger-menu-wrap">
@@ -93,7 +119,7 @@
           <a href="index.html">Hjem</a>
           <a href="priser.html">Priser & Produkter</a>
           <a href="personale.html">Personale</a>
-          <a href="kontakt.html">Kontakt & Find os</a>
+          <a href="kontakt.html" aria-current="page">Kontakt & Find os</a>
           <a href="https://salon-heidi-32334.planway.com/" target="_blank" rel="noopener" class="btn btn-small">Bestil tid</a>
         </nav>
       </div>
@@ -112,16 +138,16 @@
       <div class="container inner-grid two-col">
         <article class="info-card">
           <h2>Kontakt</h2>
-          <p><strong>Telefon:</strong> <a href="tel:66149098">66 14 90 98</a></p>
-          <p><strong>Mobil:</strong> <a href="tel:26512651">26 51 26 51</a></p>
+          <p>Telefon</p>
+          <p><a href="tel:66149098">66 14 90 98</a></p>
+          <p>Mobil</p>
+          <p><a href="tel:26512651">26 51 26 51</a></p>
           <p><strong>Adresse:</strong> Skibhusvej 99, 5000 Odense C</p>
         </article>
 
         <article class="info-card">
           <h2>Åbning & Booking</h2>
-          <p>Du kan kontakte salonen i åbningstiden eller bestille tid online. <br> 
-
-Vi tillader os at åbne og lukke efter behov. </p>
+          <p>Kontakt os i åbningstiden, eller bestil tid online. Vi åbner og lukker efter behov.</p>
           <a href="https://salon-heidi-32334.planway.com/" target="_blank" rel="noopener" class="hero-cta">Bestil tid</a>
         </article>
       </div>
@@ -161,12 +187,77 @@ Vi tillader os at åbne og lukke efter behov. </p>
     const burgerBtn = document.getElementById('burgerBtn');
     const navLinks = document.getElementById('navLinks');
 
+    // Detect touch device
+    const isTouchDevice = () => {
+      return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+    };
+
+    // Toggle menu on burger button click
     burgerBtn.addEventListener('click', function () {
       navLinks.classList.toggle('open');
       burgerBtn.classList.toggle('open');
+      document.body.classList.toggle('menu-open', navLinks.classList.contains('open'));
       const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
       burgerBtn.setAttribute('aria-expanded', !expanded);
     });
+
+    // Close menu when clicking on a link
+    const navItems = navLinks.querySelectorAll('a');
+    navItems.forEach(item => {
+      item.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        burgerBtn.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Mobile: Close menu when clicking outside
+    if (isTouchDevice()) {
+      document.addEventListener('click', function (event) {
+        if (!event.target.closest('.burger-menu-wrap')) {
+          if (navLinks.classList.contains('open')) {
+            navLinks.classList.remove('open');
+            burgerBtn.classList.remove('open');
+            document.body.classList.remove('menu-open');
+            burgerBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    }
+
+    // Desktop: Close menu on hover away (with delay for hover gap tolerance)
+    if (!isTouchDevice()) {
+      const burgerMenuWrap = document.querySelector('.burger-menu-wrap');
+      let closeTimeout;
+      
+      burgerMenuWrap.addEventListener('mouseleave', function () {
+        closeTimeout = setTimeout(() => {
+          navLinks.classList.remove('open');
+          burgerBtn.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          burgerBtn.setAttribute('aria-expanded', 'false');
+        }, 1200);
+      });
+      
+      burgerMenuWrap.addEventListener('mouseenter', function () {
+        if (closeTimeout) clearTimeout(closeTimeout);
+      });
+
+      // Desktop accessibility: close menu with Escape
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          navLinks.classList.remove('open');
+          burgerBtn.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          burgerBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Keep header visible on this inner page
+    const header = document.querySelector(".site-header");
+    header.classList.add("scrolled");
   </script>
 </body>
 
