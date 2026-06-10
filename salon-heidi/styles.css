@@ -198,26 +198,31 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.44rem 1.6rem;
+  padding: 1rem 1.35rem;
   border: none white;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: rgb(224, 201, 160);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   color: white;
-  font-weight: 600;
-  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
   transition: .18s cubic-bezier(.4,0,.2,1);
 }
 
 .btn:hover {
-  transform: scale(1.04);
+  transform: translateY(-2px);
   background: var(--accent);
   color: white;
 }
 
 .btn-small {
-  padding: .7rem 1.1rem;
-   background-color: rgb(224, 201, 160);
-  font-size: 0.9rem;
+  padding: .72rem 1.18rem;
+  background-color: rgb(224, 201, 160);
+  font-size: 0.93rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color:white;
 }
 
@@ -711,36 +716,29 @@ width: 24px;
   align-items: center;
 
   flex-wrap: wrap;
-
-  background-color: rgb(224, 201, 160);
-  color: white;
-  border-radius: 8px;
-  font-size: .9rem;
   margin-top: 3rem;
 }
 
 .hero-cta {
- display: inline-flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.55rem 1.1rem;
   border: none white;
-  border-radius: 4px;
-  background: transparent;
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.98rem;
-  transition: .18s cubic-bezier(.4,0,.2,1);
-  padding: 1rem 2.5rem;
+  border-radius: 6px;
   background-color: rgb(224, 201, 160);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   color: white;
-  font-size: 1.2rem;
-  
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 1.1rem;
+  transition: .18s cubic-bezier(.4,0,.2,1);
+  padding: 1rem 2.55rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
 
 .hero-cta:hover {
-  transform: scale(1.04);
+  transform: translateY(-2px);
   background: var(--accent);
   color: white;
 }
@@ -967,7 +965,9 @@ justify-self: center;
 .inner-hero-content p:last-child {
   max-width: 58ch;
   margin: 0 auto;
-  padding-top: 5px;
+  padding-top: 0.45rem;
+  line-height: 1.65;
+  min-height: 3.3em;
 }
 
 .inner-section {
@@ -1014,6 +1014,52 @@ justify-self: center;
 /* =========================
    PRISER.HTML
 ========================= */
+
+.priser-minimal .inner-grid.two-col {
+  gap: clamp(2.2rem, 4vw, 3.25rem);
+}
+
+.priser-minimal .inner-grid.two-col .info-card {
+  padding: clamp(1rem, 1.5vw, 1.35rem);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.priser-minimal .info-card-wide {
+  margin-top: var(--space-5);
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.priser-minimal .note-list {
+  gap: 0.9rem;
+}
+
+.priser-minimal .note-list p {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.priser-minimal .note-list p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.priser-minimal .notice-card {
+  margin-top: var(--space-5);
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.priser-minimal .brand-logos-section {
+  max-width: 1120px;
+  margin-inline: auto;
+}
 
 .price-list {
   list-style: none;
@@ -1596,11 +1642,17 @@ justify-self: center;
 ========================= */
 
 .kontakt-minimal .map-section {
-  padding-top: 2.5rem;
+  padding-top: 3.25rem;
 }
 
 .kontakt-minimal .map-card {
   overflow: hidden;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 2vw, 1.8rem);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: #fbf8f4;
 }
 
 .kontakt-minimal .map-card h2 {
@@ -1618,6 +1670,13 @@ justify-self: center;
   aspect-ratio: 16 / 9;
   border: 0;
   display: block;
+  border-radius: 10px;
+}
+
+.kontakt-minimal .map-note {
+  margin-top: 0.85rem;
+  color: #5f574e;
+  font-size: 0.95rem;
 }
 
 .kontakt-minimal .contact-notes {
@@ -1644,7 +1703,7 @@ justify-self: center;
 }
 
 .kontakt-minimal .info-card .hero-cta {
-  margin-top: 0.75rem;
+  margin-top: 1.25rem;
 }
 
 .kontakt-minimal .info-card a[href^="tel:"] {
@@ -1660,6 +1719,54 @@ justify-self: center;
   text-decoration-color: #1f5dff;
 }
 
+.kontakt-minimal .inner-grid.two-col {
+  gap: clamp(2.2rem, 4vw, 3.25rem);
+}
+
+.kontakt-minimal .contact-card,
+.kontakt-minimal .booking-card {
+  padding: clamp(1rem, 1.5vw, 1.4rem);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.kontakt-minimal .contact-details {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.kontakt-minimal .contact-item {
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.kontakt-minimal .contact-item strong {
+  color: #111111;
+  font-size: 0.8rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.kontakt-minimal .contact-item span,
+.kontakt-minimal .contact-item a {
+  color: #22201e;
+}
+
+.kontakt-minimal .contact-item-inline {
+  gap: 0.2rem;
+}
+
+.kontakt-minimal .booking-card p + p {
+  margin-top: 0.9rem;
+}
+
+.kontakt-minimal .booking-note {
+  margin-top: 1.05rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  color: #5f574e;
+}
+
 /* =========================
    PERSONALE.HTML
 ========================= */
@@ -1670,13 +1777,18 @@ justify-self: center;
 
 .personale-minimal .team-section-inner {
   background: #ffffff;
-  padding: 3.5rem 0 5rem;
+  padding: 4rem 0 5.5rem;
+}
+
+.personale-minimal .team-member {
+  padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .personale-minimal .team-note {
   margin: 4rem auto 0;
-  padding: 1.25rem 1.5rem;
-  padding-top: 1.6rem;
+  padding: 1.35rem 1.5rem;
+  padding-top: 1.7rem;
   max-width: 640px;
   text-align: center;
   display: grid;
@@ -1702,7 +1814,7 @@ justify-self: center;
 
 .personale-minimal .team-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem;
+  gap: 2.75rem;
   width: min(900px, 92%);
 }
 
@@ -1721,8 +1833,8 @@ justify-self: center;
 
 .personale-minimal .team-member p {
   max-width: 34ch;
-  margin: 0.45rem auto 0;
-  line-height: 1.6;
+  margin: 0.6rem auto 0;
+  line-height: 1.75;
 }
 
 .personale-minimal .vacation-note {
@@ -1743,6 +1855,13 @@ justify-self: center;
 }
 
 @media (max-width: 700px) {
+  .priser-minimal .inner-grid.two-col .info-card,
+  .priser-minimal .info-card-wide,
+  .priser-minimal .notice-card {
+    padding: 0;
+    border-top: none;
+  }
+
   .kontakt-minimal .map-card h2 {
     padding: 0;
     font-size: 1.2rem;
@@ -1752,9 +1871,24 @@ justify-self: center;
     margin: 0 0 1rem;
   }
 
+  .kontakt-minimal .map-card {
+    padding: 1rem;
+  }
+
+  .kontakt-minimal .contact-card,
+  .kontakt-minimal .booking-card {
+    padding: 0;
+    border-top: none;
+  }
+
   .personale-minimal .team-grid {
     grid-template-columns: 1fr;
     gap: 2.25rem;
+  }
+
+  .personale-minimal .team-member {
+    padding: 0;
+    border-top: none;
   }
 
   .personale-minimal .team-member img {
