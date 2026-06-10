@@ -15,17 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
 </head>
 
-<body>
+<body class="priser-minimal">
   <header class="site-header scrolled">
     <div class="container header-wrap">
       <a href="index.html" class="logo">
@@ -33,7 +25,7 @@
       </a>
 
       <div class="burger-menu-wrap">
-        <button class="burger" id="burgerBtn" aria-label="Åbn menu" aria-expanded="false">
+        <button class="burger" id="burgerBtn" aria-label="Åbn menu" aria-expanded="false" aria-controls="navLinks">
           <span></span>
           <span></span>
           <span></span>
@@ -94,9 +86,9 @@
         <div class="produkt-tekst">
           <h2>Godt at vide</h2>
           <div class="note-list">
-          <p>* Ved farvebehandlinger i langt hår, kontakt gerne salonen så vi får sat den rigtige tid af.</p>
-                <p>* Brudeopsætning og evt. makeup: Pris oplyses i salonen.</p>
-                <p>* Gavekort udstedes efter ønske.</p>
+          <p>Ved farvebehandlinger i langt hår, kontakt gerne salonen så vi får sat den rigtige tid af.</p>
+                <p>Brudeopsætning og evt. makeup: Pris oplyses i salonen.</p>
+                <p>Gavekort udstedes efter ønske.</p>
               </div>
         </div>
 
@@ -153,82 +145,7 @@
     </div>
   </footer>
 
-  <script>
-    const burgerBtn = document.getElementById('burgerBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    // Detect touch device
-    const isTouchDevice = () => {
-      return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-    };
-
-    // Toggle menu on burger button click
-    burgerBtn.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-      burgerBtn.classList.toggle('open');
-      document.body.classList.toggle('menu-open', navLinks.classList.contains('open'));
-      const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
-      burgerBtn.setAttribute('aria-expanded', !expanded);
-    });
-
-    // Close menu when clicking on a link
-    const navItems = navLinks.querySelectorAll('a');
-    navItems.forEach(item => {
-      item.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        burgerBtn.classList.remove('open');
-        document.body.classList.remove('menu-open');
-        burgerBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Mobile: Close menu when clicking outside
-    if (isTouchDevice()) {
-      document.addEventListener('click', function (event) {
-        if (!event.target.closest('.burger-menu-wrap')) {
-          if (navLinks.classList.contains('open')) {
-            navLinks.classList.remove('open');
-            burgerBtn.classList.remove('open');
-            document.body.classList.remove('menu-open');
-            burgerBtn.setAttribute('aria-expanded', 'false');
-          }
-        }
-      });
-    }
-
-    // Desktop: Close menu on hover away (with delay for hover gap tolerance)
-    if (!isTouchDevice()) {
-      const burgerMenuWrap = document.querySelector('.burger-menu-wrap');
-      let closeTimeout;
-      
-      burgerMenuWrap.addEventListener('mouseleave', function () {
-        closeTimeout = setTimeout(() => {
-          navLinks.classList.remove('open');
-          burgerBtn.classList.remove('open');
-          document.body.classList.remove('menu-open');
-          burgerBtn.setAttribute('aria-expanded', 'false');
-        }, 1200);
-      });
-      
-      burgerMenuWrap.addEventListener('mouseenter', function () {
-        if (closeTimeout) clearTimeout(closeTimeout);
-      });
-
-      // Desktop accessibility: close menu with Escape
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-          navLinks.classList.remove('open');
-          burgerBtn.classList.remove('open');
-          document.body.classList.remove('menu-open');
-          burgerBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
-    // Keep header visible on this inner page
-    const header = document.querySelector(".site-header");
-    header.classList.add("scrolled");
-  </script>
+  <script src="site.js"></script>
 </body>
 
 </html>
