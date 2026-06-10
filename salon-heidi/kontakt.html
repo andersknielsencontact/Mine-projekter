@@ -15,14 +15,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
 </head>
 
 <body class="kontakt-minimal">
@@ -33,7 +25,7 @@
       </a>
 
       <div class="burger-menu-wrap">
-        <button class="burger" id="burgerBtn" aria-label="Åbn menu" aria-expanded="false">
+        <button class="burger" id="burgerBtn" aria-label="Åbn menu" aria-expanded="false" aria-controls="navLinks">
           <span></span>
           <span></span>
           <span></span>
@@ -59,31 +51,40 @@
 
     <section class="inner-section">
       <div class="container inner-grid two-col">
-        <article class="info-card">
+        <article class="info-card contact-card">
           <h2>Kontakt</h2>
 
-          <p><strong>Salon Heidi</strong> <br>
-V / Heidi Arrengaard Andersen<br></p>
-<p><strong>Adresse</strong></p>
-Skibhusvej 99<br>
-5000 Odense C<br></p>
-          <p>
-            <strong>Telefon</strong><br>
-            <a href="tel:66149098">66 14 90 98</a>
-          </p>
-                    <p>
-            <strong>Mobil</strong><br>
-            <a href="tel:26512651">26 51 26 51</a>
-</p>
-          
+          <div class="contact-details">
+            <p class="contact-item">
+              <strong>Salon</strong>
+              <span>Salon Heidi<br>v/ Heidi Arrengaard Andersen</span>
+            </p>
+
+            <p class="contact-item">
+              <strong>Adresse</strong>
+              <span>Skibhusvej 99<br>5000 Odense C</span>
+            </p>
+
+            <p class="contact-item contact-item-inline">
+              <strong>Telefon</strong>
+              <a href="tel:66149098">66 14 90 98</a>
+            </p>
+
+            <p class="contact-item contact-item-inline">
+              <strong>Mobil</strong>
+              <a href="tel:26512651">26 51 26 51</a>
+            </p>
+          </div>
         </article>
 
-        <article class="info-card">
+        <article class="info-card booking-card">
           <h2>Åbning & Booking</h2>
-          <p>Kontakt os eller bestil tid online.
-            <br>Ved særlige ønsker til en frisørtid er du
-velkommen til at kontakte os.   
-             <br>Vi tillader os at åbne og lukke salonen efter behov.</p>
+          <p>Kontakt os gerne eller bestil tid online, når det passer dig bedst.</p>
+          <p>
+            Ved særlige ønsker til din frisørtid er du altid velkommen til at ringe,
+            så finder vi en løsning sammen.
+          </p>
+          <p class="booking-note">Vi tillader os at åbne og lukke salonen efter behov.</p>
           <a href="https://salon-heidi-32334.planway.com/" target="_blank" rel="noopener" class="hero-cta">Bestil tid</a>
         </article>
       </div>
@@ -93,6 +94,7 @@ velkommen til at kontakte os.
       <div class="container">
         <article class="map-card">
           <h2>Find os</h2>
+          <p>Du finder os centralt i Skibhuskvarteret med nem adgang og parkering bag salonen.</p>
           <iframe
             class="map-frame"
             title="Salon Heidi på Google Maps"
@@ -101,6 +103,7 @@ velkommen til at kontakte os.
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen>
           </iframe>
+          <p class="map-note">Adresse: Skibhusvej 99, 5000 Odense C</p>
         </article>
       </div>
     </section>
@@ -118,82 +121,7 @@ velkommen til at kontakte os.
     </div>
   </footer>
 
-  <script>
-    const burgerBtn = document.getElementById('burgerBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    // Detect touch device
-    const isTouchDevice = () => {
-      return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-    };
-
-    // Toggle menu on burger button click
-    burgerBtn.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-      burgerBtn.classList.toggle('open');
-      document.body.classList.toggle('menu-open', navLinks.classList.contains('open'));
-      const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
-      burgerBtn.setAttribute('aria-expanded', !expanded);
-    });
-
-    // Close menu when clicking on a link
-    const navItems = navLinks.querySelectorAll('a');
-    navItems.forEach(item => {
-      item.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        burgerBtn.classList.remove('open');
-        document.body.classList.remove('menu-open');
-        burgerBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Mobile: Close menu when clicking outside
-    if (isTouchDevice()) {
-      document.addEventListener('click', function (event) {
-        if (!event.target.closest('.burger-menu-wrap')) {
-          if (navLinks.classList.contains('open')) {
-            navLinks.classList.remove('open');
-            burgerBtn.classList.remove('open');
-            document.body.classList.remove('menu-open');
-            burgerBtn.setAttribute('aria-expanded', 'false');
-          }
-        }
-      });
-    }
-
-    // Desktop: Close menu on hover away (with delay for hover gap tolerance)
-    if (!isTouchDevice()) {
-      const burgerMenuWrap = document.querySelector('.burger-menu-wrap');
-      let closeTimeout;
-      
-      burgerMenuWrap.addEventListener('mouseleave', function () {
-        closeTimeout = setTimeout(() => {
-          navLinks.classList.remove('open');
-          burgerBtn.classList.remove('open');
-          document.body.classList.remove('menu-open');
-          burgerBtn.setAttribute('aria-expanded', 'false');
-        }, 1200);
-      });
-      
-      burgerMenuWrap.addEventListener('mouseenter', function () {
-        if (closeTimeout) clearTimeout(closeTimeout);
-      });
-
-      // Desktop accessibility: close menu with Escape
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-          navLinks.classList.remove('open');
-          burgerBtn.classList.remove('open');
-          document.body.classList.remove('menu-open');
-          burgerBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
-    // Keep header visible on this inner page
-    const header = document.querySelector(".site-header");
-    header.classList.add("scrolled");
-  </script>
+  <script src="site.js"></script>
 </body>
 
 </html>
