@@ -28,14 +28,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
-<!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
   </head>
 
 <body class="index-page">
@@ -254,92 +246,7 @@ En salon med god stemning og et godt arbejdsmiljø, hvor der er tid til den enke
        JS
   ========================== -->
 
-  <script>
-    const burgerBtn = document.getElementById('burgerBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    // Detect touch device
-    const isTouchDevice = () => {
-      return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-    };
-
-    // Toggle menu on burger button click
-    burgerBtn.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-      burgerBtn.classList.toggle('open');
-        document.body.classList.toggle('menu-open', navLinks.classList.contains('open'));
-      const expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
-      burgerBtn.setAttribute('aria-expanded', !expanded);
-    });
-
-    // Close menu when clicking on a link
-    const navItems = navLinks.querySelectorAll('a');
-    navItems.forEach(item => {
-      item.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        burgerBtn.classList.remove('open');
-          document.body.classList.remove('menu-open');
-        burgerBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Mobile: Close menu when clicking outside
-    if (isTouchDevice()) {
-      document.addEventListener('click', function (event) {
-        if (!event.target.closest('.burger-menu-wrap')) {
-          if (navLinks.classList.contains('open')) {
-            navLinks.classList.remove('open');
-            burgerBtn.classList.remove('open');
-              document.body.classList.remove('menu-open');
-            burgerBtn.setAttribute('aria-expanded', 'false');
-          }
-        }
-      });
-    }
-
-    // Desktop: Close menu on hover away (with delay for hover gap tolerance)
-    if (!isTouchDevice()) {
-      const burgerMenuWrap = document.querySelector('.burger-menu-wrap');
-      let closeTimeout;
-      
-      burgerMenuWrap.addEventListener('mouseleave', function () {
-        closeTimeout = setTimeout(() => {
-          navLinks.classList.remove('open');
-          burgerBtn.classList.remove('open');
-            document.body.classList.remove('menu-open');
-          burgerBtn.setAttribute('aria-expanded', 'false');
-        }, 1200);
-      });
-      
-      burgerMenuWrap.addEventListener('mouseenter', function () {
-        if (closeTimeout) clearTimeout(closeTimeout);
-      });
-
-        // Desktop accessibility: close menu with Escape
-        document.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') {
-            navLinks.classList.remove('open');
-            burgerBtn.classList.remove('open');
-            document.body.classList.remove('menu-open');
-            burgerBtn.setAttribute('aria-expanded', 'false');
-          }
-        });
-    }
-
-    // Header behavior: fixed style on mobile, scroll style on desktop
-    const header = document.querySelector(".site-header");
-    if (isTouchDevice()) {
-      header.classList.add("scrolled");
-    } else {
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
-    }
-  </script>
+  <script src="site.js"></script>
 
 </body>
 
