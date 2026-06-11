@@ -3,6 +3,27 @@
    ================================================== */
 
 (function () {
+  const schemaExists = document.querySelector('script[type="application/ld+json"][data-schema="salon-heidi"]');
+  if (!schemaExists) {
+    const schemaScript = document.createElement("script");
+    schemaScript.type = "application/ld+json";
+    schemaScript.setAttribute("data-schema", "salon-heidi");
+    schemaScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HairSalon",
+      name: "Salon Heidi",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Skibhusvej 99",
+        addressLocality: "Odense",
+        postalCode: "5000",
+        addressCountry: "DK"
+      },
+      telephone: "+4566149098"
+    });
+    document.head.appendChild(schemaScript);
+  }
+
   const burgerBtn = document.getElementById("burgerBtn");
   const navLinks = document.getElementById("navLinks");
 
