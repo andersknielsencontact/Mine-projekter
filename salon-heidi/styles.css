@@ -1251,6 +1251,10 @@ justify-self: center;
   max-width: 50ch;
 }
 
+.priser-minimal .brand-copy {
+  padding-left: clamp(0.55rem, 1.2vw, 1rem);
+}
+
 .brand-logos-text {
   margin: 0;
   color: #22201e;
@@ -1579,6 +1583,10 @@ justify-self: center;
 
   .brand-copy {
     max-width: 100%;
+  }
+
+  .priser-minimal .brand-copy {
+    padding-left: 0;
   }
 
   .brand-logos-text-secondary {
