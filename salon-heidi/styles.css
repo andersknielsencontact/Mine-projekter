@@ -479,8 +479,9 @@ button {
 
 .nav-links a {
   color: white;
-   transition: color 0.3s ease;
-   
+  font-weight: 700;
+  transition: color 0.3s ease;
+  justify-content: flex-start;
 }
 
 .nav-links a[aria-current="page"] {
