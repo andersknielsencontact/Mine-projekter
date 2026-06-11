@@ -31,9 +31,13 @@ body {
 
 .footer-col a {
   color: white;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 600;
   
+}
+
+.phone-mobile-only {
+  display: none;
 }
 
 @media (max-width: 700px) {
@@ -44,6 +48,14 @@ body {
   }
   .footer-col {
     min-width: unset;
+  }
+
+  .phone-desktop {
+    display: none;
+  }
+
+  .phone-mobile-only {
+    display: inline;
   }
 }
 
@@ -937,6 +949,10 @@ justify-self: center;
   color: #5f574e;
 }
 
+.contact-note .small-heading {
+  padding-bottom: 0.35rem;
+}
+
 /* =========================
    INNER PAGES
 ========================= */
@@ -947,9 +963,10 @@ justify-self: center;
 }
 
 .inner-hero {
-  padding: 5rem 0 4rem;
-
-  background: #ffffff;
+    padding: 5rem 0 4rem;
+  min-height: 220px; /* justér efter smag */
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid var(--line);
 }
 
@@ -960,6 +977,12 @@ justify-self: center;
 
 .inner-hero-content h1 {
   font-size: clamp(2.3rem, 4.6vw, 3.4rem);
+  margin-bottom: 1rem;
+}
+
+.inner-hero-content p {
+   max-width: 58ch;
+  margin: 0 auto;
 }
 
 .inner-hero-content p:last-child {
@@ -978,7 +1001,7 @@ justify-self: center;
 .inner-grid {
   display: grid;
   gap: var(--space-4);
-  margin-top: var(--space-5);
+  margin-top: 0;
 }
 
 .inner-section .inner-grid + .inner-grid {
@@ -1146,8 +1169,8 @@ justify-self: center;
 }
 
 .priser-minimal .brand-logos-section {
-  max-width: 1120px;
-  margin-inline: auto;
+  max-width: 100%;
+  margin-inline: 0;
 }
 
 .priser-minimal .info-products-block .brand-logos-section {
@@ -1252,7 +1275,7 @@ justify-self: center;
 }
 
 .priser-minimal .brand-copy {
-  padding-left: clamp(0.55rem, 1.2vw, 1rem);
+  padding-left: 0;
 }
 
 .brand-logos-text {
@@ -1357,6 +1380,11 @@ justify-self: center;
 
 .cta-content {
   max-width: 900px;
+}
+
+.cta-content .small-heading {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
 }
 
 .cta-content h2 {
