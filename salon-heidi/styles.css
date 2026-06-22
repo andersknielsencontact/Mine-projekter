@@ -704,6 +704,16 @@ width: 24px;
 
 }
 
+.hero-eyebrow {
+  margin-bottom: 2.35rem;
+  color: rgb(250, 230, 200);
+  font-size: 0.65rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  opacity: 0.78;
+}
+
 .hero-text h1 {
   color: rgb(250, 230, 200);
   display:flex;
