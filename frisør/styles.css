@@ -54,6 +54,8 @@ body {
     sans-serif;
 
   line-height: 1.6;
+
+  overflow-x: clip;
 }
 
 img {
@@ -161,6 +163,8 @@ p {
   color: black;
 
   font-weight: 700;
+
+  min-height: 44px;
 
   transition:
     .25s ease;
@@ -445,7 +449,7 @@ p {
   border-bottom:
     1px solid var(--line);
 
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
 }
 
 .service-item span:last-child {
@@ -491,19 +495,16 @@ p {
 }
 
 .stylist-photo {
-  width: 320px;
-  height: 520px;
+  width: min(100%, 320px);
+  aspect-ratio: 4 / 5;
+  height: auto;
   object-fit: cover;
-   object-position: center;
+  object-position: center;
 
   margin-inline: auto;
   margin-bottom: 1.5rem;
 
   border-radius: 4px;
-
-  object-fit: cover;
-
- 
 }
 
 .stylist-info {
@@ -730,12 +731,24 @@ p {
       repeat(2, 1fr);
   }
 
+  .stylist-card {
+    padding: 1.5rem;
+  }
+
 }
 
 @media (max-width: 700px) {
 
   .section {
     padding: 5rem 0;
+  }
+
+  .section-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .header-wrap {
+    position: relative;
   }
 
   .burger {
@@ -758,7 +771,19 @@ p {
     border-bottom:
       1px solid var(--line);
 
+    gap: .6rem;
+
     display: none;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: .75rem 1rem;
+  }
+
+  .nav-links .btn-small {
+    width: 100%;
   }
 
   .nav-links.open {
@@ -766,27 +791,36 @@ p {
   }
 
   .trust-grid,
-  .stylists-grid,
-  .gallery-grid {
+  .stylists-grid {
     grid-template-columns: 1fr;
   }
 
-  .gallery-image.large {
-    grid-column: auto;
+  .trust-card {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
 
-    height: 500px;
+  .trust-card:last-child {
+    border-bottom: none;
   }
 
   .hero-content {
     text-align: center;
+    align-items: flex-end;
+    padding-bottom: 2rem;
   }
 
   .hero-text {
     margin-inline: auto;
   }
 
+  .hero-text h1 {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+  }
+
   .hero-text p {
     margin-inline: auto;
+    font-size: 1rem;
   }
 
   .hero-actions {
@@ -811,8 +845,12 @@ p {
 
 @media (max-width: 520px) {
 
+  .container {
+    width: min(94%, 1100px);
+  }
+
   .hero-image-wrapper {
-    height: 80vh;
+    height: 72vh;
   }
 
   .trust-card {
@@ -827,6 +865,14 @@ p {
 
   .hero-actions .btn {
     width: 100%;
+  }
+
+  .stylist-card {
+    padding: 1.2rem;
+  }
+
+  .footer-wrap {
+    gap: .5rem;
   }
 
 }
