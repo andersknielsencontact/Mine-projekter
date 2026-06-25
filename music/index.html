@@ -170,7 +170,7 @@
 
               <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-2">
                 {[
-                  { tag: "STRENGE", title: "GUITAR", href: "#", image: "musikheroimg.avif" },
+                  { tag: "STRENGE", title: "GUITAR", href: "#", image: "../img/musikheroimg.avif" },
                   { tag: "VOKAL", title: "SANG", href: "#", image: "song.avif" },
                   { tag: "STRENGE", title: "BAS", href: "#", image: "bass.avif" },
                   { tag: "BLÆSE", title: "BLÆSERE", href: "#", image: "trompet.avif" },
@@ -179,7 +179,7 @@
                   { tag: "TRADITION", title: "FOLKEMUSIK", href: "#", image: "folkmusic.avif" },
                   { tag: "RYTME", title: "TROMMER", href: "#", image: "drums.avif" },
                   { tag: "VOKAL", title: "KOR", href: "#", image: "choir.avif" },
-                  { tag: "ENSEMBLE", title: "SAMMENSPIL", href: "#", image: "sammenholdimg.png" },
+                  { tag: "ENSEMBLE", title: "SAMMENSPIL", href: "#", image: "band.avif" },
                   { tag: "SCENE", title: "TEATER & DANS", href: "#", image: "dance.avif" },
                   { tag: "ARRANGEMENT", title: "EVENTS", href: "#", image: "events.avif" },
                 ].map((item) => (
@@ -215,12 +215,12 @@
           <section id="undervisere" className="scroll-mt-24 relative overflow-hidden border-y border-[#7b5a3a]/10 bg-[#e3d5bf]">
             <div className="absolute inset-0 md:hidden">
               <img
-                src="sammenholdimg.png"
-                alt="sammenhold"
+                src="../img/sammenholdimg.png"
+                alt=""
                 aria-hidden="true"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = "dance.avif";
+                  e.currentTarget.src = "../img/band.avif";
                 }}
                 className="h-full w-full object-cover object-center"
               />
@@ -230,11 +230,11 @@
             <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28 grid lg:grid-cols-2 gap-16 items-center">
               <div className="hidden md:block">
                 <img
-                  src="sammenholdimg.png"
+                  src="../img/sammenholdimg.png"
                   alt="Sammenspil og fællesskab på tværs af niveauer"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = "dance.avif";
+                    e.currentTarget.src = "../img/band.avif";
                   }}
                   className="rounded-[32px] w-full h-[460px] object-cover object-center border border-[#7b5a3a]/15"
                 />
