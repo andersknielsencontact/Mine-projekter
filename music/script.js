@@ -1,21 +1,32 @@
-const toggleButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('#site-nav');
+const header = document.querySelector('[data-site-header]');
+const toggleButton = document.querySelector('[data-menu-toggle]');
+const mobileNav = document.querySelector('#mobile-main-menu');
 
-if (toggleButton && nav) {
+if (header) {
+  const updateHeaderState = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 16);
+  };
+
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+}
+
+if (toggleButton && mobileNav) {
   toggleButton.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
+    const isOpen = mobileNav.classList.toggle('is-open');
     toggleButton.setAttribute('aria-expanded', String(isOpen));
   });
 
-  nav.querySelectorAll('a').forEach((link) => {
+  mobileNav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      nav.classList.remove('open');
+      mobileNav.classList.remove('is-open');
       toggleButton.setAttribute('aria-expanded', 'false');
     });
   });
 }
 
 const form = document.querySelector('.contact-form');
+
 if (form) {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
