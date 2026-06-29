@@ -1542,11 +1542,6 @@ justify-self: center;
 }
 
 @media (max-width: 700px) {
-
-  body.menu-open {
-    overflow: hidden;
-  }
-
   .site-header {
     background: rgba(170, 165, 158, 0.22);
     backdrop-filter: blur(6px);
@@ -1680,7 +1675,11 @@ justify-self: center;
   }
 
   .priser-minimal .brand-copy {
-    padding-left: 0;
+    padding-inline: 0.9rem;
+  }
+
+  .priser-minimal .brand-products-image {
+    padding-inline: 0.9rem;
   }
 
   .brand-logos-text-secondary {
@@ -1689,8 +1688,9 @@ justify-self: center;
   }
 
   .brand-products-image img {
-    margin-inline: auto;
-    max-width: 460px;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
   }
 
   .brand-products-image figcaption {
