@@ -944,6 +944,26 @@ justify-self: center;
   
 }
 
+  .contact-note {
+    padding: 2.5rem 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .cancellation-strip {
+    max-width: 100%;
+    margin: 1.25rem 0 1.8rem;
+    padding: 0.95rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .cancellation-label {
+    font-size: 0.75rem;
+  }
+
+  .cancellation-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 }
 
 
@@ -951,7 +971,41 @@ justify-self: center;
   padding: 4rem 1rem;
   text-align: center;
   background: #f5f1eb;
-  padding-bottom: 8rem;
+  padding-bottom: 7rem;
+  
+}
+
+.cancellation-strip {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 700px;
+  margin: 3.25rem auto 0;
+  padding: 1.35rem 1.4rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 0;
+  background: #f8f4ee;
+  box-shadow: none;
+  text-align: center;
+}
+
+.cancellation-label {
+  margin: 0;
+  color: #111111;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  margin-bottom: 1.2rem;
+  
+  
+}
+
+.cancellation-text {
+  margin: 0;
+  color: #5f574e;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  
 }
 
 .contact-note p {
@@ -1950,6 +2004,35 @@ justify-self: center;
   margin-top: 0.9rem;
 }
 
+.opening-hours {
+  display: grid;
+  gap: 0.25rem;
+  margin: 1rem 0 2.5rem;
+}
+
+.opening-hours-heading {
+  margin-bottom: 0.35rem;
+  color: #111111;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.opening-hours p {
+  margin: 0;
+  color: #22201e;
+}
+
+.opening-hours-inline {
+  max-width: 22rem;
+  margin-inline: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: center;
+}
+
 .kontakt-minimal .booking-note {
   margin-top: 1.05rem;
   padding-top: 0.9rem;
@@ -1971,16 +2054,19 @@ justify-self: center;
 }
 
 .personale-minimal .team-member {
-  padding: 1rem;
+  padding: 0.75rem;
   border-top: none;
+  text-align: left;
 }
 
 .personale-minimal .team-note {
-  margin: 4rem auto 0;
+  margin: 4.75rem auto 0;
   padding: 1.35rem 1.5rem;
   padding-top: 1.7rem;
+  padding-bottom: 1.8rem;
   max-width: 640px;
   text-align: center;
+  line-height: 1.65;
   display: grid;
   gap: 0.5rem;
   background: #f7f2ec;
@@ -2007,6 +2093,8 @@ justify-self: center;
   gap: 2.75rem;
   width: min(900px, 92%);
   margin-top: var(--space-5);
+  margin-bottom: 1rem;
+  align-items: start;
 }
 
 .personale-minimal .team-member img {
@@ -2016,16 +2104,37 @@ justify-self: center;
   height: 320px;
 }
 
+.personale-minimal .team-text {
+  margin-inline: auto;
+}
+
 .personale-minimal .team-member h3,
 .personale-minimal .team-member p,
 .personale-minimal .role {
   color: #111111;
 }
 
+.personale-minimal .team-member h3 {
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
 .personale-minimal .team-member p {
-  max-width: 34ch;
-  margin: 0.6rem auto 0;
-  line-height: 1.75;
+  max-width: none;
+  margin: 0.65rem auto 0;
+  line-height: 1.9;
+  color: #514a43;
+}
+
+.personale-minimal .team-text > p:not(.role) {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  text-align: left;
+  max-width: 45ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .personale-minimal .vacation-note {
@@ -2042,7 +2151,14 @@ justify-self: center;
 }
 
 .personale-minimal .role {
-  font-weight: 600;
+  margin-top: 0.4rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #887f74;
+  text-align: center;
 }
 
 @media (max-width: 700px) {
@@ -2079,6 +2195,7 @@ justify-self: center;
     grid-template-columns: 1fr;
     gap: 2.25rem;
     margin-top: var(--space-4);
+    margin-bottom: 0.75rem;
   }
 
   .personale-minimal .team-member {
@@ -2087,7 +2204,11 @@ justify-self: center;
   }
 
   .personale-minimal .team-member img {
-    height: 360px;
+    height: 340px;
+  }
+
+  .personale-minimal .team-text {
+    max-width: 100%;
   }
 
   .personale-minimal .team-section-inner {
