@@ -46,12 +46,32 @@
     burgerBtn.setAttribute("aria-expanded", "false");
   };
 
+  const syncMenuScrollLock = () => {
+    const shouldLock = window.matchMedia("(max-width: 700px)").matches && navLinks.classList.contains("open");
+    document.body.classList.toggle("menu-open", shouldLock);
+  };
+
+  // Prevent stale locked-scroll state when returning via history/bfcache.
+  closeMenu();
+
   burgerBtn.addEventListener("click", function () {
     navLinks.classList.toggle("open");
     burgerBtn.classList.toggle("open");
-    document.body.classList.toggle("menu-open", navLinks.classList.contains("open"));
+    syncMenuScrollLock();
     const expanded = burgerBtn.getAttribute("aria-expanded") === "true";
     burgerBtn.setAttribute("aria-expanded", String(!expanded));
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 700) {
+      closeMenu();
+      return;
+    }
+    syncMenuScrollLock();
+  });
+
+  window.addEventListener("pageshow", function () {
+    closeMenu();
   });
 
   const navItems = navLinks.querySelectorAll("a");
