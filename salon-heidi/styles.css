@@ -1316,7 +1316,7 @@ justify-self: center;
 .brand-logos-section {
   margin-top: 8rem;
   text-align: center;
-  padding: 2.5rem 0 0.75rem;
+  padding: 2.5rem 0 1rem;
 }
 
 .brand-logos-section h2 {
@@ -1340,7 +1340,8 @@ justify-self: center;
 }
 
 .priser-minimal .brand-copy {
-  padding-left: 0;
+  max-width: none;
+  padding-left: clamp(1rem, 1.5vw, 1.35rem);
 }
 
 .brand-logos-text {
@@ -1621,7 +1622,7 @@ justify-self: center;
 
   .brand-logos-section {
     margin-top: var(--space-4);
-    padding: 1.5rem 0 0.5rem;
+    padding: 1.5rem 0 0.65rem;
   }
 
   .priser-minimal .info-products-block {
@@ -1671,7 +1672,7 @@ justify-self: center;
     margin: 0;
     font-size: 1rem;
     line-height: 1.55;
-    text-align: center;
+    text-align: left;
   }
 
   .brand-copy {
@@ -1932,14 +1933,21 @@ justify-self: center;
   background: transparent;
 }
 
+.kontakt-minimal .contact-card .contact-notes-card {
+  margin-top: 1.1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
 .kontakt-minimal .contact-notes-card h2 {
   margin-bottom: 0.9rem;
 }
 
 .kontakt-minimal .contact-notes-card p {
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.55rem;
   color: #22201e;
-  line-height: 1.7;
+  line-height: 1.62;
+  max-width: 46ch;
 }
 
 .kontakt-minimal .contact-notes-card p:last-child {
@@ -1947,7 +1955,7 @@ justify-self: center;
 }
 
 .kontakt-minimal .info-card .hero-cta {
-  margin-top: 1.25rem;
+  margin-top: 0.45rem;
 }
 
 .kontakt-minimal .info-card a[href^="tel:"] {
@@ -2010,6 +2018,35 @@ justify-self: center;
   margin: 1rem 0 2.5rem;
 }
 
+.kontakt-minimal .opening-hours {
+  margin: 1rem 0 1.3rem;
+}
+
+.kontakt-minimal .opening-hours-label {
+  margin-bottom: 0.55rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kontakt-minimal .opening-hours-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.45rem 1.25rem;
+  align-items: baseline;
+}
+
+.kontakt-minimal .opening-day {
+  color: #3e3832;
+  text-align: left;
+}
+
+.kontakt-minimal .opening-time {
+  color: #111111;
+  text-align: right;
+  font-weight: 600;
+}
+
 .opening-hours-heading {
   margin-bottom: 0.35rem;
   color: #111111;
@@ -2034,10 +2071,39 @@ justify-self: center;
 }
 
 .kontakt-minimal .booking-note {
-  margin-top: 1.05rem;
-  padding-top: 0.9rem;
+  margin-top: 0.6rem;
+  padding-top: 0.45rem;
   border-top: none;
   color: #5f574e;
+}
+
+.kontakt-minimal .booking-cta-block {
+  margin-top: 0.35rem;
+  display: grid;
+  gap: 0.55rem;
+  justify-items: start;
+}
+
+.kontakt-minimal .booking-cta-note {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #5f574e;
+}
+
+.kontakt-minimal .map-open-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  color: #111111;
+  text-decoration: underline;
+  text-decoration-color: rgba(17, 17, 17, 0.35);
+  text-underline-offset: 0.22em;
+}
+
+.kontakt-minimal .map-open-link:hover {
+  color: #1f5dff;
+  text-decoration-color: #1f5dff;
 }
 
 /* =========================
@@ -2189,6 +2255,44 @@ justify-self: center;
   .kontakt-minimal .booking-card {
     padding: 0;
     border-top: none;
+  }
+
+  .kontakt-minimal .contact-card .contact-notes-card {
+    margin-top: 0.95rem;
+    padding-top: 0.6rem;
+  }
+
+  .kontakt-minimal .contact-notes-card p {
+    margin: 0 0 0.45rem;
+    line-height: 1.56;
+  }
+
+  .kontakt-minimal .opening-hours {
+    margin: 0.85rem 0 1.05rem;
+  }
+
+  .kontakt-minimal .opening-hours-grid {
+    gap: 0.4rem 0.9rem;
+  }
+
+  .kontakt-minimal .opening-day,
+  .kontakt-minimal .opening-time {
+    font-size: 0.97rem;
+  }
+
+  .kontakt-minimal .booking-note {
+    margin-top: 0.45rem;
+    padding-top: 0.35rem;
+  }
+
+  .kontakt-minimal .booking-cta-block {
+    margin-top: 0.15rem;
+    gap: 0.45rem;
+  }
+
+  .kontakt-minimal .booking-cta-note {
+    font-size: 0.88rem;
+    line-height: 1.4;
   }
 
   .personale-minimal .team-grid {
