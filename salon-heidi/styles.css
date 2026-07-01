@@ -1018,6 +1018,28 @@ justify-self: center;
   padding-bottom: 0.35rem;
 }
 
+.contact-note .contact-phone-intro {
+  color: #5f574e;
+}
+
+.contact-note .contact-phone-secondary {
+  color: #5f574e;
+}
+
+.contact-note .phone-desktop,
+.contact-note .phone-mobile-only {
+  white-space: nowrap;
+  font-weight: 400;
+  padding-top: 0.12rem;
+}
+
+.contact-note .phone-desktop::after,
+.contact-note .phone-mobile-only::after {
+  content: "";
+  display: block;
+  height: 0.8rem;
+}
+
 /* =========================
    INNER PAGES
 ========================= */
@@ -1361,7 +1383,6 @@ justify-self: center;
 
 .brand-products-image {
   margin: 0;
-  
 }
 
 .brand-products-image img {
@@ -1381,25 +1402,32 @@ justify-self: center;
 
 .brand-logos-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1.1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 2.2rem;
   align-items: center;
-   
-  
+  justify-items: stretch;
 }
 
 .brand-logos-grid img {
   width: 100%;
-  max-height: 48px;
+  height: 92px;
+  padding: 0.65rem 0.8rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  object-position: center;
   object-fit: contain;
   filter: none;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+  opacity: 0.95;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .brand-logos-grid img:hover {
   opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .inner-hero-content h1,
@@ -1829,15 +1857,16 @@ justify-self: center;
   }
 
   .brand-logos-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .brand-logos-grid img {
-    max-height: 54px;
+    height: 84px;
+    padding: 0.6rem;
   }
 
   .brand-products-image img {
-    border-radius: 12px;
+    border-radius: 16px;
   }
 
 }
