@@ -26,7 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  min-width: 180px;
+  min-width: 220px;
 }
 
 .footer-col a {
@@ -43,11 +43,30 @@ body {
 @media (max-width: 700px) {
   .footer-wrap {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
+
+  .footer-col.footer-info-grid {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+
   .footer-col {
     min-width: unset;
+  }
+
+  .parking-col {
+    margin-left: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-info-grid .footer-block {
+    width: 100%;
+    align-items: flex-start;
   }
 
   .phone-desktop {
@@ -132,14 +151,6 @@ button {
 
 .index-page .team-grid {
   width: min(1000px, 92%);
-}
-
-.index-page .footer-wrap {
-  justify-content: center;
-}
-
-.index-page .footer-col {
-  min-width: 0;
 }
 
 .index-page .social-icon {
@@ -1120,6 +1131,164 @@ justify-self: center;
 }
 
 /* =========================
+   PRIVATLIVSPOLITIK.HTML
+========================= */
+
+.privatliv-minimal .inner-hero {
+  min-height: auto;
+  padding: 4.25rem 0 2.5rem;
+}
+
+.privatliv-minimal .inner-hero-content {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.privatliv-minimal .inner-hero-content h1 {
+  width: 100%;
+}
+
+.privatliv-minimal .inner-hero-content p {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.privatliv-minimal .inner-hero-content p + p {
+  margin-top: 0.95rem;
+}
+
+.privacy-update-box {
+  display: inline-flex;
+  margin-top: 2rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: #f8f4ee;
+  color: #111111;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.privatliv-minimal .inner-section {
+  padding-top: 1rem;
+}
+
+.privacy-layout {
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+.privacy-toc {
+  margin-bottom: 2rem;
+  padding: 1rem 0.9rem 1rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  background: #f8f4ee;
+}
+
+.privacy-toc-label {
+  margin-bottom: 0.75rem;
+  color: #111111;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.privacy-toc nav {
+  display: grid;
+  gap: 0.38rem;
+  justify-items: start;
+}
+
+.privacy-toc a {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  color: #111111;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-decoration-color: rgba(17, 17, 17, 0.28);
+  text-underline-offset: 0.16em;
+}
+
+.privacy-content {
+  display: grid;
+  gap: 2.25rem;
+  padding-top: 2.25rem;
+}
+
+.privacy-section {
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  scroll-margin-top: 6.4rem;
+}
+
+.privacy-section:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.privacy-section h2 {
+  margin-bottom: 0.8rem;
+  color: #111111;
+  font-size: 1.5rem;
+}
+
+.privacy-section h3 {
+  margin: 0 0 0.55rem;
+  color: #111111;
+  font-size: 1.05rem;
+}
+
+.privacy-section p,
+.privacy-section li {
+  color: #111111;
+  line-height: 1.72;
+}
+
+.privacy-section p + p,
+.privacy-section ul + p,
+.privacy-section .privacy-subsection + .privacy-subsection {
+  margin-top: 0.85rem;
+}
+
+.privacy-section ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.privacy-subsection {
+  margin-top: 1rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 14px;
+  background: transparent;
+}
+
+.privacy-subsection-toned {
+  background: #f8f4ee;
+}
+
+.privacy-note {
+  color: #5f574e;
+  font-size: 0.95rem;
+}
+
+#rettigheder ul {
+  gap: 0.7rem;
+}
+
+/* =========================
    PRISER.HTML
 ========================= */
 
@@ -1418,14 +1587,7 @@ justify-self: center;
   object-position: center;
   object-fit: contain;
   filter: none;
-  opacity: 0.95;
-  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.brand-logos-grid img:hover {
   opacity: 1;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .inner-hero-content h1,
@@ -1488,44 +1650,193 @@ justify-self: center;
 ========================= */
 
 .site-footer {
-  padding: 4rem 0;
+  padding: 2.25rem 0 1.5rem;
+  background: #111111;
+  color: #ffffff;
+}
 
-  background: #111;
-
-  color: white;
+.site-footer .container {
+  width: min(980px, 86%);
 }
 
 .footer-wrap {
   display: flex;
 
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   gap: 1rem;
 }
 
 .footer-wrap p {
   margin: 0;
+  color: #ffffff;
+}
 
-  color: white;
+.site-footer a {
+  min-height: 0;
+  min-width: 0;
+  display: inline;
+}
+
+.site-footer .footer-col a {
+  color: #ffffff;
 }
 
 .footer-col {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.footer-col.footer-info-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: start;
+  gap: 4.2rem;
   flex-direction: row;
-  align-items: center;
-  gap: clamp(1rem, 2vw, 1.75rem);
+}
+
+.footer-info-grid .footer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  line-height: 1.35;
+}
+
+.footer-info-grid .footer-block::before {
+  display: block;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
+
+.footer-info-grid .footer-address::before {
+  content: "Salon Heidi";
+}
+
+.footer-info-grid .footer-contact::before {
+  content: "Kontakt";
+}
+
+.footer-info-grid .footer-legal-info::before {
+  content: "Information";
+}
+
+.footer-info-grid .footer-address {
+  max-width: 290px;
+}
+
+.footer-info-grid .footer-contact,
+.footer-info-grid .footer-legal-info {
+  align-self: flex-start;
+}
+
+.footer-info-grid .footer-address p,
+.footer-info-grid .footer-contact p,
+.footer-info-grid .footer-legal-info p {
+  margin: 0;
+}
+
+.footer-meta-label {
+  color: rgb(255 255 255 / 72%);
+  font-weight: 500;
+}
+
+.footer-info-grid .footer-legal-info a {
+  color: #fffdf6;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgb(255 255 255 / 85%);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-info-grid .footer-legal-info a:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+.footer-info-grid .footer-legal-info a[aria-current="page"] {
+  display: inline-block;
+  padding: 0.08rem 0.42rem;
+  border: 1px solid rgb(255 255 255 / 38%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 10%);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-info-grid .footer-legal-info a:focus-visible {
+  outline: 2px solid #fffdf6;
+  outline-offset: 2px;
 }
 
 .parking-col {
-  margin-left: auto;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 1.25rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+  align-items: center;
+  text-align: left;
+}
+
+.parking-col p {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  margin-top: 35px;
+}
+
+.parking-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 20%;
+  background: #2f66ff;
+  color: #ffffff;
+  font-size: 0;
+  line-height: 0;
+}
+
+.parking-icon::before {
+  content: "P";
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+  
+}
+
+.parking-text {
+  font-size: 18px;
+}
+
+.parking-col em {
+  font-style: normal;
+}
+
+.parking-highlight {
+  font-weight: 700;
 }
 
 .footer-gap {
   display: inline-block;
-  width: clamp(1rem, 2vw, 1.75rem);
+  width: clamp(.2rem, 2vw, 1.75rem);
   height: 0;
 }
+
 
 
 /* =========================
@@ -1601,6 +1912,10 @@ justify-self: center;
 
   .inner-section {
     padding: var(--space-5) 0 4.25rem;
+  }
+
+  .privacy-section {
+    scroll-margin-top: 5.6rem;
   }
 
   .inner-grid {
@@ -1802,25 +2117,43 @@ justify-self: center;
     text-align: center;
   }
 
+  .site-footer .container {
+    width: var(--container);
+  }
+
   .footer-wrap {
     flex-direction: column;
 
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.7rem;
   }
 
   .footer-col {
     flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .footer-col.footer-info-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .footer-info-grid .footer-block {
+    align-items: flex-start;
   }
 
   .parking-col {
     margin-left: 0;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .footer-col p {
-    text-align: center;
+    text-align: left;
   }
 
   .brand-logos-grid {
