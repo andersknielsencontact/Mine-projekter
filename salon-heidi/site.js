@@ -46,6 +46,14 @@
     burgerBtn.setAttribute("aria-expanded", "false");
   };
 
+  let closeTimeout;
+  const clearCloseTimeout = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      closeTimeout = undefined;
+    }
+  };
+
   const syncMenuScrollLock = () => {
     const shouldLock = window.matchMedia("(max-width: 700px)").matches && navLinks.classList.contains("open");
     document.body.classList.toggle("menu-open", shouldLock);
@@ -55,6 +63,7 @@
   closeMenu();
 
   burgerBtn.addEventListener("click", function () {
+    clearCloseTimeout();
     navLinks.classList.toggle("open");
     burgerBtn.classList.toggle("open");
     syncMenuScrollLock();
@@ -67,6 +76,7 @@
       closeMenu();
       return;
     }
+    clearCloseTimeout();
     syncMenuScrollLock();
   });
 
@@ -87,17 +97,23 @@
     });
   } else {
     const burgerMenuWrap = document.querySelector(".burger-menu-wrap");
-    let closeTimeout;
 
     if (burgerMenuWrap) {
       burgerMenuWrap.addEventListener("mouseleave", function () {
-        closeTimeout = setTimeout(closeMenu, 1200);
+        if (window.matchMedia("(max-width: 700px)").matches) {
+          return;
+        }
+
+        clearCloseTimeout();
+        closeTimeout = setTimeout(function () {
+          if (!window.matchMedia("(max-width: 700px)").matches) {
+            closeMenu();
+          }
+        }, 1200);
       });
 
       burgerMenuWrap.addEventListener("mouseenter", function () {
-        if (closeTimeout) {
-          clearTimeout(closeTimeout);
-        }
+        clearCloseTimeout();
       });
     }
 
@@ -107,6 +123,85 @@
       }
     });
   }
+
+  // Hidden easter egg: type KROG to show a subtle creator signature.
+  const easterSequence = "KROG";
+  let easterBuffer = "";
+  let easterHideTimer;
+
+  const showEasterNotice = () => {
+    let notice = document.querySelector(".easter-egg-notice");
+
+    if (!notice) {
+      notice = document.createElement("div");
+      notice.className = "easter-egg-notice";
+      notice.setAttribute("role", "status");
+      notice.setAttribute("aria-live", "polite");
+      notice.textContent = "Crafted by Krog Frontend";
+      Object.assign(notice.style, {
+        position: "fixed",
+        right: "14px",
+        bottom: "14px",
+        zIndex: "9999",
+        padding: "0.35rem 0.55rem",
+        borderRadius: "999px",
+        border: "1px solid rgba(255, 255, 255, 0.34)",
+        background: "rgba(17, 17, 17, 0.84)",
+        color: "#f5f5f5",
+        fontSize: "0.68rem",
+        letterSpacing: "0.02em",
+        backdropFilter: "blur(2px)",
+        opacity: "0",
+        transform: "translateY(6px)",
+        transition: "opacity 0.2s ease, transform 0.2s ease",
+        pointerEvents: "none"
+      });
+      document.body.appendChild(notice);
+    }
+
+    requestAnimationFrame(() => {
+      notice.style.opacity = "1";
+      notice.style.transform = "translateY(0)";
+    });
+
+    if (easterHideTimer) {
+      clearTimeout(easterHideTimer);
+    }
+
+    easterHideTimer = setTimeout(() => {
+      notice.style.opacity = "0";
+      notice.style.transform = "translateY(6px)";
+    }, 2200);
+  };
+
+  document.addEventListener("keydown", function (event) {
+    if (event.altKey || event.ctrlKey || event.metaKey) {
+      return;
+    }
+
+    const target = event.target;
+    if (
+      target &&
+      (
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.tagName === "SELECT" ||
+        target.isContentEditable
+      )
+    ) {
+      return;
+    }
+
+    if (!event.key || event.key.length !== 1) {
+      return;
+    }
+
+    easterBuffer = (easterBuffer + event.key.toUpperCase()).slice(-easterSequence.length);
+    if (easterBuffer === easterSequence) {
+      easterBuffer = "";
+      showEasterNotice();
+    }
+  });
 
   /* ==================================================
      INDEX.HTML
