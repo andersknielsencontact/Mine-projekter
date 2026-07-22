@@ -1,6 +1,6 @@
 /* ==================================================
-   FAE LLES NAVIGATION (ALLE SIDER)
-   ================================================== */
+  FAELLES NAVIGATION (ALLE SIDER)
+  ================================================== */
 
 (function () {
   const schemaExists = document.querySelector('script[type="application/ld+json"][data-schema="salon-heidi"]');
@@ -66,9 +66,16 @@
     clearCloseTimeout();
     navLinks.classList.toggle("open");
     burgerBtn.classList.toggle("open");
+    const isOpen = navLinks.classList.contains("open");
+    burgerBtn.setAttribute("aria-expanded", String(isOpen));
     syncMenuScrollLock();
-    const expanded = burgerBtn.getAttribute("aria-expanded") === "true";
-    burgerBtn.setAttribute("aria-expanded", String(!expanded));
+
+    if (isOpen && window.matchMedia("(max-width: 700px)").matches) {
+      const firstMenuLink = navLinks.querySelector("a[href]");
+      if (firstMenuLink) {
+        firstMenuLink.focus();
+      }
+    }
   });
 
   window.addEventListener("resize", function () {
@@ -117,12 +124,39 @@
       });
     }
 
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeMenu();
-      }
-    });
   }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && navLinks.classList.contains("open")) {
+      closeMenu();
+      burgerBtn.focus();
+      return;
+    }
+
+    if (event.key !== "Tab") {
+      return;
+    }
+
+    if (!window.matchMedia("(max-width: 700px)").matches || !navLinks.classList.contains("open")) {
+      return;
+    }
+
+    const focusable = navLinks.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    if (!focusable.length) {
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
 
   // Hidden easter egg: type KROG to show a subtle creator signature.
   const easterSequence = "KROG";
