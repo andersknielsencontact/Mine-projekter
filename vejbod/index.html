@@ -34,6 +34,18 @@
 
         <div class="sign-brace"></div>
 
+        <button
+            class="sign-toggle"
+            type="button"
+            aria-label="Åbn menu"
+            aria-expanded="false"
+            aria-controls="signBoard"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <div class="hanger left">
             <span class="ring">O</span>
             <span class="ring">O</span>
@@ -46,7 +58,7 @@
             <span class="ring">O</span>
         </div>
 
-        <div class="sign-board">
+        <div class="sign-board" id="signBoard">
             <a
                 href="https://www.google.com/maps/search/?api=1&query=Dianalundvej+15"
                 class="address-sign"
@@ -58,9 +70,9 @@
 
             <nav class="main-nav" aria-label="Primær navigation">
                 
-                <a href="#sortiment">Vores tilgang</a>
-                <a href="#galleri">Galleri</a>
-                <a href="#kontakt">Find os</a>
+                <a href="#tilgang">Vores tilgang</a>
+                <a href="#racer">Racerne</a>
+                <a href="#kontakt">Tak for besøget</a>
             </nav>
 
             <span class="nail nail-top-left"></span>
@@ -81,9 +93,6 @@
 
             <div class="hero-shade"></div>
 
-            <div class="hero-heading">
-                <h1>Niløse Vejbod</h1>
-            </div>
             <div class="hero-heading">
     <h1>Niløse Vejbod</h1>
     <p>En lille vejbod med omtanke</p>
@@ -124,7 +133,7 @@
     </div>
 </section>
 
-        <section class="intro-section" id="sortiment">
+        <section class="intro-section" id="tilgang">
     <div class="section-inner">
         <div class="intro-grid">
             <article class="intro-panel">
@@ -300,5 +309,7 @@
     </div>
 </section>
     </main>
+
+    <script src="mobile-menu.js"></script>
 </body>
 </html>
