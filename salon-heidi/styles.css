@@ -1238,7 +1238,7 @@ justify-self: center;
 
 .privacy-section {
   padding: 1.25rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.055);
   scroll-margin-top: 6.4rem;
 }
 
@@ -1288,6 +1288,14 @@ justify-self: center;
 
 .privacy-subsection-toned {
   background: #f8f4ee;
+}
+
+.privacy-section#opbevaring {
+  padding-top: calc(1.25rem + 1.5rem);
+}
+
+.privacy-section#opbevaring .privacy-subsection-toned {
+  background: #f1e9dd;
 }
 
 .privacy-note {
@@ -2639,7 +2647,7 @@ justify-self: center;
 }
 
 .personale-minimal .team-text > p:not(.role) {
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 0.3rem;
   padding-top: 0.75rem;
   border-top: 1px solid rgba(17, 17, 17, 0.08);
