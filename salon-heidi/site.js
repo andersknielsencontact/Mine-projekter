@@ -247,20 +247,27 @@
   }
 
   if (document.body.classList.contains("index-page")) {
-    if (isTouchDevice()) {
-      header.classList.add("scrolled");
-    } else {
-      const updateHeaderOnScroll = () => {
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      };
+    const followSection = document.querySelector(".follow-section");
 
-      updateHeaderOnScroll();
-      window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
-    }
+    const getScrollTriggerY = () => {
+      if (!followSection) {
+        return 50;
+      }
+
+      return Math.max(0, followSection.offsetTop - header.offsetHeight);
+    };
+
+    const updateHeaderOnScroll = () => {
+      if (window.scrollY >= getScrollTriggerY()) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    };
+
+    updateHeaderOnScroll();
+    window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
+    window.addEventListener("resize", updateHeaderOnScroll);
   }
 
   /* ==================================================
