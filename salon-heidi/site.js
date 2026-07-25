@@ -248,8 +248,17 @@
 
   if (document.body.classList.contains("index-page")) {
     const followSection = document.querySelector(".follow-section");
+    const mobileScrollTriggerY = 8;
+
+    const isMobileView = () => {
+      return window.matchMedia("(max-width: 700px)").matches;
+    };
 
     const getScrollTriggerY = () => {
+      if (isMobileView()) {
+        return mobileScrollTriggerY;
+      }
+
       if (!followSection) {
         return 50;
       }
