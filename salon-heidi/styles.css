@@ -2777,7 +2777,7 @@ justify-self: center;
 
   .kontakt-minimal .map-card h2 {
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .kontakt-minimal .map-card p {
@@ -2785,7 +2785,15 @@ justify-self: center;
   }
 
   .kontakt-minimal .map-card {
-    padding: 1rem;
+    padding: 1rem 0;
+  }
+
+  .kontakt-minimal .inner-section > .container {
+  padding-inline: 0;
+  }
+
+  .kontakt-minimal .inner-hero-content h1 {
+    font-size: clamp(1.85rem, 6.4vw, 2.25rem);
   }
 
   .kontakt-minimal .map-section {
@@ -2796,6 +2804,11 @@ justify-self: center;
   .kontakt-minimal .booking-card {
     padding: 0;
     border-top: none;
+  }
+
+  .kontakt-minimal .contact-card h2,
+  .kontakt-minimal .booking-card h2 {
+    font-size: 1.1rem;
   }
 
   .kontakt-minimal .contact-card .contact-notes-card {
