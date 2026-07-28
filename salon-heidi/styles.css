@@ -1967,6 +1967,12 @@ justify-self: center;
 }
 
 @media (max-width: 700px) {
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+
   .site-header {
     background: rgba(170, 165, 158, 0.22);
     backdrop-filter: blur(6px);
