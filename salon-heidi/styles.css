@@ -1967,12 +1967,6 @@ justify-self: center;
 }
 
 @media (max-width: 700px) {
-  body.menu-open {
-    overflow: hidden;
-    touch-action: none;
-    overscroll-behavior: none;
-  }
-
   .site-header {
     background: rgba(170, 165, 158, 0.22);
     backdrop-filter: blur(6px);
@@ -2877,6 +2871,12 @@ justify-self: center;
 
   .personale-minimal .team-section-inner {
     padding: var(--space-5) 0 4.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .privatliv-minimal .inner-section > .container {
+    width: 88%;
   }
 }
 
