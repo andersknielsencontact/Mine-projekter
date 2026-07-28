@@ -1796,7 +1796,7 @@ justify-self: center;
 
 .footer-info-grid .footer-block::before {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   color: var(--footer-fg);
   font-weight: 700;
   font-size: 1.05rem;
@@ -2227,11 +2227,15 @@ justify-self: center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.3rem;
+    gap: 1.15rem;
   }
 
   .footer-info-grid .footer-block {
     align-items: flex-start;
+  }
+
+  .footer-info-grid .footer-block::before {
+    margin-bottom: 0.35rem;
   }
 
   .parking-col {
@@ -2340,12 +2344,12 @@ justify-self: center;
 
 .kontakt-minimal .map-card {
   overflow: hidden;
-  max-width: 1040px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: clamp(1.25rem, 2vw, 1.8rem);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+ 
   border-radius: 12px;
-  background: #fbf8f4;
+  
 }
 
 .kontakt-minimal .map-card h2 {
@@ -2360,13 +2364,52 @@ justify-self: center;
 
 .kontakt-minimal .find-us-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-  align-items: center;
+  grid-template-columns: minmax(0, 1.08fr) minmax(290px, 460px);
+  align-items: start;
   gap: clamp(1.2rem, 2.6vw, 2.2rem);
 }
 
 .kontakt-minimal .find-us-text {
-  max-width: 52ch;
+  max-width: 58ch;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.kontakt-minimal .map-intro {
+  margin: 0;
+  color: #5f574e;
+}
+
+.kontakt-minimal .map-address-card {
+  margin-top: 0.15rem;
+  padding: 0.8rem 0 0.45rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.16);
+  background: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.75rem;
+  
+}
+
+.kontakt-minimal .map-address-title {
+  margin: 0;
+  color: #111111;
+  
+}
+
+.kontakt-minimal .map-address-lines {
+  margin: 0;
+  color: #4a433c;
+}
+
+.kontakt-minimal .map-card p.map-address-title,
+.kontakt-minimal .map-card p.map-address-lines {
+  margin: 0;
+}
+
+.kontakt-minimal .map-action-group {
+  margin-top: 0;
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
 }
 
 .kontakt-minimal .find-us-image-wrap {
@@ -2385,38 +2428,12 @@ justify-self: center;
   width: 100%;
   display: block;
   object-fit: cover;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   transition: transform 0.28s ease;
 }
 
-.kontakt-minimal .find-us-image-overlay {
-  position: absolute;
-  inset: auto 0 0;
-  padding: 0.7rem 0.9rem;
-  background: linear-gradient(to top, rgba(17, 17, 17, 0.72), rgba(17, 17, 17, 0));
-  color: #fffaf3;
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.kontakt-minimal .find-us-image-link:hover .find-us-image,
-.kontakt-minimal .find-us-image-link:focus-visible .find-us-image {
-  transform: scale(1.02);
-}
-
-.kontakt-minimal .find-us-image-link:hover .find-us-image-overlay,
-.kontakt-minimal .find-us-image-link:focus-visible .find-us-image-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.kontakt-minimal .find-us-image-link:focus-visible {
-  outline: 2px solid #1f5dff;
-  outline-offset: 2px;
+.kontakt-minimal .find-us-image-link:hover .find-us-image {
+  transform: scale(1.01);
 }
 
 .kontakt-minimal .map-note {
@@ -2426,6 +2443,7 @@ justify-self: center;
 }
 
 .kontakt-minimal .map-note.parking-note {
+  margin: 0;
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
@@ -2602,7 +2620,7 @@ justify-self: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.2rem;
+  margin-top: 0;
   padding: 0.62rem 0.95rem;
   border-radius: 6px;
   border: 1px solid rgba(17, 17, 17, 0.22);
