@@ -1355,17 +1355,12 @@ justify-self: center;
   background: transparent;
 }
 
-.privacy-subsection-toned {
-  background: #f8f4ee;
-}
 
 .privacy-section#opbevaring {
   padding-top: calc(1.25rem + 1.5rem);
 }
 
-.privacy-section#opbevaring .privacy-subsection-toned {
-  background: #f1e9dd;
-}
+
 
 .privacy-note {
   color: #5f574e;
