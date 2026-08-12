@@ -1,1182 +1,324 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anders Nielsen | Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-
-    .hero-tags {
-      display: flex;
-      gap: 0.7em;
-      margin: 0.7rem 0 1.2rem 0;
-      flex-wrap: wrap;
-    }
-    .hero-tag {
-      background: #e0f7f3;
-      color: #1abc9c;
-      font-weight: 600;
-      font-size: 1.02rem;
-      padding: 0.32em 1.1em;
-      border-radius: 16px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 1px 6px rgba(26,188,156,0.07);
-      border: 1px solid #b6e6fa;
-      transition: background 0.2s, color 0.2s;
-    }
-    .hero-tag:hover {
-      background: #1abc9c;
-      color: #fff;
-    }
-
-    .hero-portrait-wrap {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-    }
-    .hero-portrait {
-      width: 320px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #23242a;
-      background: #222;
-      box-shadow: 0 4px 32px rgba(0,195,255,0.13);
-      margin-bottom: 1.2rem;
-      position: relative;
-      z-index: 2;
-      /* Overlap effect */
-      margin-top: 0;
-      margin-bottom: -60px;
-      box-shadow: 0 12px 48px 0 rgba(0,195,255,0.10);
-    }
-    @media (max-width: 600px) {
-      .hero-portrait {
-        width: 160px;
-        height: 160px;
-        margin-bottom: -30px;
-      }
-    }
-
-    .scroll-cue {
-      position: absolute;
-      left: 50%;
-      bottom: 24px;
-      transform: translateX(-50%);
-      z-index: 10;
-      animation: bounce 1.7s infinite;
-      opacity: 0.7;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(12px); }
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    .project-card {
-      background: #fff;
-      border: 1px solid #e6f3f7;
-      border-radius: 28px;
-      overflow: hidden;
-      transition: 0.3s cubic-bezier(.4,0,.2,1);
-      box-shadow: 0 2px 16px rgba(0,195,255,0.04);
-      display: flex;
-      flex-direction: column;
-      min-height: 420px;
-    }
-    .project-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(0,195,255,0.13);
-      border-color: #00c3ff44;
-    }
-    .project-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      filter: brightness(0.97) contrast(1.08);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .project-content {
-      padding: 2rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .project-content h3 {
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #00c3ff;
-      letter-spacing: -0.5px;
-    }
-    .project-content p {
-      color: #23242a;
-      margin-bottom: 1.5rem;
-      font-size: 1.08rem;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f7fafc;
-      color: #23242a;
-      line-height: 1.6;
-      letter-spacing: 0.01em;
-      transition: background 0.3s, color 0.3s;
-      border: 2.5px solid #e0e0e0;
-      border-radius: 28px;
-      max-width: 1200px;
-      margin: 32px auto 32px auto;
-      box-shadow: 0 6px 48px 0 rgba(60,60,60,0.07);
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-    @media (max-width: 1300px) {
-      body {
-        margin: 0.5rem;
-        border-radius: 0;
-        max-width: 100vw;
-        border-width: 1.5px;
-      }
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.2s, box-shadow 0.2s;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Section separation */
-    section:not(:first-of-type) {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      margin-top: 4rem;
-      padding-top: 5rem;
-    }
-
-    /* Modern Navbar */
-    nav {
-      position: relative;
-      background: rgba(255,255,255,0.92);
-      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
-      z-index: 1000;
-      padding: 1.2rem 0 0 0;
-      width: 100vw;
-      max-width: 1200px;
-      margin: 0 auto 2.5rem auto;
-      border-radius: 0 0 18px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2.5rem;
-    }
-
-    .nav-links a {
-      color: #1abc9c;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      opacity: 0.85;
-      transition: opacity 0.2s, color 0.2s, box-shadow 0.2s;
-      padding: 0.2em 0.7em;
-      border-radius: 8px;
-    }
-    .nav-links a:hover {
-      color: #fff;
-      background: #1abc9c;
-      box-shadow: 0 2px 8px #1abc9c22;
-      opacity: 1;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 44vh;
-      padding: 2.5rem 0 8.5rem 0;
-      width: 100%;
-      max-width: 100%;
-      border-radius: 0 0 32px 32px;
-      box-shadow: 0 8px 32px rgba(26,188,156,0.07);
-      position: relative;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background:
-        linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)),
-        url('imghero.avif') center center/cover no-repeat,
-        #e6f3f7;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    .hero-content {
-      max-width: 540px;
-      width: 100%;
-      padding: 3.5rem 1.5rem 2rem 1.5rem;
-      gap: 1.1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1.1rem;
-      text-align: center;
-      width: 100%;
-      color: #0b3a2d;
-      text-shadow: 0 2px 16px rgba(26,188,156,0.10), 0 1px 0 #fff;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-    .hero p {
-      color: #137a5a;
-      text-shadow: 0 1px 8px #fff, 0 1px 0 #e0f7f3;
-      font-weight: 600;
-    }
-    .hero img, .hero-portrait {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 1rem 1.8rem;
-      border-radius: 16px;
-      font-weight: 500;
-      transition: 0.3s cubic-bezier(.4,0,.2,1);
-      display: inline-block;
-      font-size: 1.1rem;
-      border: none;
-      margin-right: 0.5em;
-      margin-bottom: 0.5em;
-    }
-    .btn-primary {
-      background: #1abc9c;
-      color: #fff;
-      font-weight: 700;
-      border: none;
-      box-shadow: 0 2px 12px rgba(26,188,156,0.10);
-    }
-    .btn-primary:hover {
-      background: #159c82;
-      color: #fff;
-      box-shadow: 0 4px 24px rgba(26,188,156,0.18);
-      transform: translateY(-3px) scale(1.04);
-    }
-    .btn-secondary {
-      background: #0070f3;
-      color: #fff;
-      font-weight: 700;
-      border: none;
-      box-shadow: 0 2px 12px rgba(0,112,243,0.10);
-    }
-    .btn-secondary:hover {
-      background: #005bb5;
-      color: #fff;
-      box-shadow: 0 4px 24px rgba(0,112,243,0.18);
-      transform: translateY(-3px) scale(1.04);
-    }
-
-    /* Projects */
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-    }
-    .project-card {
-      background: #fff;
-      border: 1px solid #e6f3f7;
-      border-radius: 28px;
-      overflow: hidden;
-      transition: 0.3s cubic-bezier(.4,0,.2,1);
-      box-shadow: 0 2px 16px rgba(0,195,255,0.04);
-      display: flex;
-      flex-direction: column;
-      min-height: 540px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .project-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(0,195,255,0.13);
-      border-color: #00c3ff44;
-    }
-    .project-card img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      filter: brightness(0.97) contrast(1.08);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .project-content {
-      padding: 2rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .project-content h3 {
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #00c3ff;
-      letter-spacing: -0.5px;
-    }
-    .project-content p {
-      color: #23242a;
-      margin-bottom: 1.5rem;
-      font-size: 1.08rem;
-    }
-
-    /* Services */
-    .services {
-      background: linear-gradient(90deg,#e6f3f7 60%,#fff 100%);
-      border-radius: 22px;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-    .service-card {
-      background: #fff;
-      border: 1px solid #e6f3f7;
-      border-radius: 24px;
-      padding: 2rem;
-      transition: 0.3s cubic-bezier(.4,0,.2,1);
-      box-shadow: 0 2px 12px rgba(0,195,255,0.04);
-    }
-    .service-card:hover {
-      background: #1a1a1a;
-      box-shadow: 0 4px 24px rgba(0,195,255,0.13);
-      border-color: #00c3ff44;
-    }
-    .service-card h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00c3ff;
-      margin-bottom: 0.5em;
-    }
-    .service-card p {
-      color: #23242a;
-      font-size: 1rem;
-    }
-
-    /* About */
-    .about {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 3.5rem;
-      max-width: 900px;
-      margin: 0 auto 6rem auto;
-      padding: 0 1.5rem;
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-    }
-    .about-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 180px;
-      position: relative;
-    }
-    .about-portrait {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2.5px solid #1abc9c44;
-      background: #fff;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-      margin-top: 0.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .about-photo-stack {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      position: relative;
-      margin-top: 0.5rem;
-      margin-left: -60px;
-      /* Move stack left */
-    }
-    .about-photo-stack img {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 28px;
-      box-shadow: 0 8px 36px rgba(0,0,0,0.10);
-      border: 3px solid #fff;
-      background: #fff;
-      position: relative;
-      margin-top: -54px;
-      margin-bottom: 0;
-      z-index: 1;
-      transition: transform 0.18s;
-    }
-    .about-photo-stack img:first-child {
-      margin-top: 0;
-      z-index: 3;
-      transform: scale(1.08) translateX(-44px);
-    }
-    .about-photo-stack img:nth-child(2) {
-      z-index: 2;
-      transform: scale(1.03) translateX(44px);
-    }
-    .about-photo-stack img:last-child {
-      z-index: 1;
-      transform: scale(0.98) translateX(-28px);
-    }
-    @media (max-width: 800px) {
-      .about-photo-stack img {
-        width: 110px;
-        height: 110px;
-        margin-top: -28px;
-      }
-      .about-photo-stack {
-        margin-left: -24px;
-      }
-    }
-    .about-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      min-width: 220px;
-    }
-    .about-divider {
-      width: 48px;
-      height: 3px;
-      background: #1abc9c;
-      border-radius: 2px;
-      margin: 1.5rem 0 2.5rem 0;
-      opacity: 0.7;
-    }
-    .about p {
-      color: #23242a;
-      font-size: 1.13rem;
-      margin: 0 0 1.5rem 0;
-      line-height: 1.8;
-      font-weight: 400;
-    }
-    @media (max-width: 800px) {
-      .about {
-        flex-direction: column;
-        align-items: center;
-        gap: 2.5rem;
-      }
-      .about-right {
-        align-items: center;
-        text-align: center;
-      }
-      .about-divider {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-
-    /* Contact */
-    .contact {
-      text-align: center;
-      padding: 4rem 0 2rem 0;
-    }
-    .contact p {
-      color: #23242a;
-      margin-bottom: 2rem;
-    }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .contact-links a {
-      color: #1abc9c;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.2s, box-shadow 0.2s;
-      padding: 0.3em 1em;
-      border-radius: 8px;
-    }
-    .contact-links a:hover {
-      color: #fff;
-      background: #1abc9c;
-      box-shadow: 0 2px 8px #1abc9c22;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid #e6f3f7;
-      text-align: center;
-      padding: 2rem 0 1rem 0;
-      color: #23242a99;
-      font-size: 0.98rem;
-      background: #f7fafc;
-      margin-top: 4rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        gap: 2.5rem;
-        padding: 4rem 0 2rem 0;
-      }
-      .hero {
-        min-height: 90vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 2.5rem;
-        padding: 7rem 0 3rem 0;
-        background:
-          linear-gradient(rgba(24,25,28,0.92), rgba(24,25,28,0.92)),
-          url('imghero.avif') center center/cover no-repeat,
-          #18191c;
-        border-radius: 0 0 32px 32px;
-        box-shadow: 0 8px 32px rgba(26,188,156,0.07);
-        position: relative;
-      }
-      }
-      .section-title {
-        font-size: 1.5rem;
-      }
-      .hero img {
-        height: 180px;
-        width: 180px;
-      }
-      .about img {
-        height: 90px;
-        width: 90px;
-      }
-      .container {
-        width: 98%;
-      }
-      .project-card img {
-        height: 120px;
-      }
-      .project-content {
-        padding: 1rem;
-      }
-    
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f7fafc;
-      color: #23242a;
-      line-height: 1.6;
-      letter-spacing: 0.01em;
-      transition: background 0.3s, color 0.3s;
-      border: 2.5px solid #e0e0e0;
-      border-radius: 28px;
-      max-width: 1200px;
-      margin: 32px auto 32px auto;
-      box-shadow: 0 6px 48px 0 rgba(60,60,60,0.07);
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Modern Navbar */
-    nav {
-      position: sticky;
-      top: 0;
-      background: transparent;
-      z-index: 1000;
-      padding: 2rem 0 0 0;
-      width: 100vw;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2.5rem;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00c3ff;
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.2rem;
-      align-items: center;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-
-
-    /* Hero */
-
-    /* Removed duplicate .hero definition with radial gradient. The correct .hero with background image is above. */
-
-    .hero-subtitle {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1.1rem;
-      text-align: center;
-      width: 100%;
-      color: #0b3a2d;
-      text-shadow: 0 2px 16px rgba(26,188,156,0.10), 0 1px 0 #fff;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      color: #137a5a;
-      text-shadow: 0 1px 8px #fff, 0 1px 0 #e0f7f3;
-      font-weight: 600;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 1rem 1.8rem;
-      border-radius: 16px;
-      font-weight: 500;
-      transition: 0.3s ease;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: white;
-      color: black;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 550px;
-      object-fit: cover;
-      border-radius: 32px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    /* Sections */
-
-    section {
-      padding: 7rem 0;
-    }
-
-    .section-subtitle {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 1rem;
-      font-size: 0.85rem;
-    }
-
-    .section-title {
-      font-size: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    /* Projects */
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: #121212;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      overflow: hidden;
-      transition: 0.3s ease;
-      box-shadow: 0 2px 16px rgba(0,195,255,0.07);
-      display: flex;
-      flex-direction: column;
-      min-height: 420px;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-    }
-
-    .project-content {
-      padding: 2rem;
-    }
-
-    .project-content h3 {
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-    }
-
-    .project-content p {
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 1.5rem;
-    }
-
-    /* Services */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .service-card {
-      background: #121212;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 2rem;
-      transition: 0.3s ease;
-      box-shadow: 0 2px 12px rgba(0,195,255,0.07);
-    }
-
-    .service-card:hover {
-      background: #1a1a1a;
-    }
-
-    .service-card h3 {
-      font-size: 1.5rem;
-    }
-
-    /* About */
-
-    .about {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 3.5rem;
-      max-width: 900px;
-      margin: 0 auto 6rem auto;
-      padding: 0 1.5rem;
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-    }
-    .about-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 180px;
-      position: relative;
-    }
-    .about-portrait {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2.5px solid #1abc9c44;
-      background: #fff;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-      margin-top: 0.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .about-photo-stack {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      position: relative;
-      margin-top: 0.5rem;
-      margin-left: -60px;
-      /* Move stack left */
-    }
-    .about-photo-stack img {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 28px;
-      box-shadow: 0 8px 36px rgba(0,0,0,0.10);
-      border: 3px solid #fff;
-      background: #fff;
-      position: relative;
-      margin-top: -54px;
-      margin-bottom: 0;
-      z-index: 1;
-      transition: transform 0.18s;
-    }
-    .about-photo-stack img:first-child {
-      margin-top: 0;
-      z-index: 3;
-      transform: scale(1.08) translateX(-44px);
-    }
-    .about-photo-stack img:nth-child(2) {
-      z-index: 2;
-      transform: scale(1.03) translateX(44px);
-    }
-    .about-photo-stack img:last-child {
-      z-index: 1;
-      transform: scale(0.98) translateX(-28px);
-    }
-    @media (max-width: 800px) {
-      .about-photo-stack img {
-        width: 110px;
-        height: 110px;
-        margin-top: -28px;
-      }
-      .about-photo-stack {
-        margin-left: -24px;
-      }
-    }
-    .about-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      min-width: 220px;
-    }
-    .about-divider {
-      width: 48px;
-      height: 3px;
-      background: #1abc9c;
-      border-radius: 2px;
-      margin: 1.5rem 0 2.5rem 0;
-      opacity: 0.7;
-    }
-    .about p {
-      color: #23242a;
-      font-size: 1.13rem;
-      margin: 0 0 1.5rem 0;
-      line-height: 1.8;
-      font-weight: 400;
-    }
-    @media (max-width: 800px) {
-      .about {
-        flex-direction: column;
-        align-items: center;
-        gap: 2.5rem;
-      }
-      .about-right {
-        align-items: center;
-        text-align: center;
-      }
-      .about-divider {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-
-    /* Contact */
-
-    .contact {
-      text-align: center;
-    }
-    .Text-guide-mig {
-        font-size: 1.4rem;
-    }
-
-    .contact p {
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 2rem;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    footer {
-      border-top: 1px solid #e6f3f7;
-      text-align: center;
-      padding: 2rem;
-      color: rgba(255,255,255,0.4);
-    }
-
-
-
-    /* Responsive */
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-
-      .section-title {
-        font-size: 2.3rem;
-      }
-
-      .hero-image img {
-        height: 400px;
-      }
-      
-    }
-  </style>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Anders Nielsen | Portfolio</title>
+	<meta name="description" content="Frontend portfolio med fokus på moderne websites, performance og conversion-fokuserede løsninger." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="styles.css" />
+	<script src="script.js" defer></script>
 </head>
 <body>
 
 
+<header class="hero-header">
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <div style="text-transform:uppercase;font-size:1.05rem;letter-spacing:2px;color:#1abc9c;font-weight:600;">Webudvikler & Designer</div>
-      <h1 style="font-size:2.7rem;font-weight:800;line-height:1.1;margin-bottom:0.2em;">Websites der vinder kunder</h1>
-      <p style="margin-bottom:1.2em;">Jeg designer moderne landingpages og frontend-løsninger til virksomheder, der ønsker en stærkere online tilstedeværelse.</p>
-    </div>
-    <div class="hero-tags">
-      <span class="hero-tag">Branding</span>
-      <span class="hero-tag">UI/UX</span>
-      <span class="hero-tag">Responsivt design</span>
-      <span class="hero-tag">Performance</span>
-    </div>
-   
-  </section>
+	<img src="logo2.png" alt="Anders Nielsen logo" class="hero-logo" decoding="async">
 
-  <!-- Modern Navbar (now below hero) -->
-  <nav style="width:100vw;background:transparent;position:relative;z-index:1000;padding:2rem 0 0 0;">
-    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;">
-      <div style="display:flex;gap:2.2rem;align-items:center;">
-        <a href="#about" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Om mig</a>
-        <a href="#projects" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Cases</a>
-        <a href="#services" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Ydelser</a>
-        <a href="#contact" style="color:#fff;font-weight:500;letter-spacing:0.5px;opacity:0.8;transition:opacity 0.2s;">Kontakt</a>
-      </div>
-    </div>
-  </nav>
+	<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Åbn menu">
+		<span class="nav-toggle-bar"></span>
+		<span class="nav-toggle-bar"></span>
+		<span class="nav-toggle-bar"></span>
+	</button>
 
-  <!-- Cases-->
-
-  <section id="projects">
-    <div class="container">
-
-      <div class="section-subtitle">Portfolio</div>
-      <h2 class="section-title">Udvalgte cases</h2>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="northnoteimg.png" alt="Musikskole preview">
-          <div class="project-content">
-            <h3>Musikskole</h3>
-            <p>Moderne landing page-koncept for en fiktiv musikskole med fokus på atmosfære og responsivt design.</p>
-            <div class="hero-buttons">
-              <a href="https://andersknielsencontact.github.io/Mine-projekter/music/" class="btn btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="frisør-preview.png" alt="Firsør koncept preview">
-          <div class="project-content">
-            <h3>Frisør koncept</h3>
-            <p>Premium frisør side, med fokus på moderne design, branding og booking.</p>
-            <div class="hero-buttons">
-              <a href="https://andersknielsencontact.github.io/Mine-projekter/fris%C3%B8r/" class="btn btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="shelterheroimg.png" alt="Shelter koncept preview">
-          <div class="project-content">
-            <h3>Shelter koncept</h3>
-            <p>Moderne shelter koncept med fokus på at guide kunden og fremhæve produkter.</p>
-            <div class="hero-buttons">
-              <a href="https://andersknielsencontact.github.io/Mine-projekter/Shelter-demo/" class="btn btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Services -->
-
-  <section class="services" id="services" style="background:linear-gradient(90deg,#e6f3f7 60%,#fff 100%);border-radius:22px;box-shadow:0 2px 24px rgba(0,0,0,0.10);margin-top:3rem;margin-bottom:3rem;">
-    <div style="max-width:900px;margin:0 auto;padding:3.5rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:2.5rem;">
-      <h2 class="section-title" style="margin:0 0 2.5rem 0;font-size:2.2rem;letter-spacing:-1px;line-height:1.1;font-weight:700;">Det kan jeg hjælpe dig med</h2>
-      <p class="Text-guide-mig">Jeg arbejder primært med frontend layout og design. Dette indebærer at skabe moderne, brugervenlige og visuelt tiltalende hjemmesider, der er optimeret til forskellige enheder og skærmstørrelser.
-        Mit fokus er også, at forsiden skal se moderniseret ud, og være med til, at give kunderne et godt førstehåndsindtryk, og guide dem til at tage kontakt eller købe et produkt. Jeg kan også hjælpe med at analysere og forbedre eksisterende hjemmesider, så de bliver mere effektive og brugervenlige.
-      </p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.2rem;width:100%;">
-        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
-          <h3 style="color:#1abc9c;font-size:1.18rem;font-weight:700;margin:0;">Design & UI/UX</h3>
-          <ul style="margin:0 0 0 1.1em;padding:0;line-height:1.7;font-size:1.04rem;color:#137a5a;">
-            <li>Moderne, brugervenlige layouts</li>
-            <li>Farvepaletter & typografi</li>
-            <li>Branding og visuel identitet</li>
+    <nav class="hero-nav">
+		<div class="nav-links" id="site-nav-links">
+			<a href="#hero-title">Forside</a>
+			<div class="nav-item nav-dropdown">
+				<a href="#cases" class="nav-dropdown-toggle" aria-haspopup="true">Cases <span class="nav-dropdown-chevron" aria-hidden="true">▾</span></a>
+				<div class="nav-dropdown-menu" aria-label="Cases menu">
+					<a href="#case-salon-heidi">Case 01 - Salon Heidi</a>
+					<a href="#koncept">Konceptprojekter (ikke kundecase)</a>
+					
+				</div>
+			</div>
             
-          </ul>
+            <a href="#kontakt">Kontakt</a>
         </div>
-        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
-          <h3 style="color:#1abc9c;font-size:1.18rem;font-weight:700;margin:0;">Webudvikling</h3>
-          <ul style="margin:0 0 0 1.1em;padding:0;line-height:1.7;font-size:1.04rem;color:#137a5a;">
-            <li>Responsivt design (mobil, tablet, desktop)</li>
-            <li>Hurtige, optimerede sider</li>
-            <li>HTML, CSS, JavaScript</li>
-          </ul>
-        </div>
-        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 12px #1abc9c11;padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:0.7rem;">
-          <h3 style="color:#1abc9c;font-size:1.18rem;font-weight:700;margin:0;">Rådgivning & Support</h3>
-          <ul style="margin:0 0 0 1.1em;padding:0;line-height:1.7;font-size:1.04rem;color:#137a5a;">
-            <li>Analyse af eksisterende hjemmeside</li>
-            <li>Forbedringsforslag & sparring</li>
-            <li>Teknisk support</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- About -->
+</header>
 
-  <section class="about" id="about">
-    <div class="about-left">
-      <img src="Potræt.png" alt="Portræt af Anders Nielsen" class="about-portrait" />
-      <div class="about-photo-stack">
-        <img src="fishingimg.avif" alt="Fiskeri" title="Fiskeri" />
-        <img src="guitarimg.avif" alt="Musik" title="Musik" />
-        <img src="mushroomsimg.avif" alt="Natur" title="Naturen" />
-      </div>
-    </div>
-    <div class="about-right">
-      <h2 class="section-title" style="font-size:2.2rem;margin-bottom:0.2em;">Om mig</h2>
-      <div class="about-divider"></div>
-      <p>
-        Hej! Jeg hedder Anders og arbejder som freelance webudvikler med base i Danmark – men jeg elsker friheden til at arbejde, hvor jeg vil.
-      </p>
-      <p>
-        Jeg brænder for at skabe moderne, brugervenlige hjemmesider, der hjælper virksomheder med at vokse online. Min tilgang er enkel: design skal være smukt, hurtigt og nemt at bruge – både for dig og dine kunder.
-      </p>
-      <p>
-        Når jeg ikke koder, finder du mig ofte ude i naturen, på fisketur, til koncert eller på eventyr med min kæreste. Jeg tror på, at et balanceret liv giver de bedste idéer og løsninger.
-      </p>
-    </div>
-  </section>
 
-  <!-- Contact -->
 
-  <section class="contact" id="contact">
-    <h2 class="section-title">Kontakt</h2>
-    <p>Har du et projekt i tankerne? Kontakt mig for en uforpligtende snak!</p>
-    <ul class="contact-info">
-      <li><strong>Email:</strong> <a href="mailto:kontakt@eksempel.dk">anders.k.nielsen.contact@gmail.com</a></li>
-    </ul>
-    
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/anders-krog-nielsen-7b9336198" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.4em;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.034 0 3.595 1.997 3.595 4.59v5.606z"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </section>
+	<main>
+		<section class="hero" aria-labelledby="hero-title">
+			
+			<p class="hero-kicker">Freelance Frontend-udvikler</p>
+			<h1 id="hero-title"><span class="hero-building">Jeg bygger</span> <span class="hero-modern">moderne</span><br />hjemmesider</h1>
+			<div class="hero-tech-badges" aria-label="Teknologier">
+				<span class="hero-tech-badge">HTML</span>
+				<span class="hero-tech-badge">CSS</span>
+				<span class="hero-tech-badge">JavaScript</span>
+			</div>
+			<p class="hero-lead">
+				Moderne hjemmesider, der styrker din virksomheds førstehåndsindtryk og gør det nemt for kunder at tage kontakt
+			</p>
+			
+			<a class="scroll-cue" href="#cases" aria-label="Scroll til cases">
+				<span class="scroll-arrow" aria-hidden="true">↓</span>
+			</a>
+		</section>
 
-  <footer>
-    © 2026 Anders Nielsen. Alle rettigheder forbeholdes.
-  </footer>
+		<section id="cases" class="case-feature case-feature-salon" aria-label="Salon Heidi case">
+			<div class="case-intro" id="case-salon-heidi">
+				<div class="case-divider" aria-hidden="true"></div>
+				<p class="case-number">Case 01</p>
+				<p class="case-hero-name">Salon Heidi</p>
+				
+				
+			</div>
 
-  <!-- <script src="lang.js"></script> -->
+			<div class="case-showcase">
+				<img src="Salonheidiimg.png" alt="Stort hero-billede af Salon Heidi hjemmesiden" loading="eager" fetchpriority="high" decoding="async" />
+			</div>
 
+			<div class="case-post-intro">
+				<h2>Fra et ældre website <br>Til en moderne oplevelse</h2>
+			</div>
+
+			<div class="case-story case-story-challenge">
+				<div class="case-story-copy">
+					<p class="case-story-kicker">Udgangspunktet</p>
+					<p>
+						Salon Heidi ønskede et mere moderne digitalt udtryk, der fungerede godt på både mobil og desktop. Samtidig var målet at gøre information og booking lettere tilgængelig for både nye og eksisterende kunder.
+        
+					</p>
+				</div>
+				<div class="case-story-image case-story-image-compare">
+					<div class="case-image-frame">
+						<div class="case-image-frame-header">
+							<p class="case-story-kicker">Før / efter</p>
+							<p class="case-image-frame-lead">Træk i slideren for at se forskellen mellem den gamle og den nye oplevelse.</p>
+						</div>
+						<div class="image-compare" style="--compare-pos: 70%">
+						<div class="image-compare-after-wrap">
+							<img class="image-compare-after" src="Salonheidiimg.png" alt="Ny version af Salon Heidi hjemmeside" loading="lazy" fetchpriority="low" decoding="async" />
+							<span class="image-compare-tag image-compare-tag-after">Efter</span>
+						</div>
+						<div class="image-compare-before-wrap">
+							<img class="image-compare-before" src="Skærmbillede 2026-07-01 143720.png" alt="Gammel version af Salon Heidi hjemmeside" loading="lazy" fetchpriority="low" decoding="async" />
+							<span class="image-compare-tag image-compare-tag-before">Før</span>
+						</div>
+						<div class="image-compare-divider" aria-hidden="true"></div>
+						<div class="image-compare-handle" aria-hidden="true">↔</div>
+						<label class="visually-hidden" for="udgangspunkt-slider">Sammenlign gammel og ny hjemmeside</label>
+						<input id="udgangspunkt-slider" class="image-compare-range" type="range" min="0" max="100" value="70" aria-label="Før og efter slider" />
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+			<div id="process" class="case-story case-story-solution">
+				<div class="case-story-copy">
+					<p class="case-story-kicker">Hvad blev forbedret?</p>
+					<ul class="case-solution-list">
+						<li> Moderne design</li>
+						<li> Responsivt layout</li>
+						<li> Tydelig navigation</li>
+						<li> Fokus på booking</li>
+						<li> Klar til implementering</li>
+						<li> Mobilvenlig</li>
+					</ul>
+				</div>
+				
+			</div>
+
+			<section class="portfolio-gallery" aria-labelledby="gallery-title">
+				<div class="portfolio-gallery-intro">
+					<p class="portfolio-gallery-kicker">Galleri</p>
+					<h2 id="gallery-title">Et kig på den færdige løsning</h2>
+					<p>
+						Et udvalg af de vigtigste sider og den visuelle retning på tværs
+						af hjemmesiden.
+					</p>
+				</div>
+
+				<div class="portfolio-gallery-grid">
+					<article class="portfolio-gallery-item portfolio-gallery-main">
+						<div class="portfolio-gallery-image">
+							<img src="forsideimg.png" alt="Forsiden på Salon Heidis nye hjemmeside" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3>Forside</h3>
+								<p>Hero · CTA · præsentation</p>
+							</div>
+
+							<span>01</span>
+						</div>
+					</article>
+
+					<article class="portfolio-gallery-item">
+						<div class="portfolio-gallery-image">
+							<img src="priserimg.png" alt="Pris- og produktsiden på Salon Heidis hjemmeside" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3>Priser</h3>
+								<p>Produkter · overblik</p>
+							</div>
+
+							<span>02</span>
+						</div>
+					</article>
+
+					<article class="portfolio-gallery-item">
+						<div class="portfolio-gallery-image">
+							<img src="personaleimg.png" alt="Personalesiden på Salon Heidis hjemmeside" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3>Personale</h3>
+								<p>Team · præsentation</p>
+							</div>
+
+							<span>03</span>
+						</div>
+					</article>
+
+					<article class="portfolio-gallery-item">
+						<div class="portfolio-gallery-image">
+							<img src="kontaktimg.png" alt="Kontaktsiden på Salon Heidis hjemmeside" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3>Kontakt</h3>
+								<p>Find os · kontakt</p>
+							</div>
+
+							<span>04</span>
+						</div>
+					</article>
+
+					<article class="portfolio-gallery-item">
+						<div class="portfolio-gallery-image">
+							<img src="privatpolitikimg.png" alt="Privatlivspolitikken på Salon Heidis hjemmeside" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3>Privatlivspolitik</h3>
+								<p>Information · struktur</p>
+							</div>
+
+							<span>05</span>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<div class="case-project-meta" id="om">
+				<div class="case-meta-header">
+					<p class="case-story-kicker case-meta-kicker">Mit bidrag</p>
+					<p class="case-meta-lead">Et kort overblik over min rolle i projektet og de konkrete områder, jeg stod for.</p>
+				</div>
+				<div class="case-meta-grid">
+					<article class="case-meta-item case-contribution-section">
+						
+						<ul class="case-contribution-list">
+							<li class="contribution-card contribution-card-design">
+								<span class="contribution-icon" aria-hidden="true">✦</span>
+								<div>
+									<strong>Design</strong>
+									<p>Udarbejdelse af nyt visuelt design med fokus på et moderne udtryk.</p>
+								</div>
+							</li>
+							<li class="contribution-card contribution-card-development">
+								<span class="contribution-icon" aria-hidden="true">↗</span>
+								<div>
+									<strong>Frontend-udvikling</strong>
+									<p>Opbygning af den nye hjemmeside i HTML, CSS og JavaScript.</p>
+								</div>
+							</li>
+							<li class="contribution-card contribution-card-ux">
+								<span class="contribution-icon" aria-hidden="true">▦</span>
+								<div>
+									<strong>Struktur &amp; UX</strong>
+									<p>Ny informationsstruktur og optimeret brugeroplevelse på tværs af enheder.</p>
+								</div>
+							</li>
+							<li class="contribution-card contribution-card-coordination">
+								<span class="contribution-icon" aria-hidden="true">⌁</span>
+								<div>
+									<strong>Projektkoordinering</strong>
+									<p>Dialog med kunden og koordinering med webbureau frem til implementering.</p>
+								</div>
+							</li>
+						</ul>
+					</article>
+				</div>
+			</div>
+
+			<section class="case-final-cta" aria-labelledby="case-final-title">
+				<div class="case-final-cta-copy">
+						<p class="case-story-kicker case-final-kicker">Se det færdige resultat</p>
+						<h3 id="case-final-title"><span class="case-final-line">Salon Heidi er implementeret</span><span class="case-final-line">og kan besøges her</span></h3>
+					</div>
+
+					<div class="case-final-cta-actions">
+						<a href="https://salonheidiodense.dk/" class="case-home-link" target="_blank" rel="noopener">Besøg hjemmesiden ↗</a>
+					</div>
+			</section>
+
+		
+					
+
+				
+
+		<section class="concept-section" id="koncept" aria-labelledby="koncept-title">
+			<div class="concept-section-inner">
+				<p class="concept-kicker">Konceptprojekter</p>
+				<h3 id="koncept-title" class="concept-title">Egenudviklede sider </h3>
+				<p class="concept-lead">De her sider er egne konceptprojekter, som jeg bygger ved siden af kundeopgaver. De er ikke leveret til kunder, men viser min stil og hvilke typer websites, jeg også kan lave.</p>
+				<div class="concept-grid">
+					<article class="concept-item">
+						<h4>North Note</h4>
+						<p>Musikskole-koncept med fokus på en rolig stemning og et inspirerende læringsmiljø. Strukturen gør det nemt at få overblik og tage kontakt.</p>
+						<a href="https://andersknielsencontact.github.io/Mine-projekter/music/" target="_blank" rel="noopener">Se koncept</a>
+					</article>
+					<article class="concept-item">
+						<h4>Haircut Salon</h4>
+						<p>Designkoncept til en moderne frisørsalon. Layoutet er brugervenligt og visuelt skarpt med fokus på at fremhæve ydelser, skabe en indbydende atmosfære og opbygge tillid.</p>
+						<a href="../Haircut-salon-projekt/index.html" target="_blank" rel="noopener">Se koncept</a>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact-section" id="kontakt" aria-labelledby="contact-title">
+			
+			<div class="contact-section-inner">
+				<img src="logo2.png" alt="Anders Nielsen logo" class="contact-logo" loading="lazy" fetchpriority="low" decoding="async" />
+				<p class="contact-kicker">Kontakt</p>
+				<h3 id="contact-title" class="contact-title"><span class="contact-title-line">Har du en hjemmeside, der trænger til et moderne løft?</span><span class="contact-title-line contact-title-line-secondary">Lad os tage en uforpligtende snak.</span></h3>
+				<p class="contact-lead">Jeg hjælper med moderne websites, der ser skarpe ud, fungerer på mobil og gør det nemt for kunder at tage kontakt.</p>
+				
+				<div class="contact-card">
+					<p class="contact-label">Skriv direkte til mig</p>
+					<a class="contact-mail" href="mailto:Anders.k.nielsen.contact@gmail.com">Anders.k.nielsen.contact@gmail.com</a>
+					<div class="contact-actions">
+						<a class="contact-button contact-button-primary" href="mailto:Anders.k.nielsen.contact@gmail.com">Send mail</a>
+						<a class="contact-button contact-button-secondary" href="https://www.linkedin.com/in/anders-krog-nielsen-7b9336198" target="_blank" rel="noopener">LinkedIn</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<div class="gallery-lightbox" id="gallery-lightbox" hidden aria-hidden="true">
+		<div class="gallery-lightbox-backdrop" data-lightbox-close></div>
+		<div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Forstørret screenshot">
+			<button class="gallery-lightbox-close" type="button" data-lightbox-close aria-label="Luk stor visning">Luk</button>
+			<div class="gallery-lightbox-stage" id="gallery-lightbox-stage"></div>
+		</div>
+	</div>
 </body>
 </html>
