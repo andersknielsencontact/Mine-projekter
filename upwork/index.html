@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title data-i18n="document-title">Anders Nielsen | Portfolio</title>
+	<meta name="description" content="Frontend portfolio med fokus på moderne websites, performance og conversion-fokuserede løsninger." data-i18n-content="meta-description" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="styles.css" />
+	<script src="scipt.js" defer></script>
+</head>
+<body>
+
+
+<header class="hero-header">
+
+	<img src="logo2.png" alt="Anders Nielsen logo" class="hero-logo" decoding="async">
+
+	<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Åbn menu">
+		<span class="nav-toggle-bar"></span>
+		<span class="nav-toggle-bar"></span>
+		<span class="nav-toggle-bar"></span>
+	</button>
+
+    <nav class="hero-nav">
+		<div class="nav-links" id="site-nav-links">
+			<a href="#hero-title" data-i18n="nav-home">Forside</a>
+			<div class="nav-item nav-dropdown">
+				<a href="#cases" class="nav-dropdown-toggle" aria-haspopup="true" data-i18n-html="nav-cases">Cases <span class="nav-dropdown-chevron" aria-hidden="true">▾</span></a>
+				<div class="nav-dropdown-menu" aria-label="Cases menu" data-i18n-aria-label="nav-cases-menu-label">
+					<a href="#case-salon-heidi" data-i18n="nav-case-salon">Case 01 - Salon Heidi</a>
+					<a href="#koncept" data-i18n="nav-concept">Konceptprojekter (ikke kundecase)</a>
+					
+				</div>
+			</div>
+            
+			<a href="#kontakt" data-i18n="nav-contact">Kontakt</a>
+			<div class="nav-item lang-switcher">
+				<button class="lang-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Skift sprog" data-i18n-aria-label="lang-toggle-label">
+					<span class="lang-toggle-current" aria-hidden="true">
+						<span class="lang-toggle-option lang-toggle-option-da">DA</span>
+						<span class="lang-toggle-option lang-toggle-option-en">EN</span>
+					</span>
+					<span class="lang-toggle-chevron" aria-hidden="true">▾</span>
+				</button>
+				<div class="lang-menu" hidden>
+					<button class="lang-menu-option" type="button" data-lang-option="da" aria-label="Vælg dansk" data-i18n-aria-label="lang-option-da-label">
+						<span aria-hidden="true">DA</span>
+					</button>
+					<button class="lang-menu-option" type="button" data-lang-option="en" aria-label="Choose English" data-i18n-aria-label="lang-option-en-label">
+						<span aria-hidden="true">EN</span>
+					</button>
+				</div>
+			</div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+	<main>
+		<section class="hero" aria-labelledby="hero-title">
+			
+			<p class="hero-kicker" data-i18n="hero-kicker">Freelance Frontend-udvikler</p>
+			<h1 id="hero-title" data-i18n-html="hero-title"><span class="hero-building">Jeg bygger</span> <span class="hero-modern">moderne</span><br />hjemmesider</h1>
+			<div class="hero-tech-badges" aria-label="Teknologier">
+				<span class="hero-tech-badge">HTML</span>
+				<span class="hero-tech-badge">CSS</span>
+				<span class="hero-tech-badge">JavaScript</span>
+			</div>
+			<p class="hero-lead" data-i18n="hero-lead">
+				Moderne hjemmesider, der styrker din virksomheds førstehåndsindtryk og gør det nemt for kunder at tage kontakt
+			</p>
+			
+			<a class="scroll-cue" href="#cases" aria-label="Scroll til cases" data-i18n-aria-label="hero-scroll-label">
+				<span class="scroll-arrow" aria-hidden="true">↓</span>
+			</a>
+		</section>
+
+		<section id="cases" class="case-feature case-feature-salon" aria-label="Salon Heidi case" data-i18n-aria-label="case-salon-label">
+			<div class="case-intro" id="case-salon-heidi">
+				<div class="case-divider" aria-hidden="true"></div>
+				<p class="case-number" data-i18n="case-number">Case 01</p>
+				<p class="case-hero-name">Salon Heidi</p>
+				
+				
+			</div>
+
+			<div class="case-showcase">
+				<img src="Salonheidiimg.png" alt="Stort hero-billede af Salon Heidi hjemmesiden" data-i18n-alt="case-hero-image-alt" loading="eager" fetchpriority="high" decoding="async" />
+			</div>
+
+			<div class="case-post-intro">
+				<h2 data-i18n-html="case-post-intro-title">Fra et ældre website <br>Til en moderne oplevelse</h2>
+			</div>
+
+			<div class="case-story case-story-challenge">
+				<div class="case-story-copy">
+					<p class="case-story-kicker" data-i18n="case-start-kicker">Udgangspunktet</p>
+					<p data-i18n="case-start-copy">
+						Salon Heidi ønskede et mere moderne digitalt udtryk, der fungerede godt på både mobil og desktop. Samtidig var målet at gøre information og booking lettere tilgængelig for både nye og eksisterende kunder.
+        
+					</p>
+				</div>
+				<div class="case-story-image case-story-image-compare">
+					<div class="case-image-frame">
+						<div class="case-image-frame-header">
+							<p class="case-story-kicker" data-i18n="compare-kicker">Før / efter</p>
+							<p class="case-image-frame-lead" data-i18n="compare-lead">Træk i slideren for at se forskellen mellem den gamle og den nye oplevelse.</p>
+						</div>
+						<div class="image-compare" style="--compare-pos: 70%">
+						<div class="image-compare-after-wrap">
+							<img class="image-compare-after" src="Salonheidiimg.png" alt="Ny version af Salon Heidi hjemmeside" data-i18n-alt="compare-after-alt" loading="lazy" fetchpriority="low" decoding="async" />
+							<span class="image-compare-tag image-compare-tag-after" data-i18n="compare-after-tag">Efter</span>
+						</div>
+						<div class="image-compare-before-wrap">
+							<img class="image-compare-before" src="Skærmbillede 2026-07-01 143720.png" alt="Gammel version af Salon Heidi hjemmeside" data-i18n-alt="compare-before-alt" loading="lazy" fetchpriority="low" decoding="async" />
+							<span class="image-compare-tag image-compare-tag-before" data-i18n="compare-before-tag">Før</span>
+						</div>
+						<div class="image-compare-divider" aria-hidden="true"></div>
+						<div class="image-compare-handle" aria-hidden="true">↔</div>
+						<label class="visually-hidden" for="udgangspunkt-slider" data-i18n="compare-input-label">Sammenlign gammel og ny hjemmeside</label>
+						<input id="udgangspunkt-slider" class="image-compare-range" type="range" min="0" max="100" value="70" aria-label="Før og efter slider" data-i18n-aria-label="compare-range-aria" />
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+			<div id="process" class="case-story case-story-solution">
+				<div class="case-story-copy">
+					<p class="case-story-kicker" data-i18n="case-improved-kicker">Hvad blev forbedret?</p>
+					<ul class="case-solution-list">
+						<li data-i18n="case-solution-1"> Moderne design</li>
+						<li data-i18n="case-solution-2"> Responsivt layout</li>
+						<li data-i18n="case-solution-3"> Tydelig navigation</li>
+						<li data-i18n="case-solution-4"> Fokus på booking</li>
+						<li data-i18n="case-solution-5"> Klar til implementering</li>
+						<li data-i18n="case-solution-6"> Mobilvenlig</li>
+					</ul>
+				</div>
+				
+			</div>
+
+			<section class="portfolio-gallery" aria-labelledby="gallery-title">
+				<div class="portfolio-gallery-intro">
+					<p class="portfolio-gallery-kicker" data-i18n="gallery-kicker">Galleri</p>
+					<h2 id="gallery-title" data-i18n="gallery-title">Et kig på den færdige løsning</h2>
+					<p data-i18n="gallery-lead">
+						Et udvalg af de vigtigste sider og den visuelle retning på tværs
+						af hjemmesiden.
+					</p>
+				</div>
+
+				<div class="portfolio-gallery-grid">
+					<article class="portfolio-gallery-item portfolio-gallery-main">
+						<div class="portfolio-gallery-image">
+							<img src="forsideimg.png" alt="Forsiden på Salon Heidis nye hjemmeside" data-i18n-alt="gallery-image-home-alt" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3 data-i18n="gallery-home-title">Forside</h3>
+								<p data-i18n="gallery-home-copy">Hero · CTA · præsentation</p>
+							</div>
+
+							<span>01</span>
+						</div>
+					</article>
+
+					<article class="portfolio-gallery-item">
+						<div class="portfolio-gallery-image">
+							<img src="priserimg.png" alt="Pris- og produktsiden på Salon Heidis hjemmeside" data-i18n-alt="gallery-image-prices-alt" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3 data-i18n="gallery-prices-title">Priser</h3>
+								<p data-i18n="gallery-prices-copy">Produkter · overblik</p>
+							</div>
+
+							<span>02</span>
+						</div>
+					</article>
+
+					<article class="portfolio-gallery-item">
+						<div class="portfolio-gallery-image">
+							<img src="personaleimg.png" alt="Personalesiden på Salon Heidis hjemmeside" data-i18n-alt="gallery-image-team-alt" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3 data-i18n="gallery-team-title">Personale</h3>
+								<p data-i18n="gallery-team-copy">Team · præsentation</p>
+							</div>
+
+							<span>03</span>
+						</div>
+					</article>
+
+					<article class="portfolio-gallery-item">
+						<div class="portfolio-gallery-image">
+							<img src="kontaktimg.png" alt="Kontaktsiden på Salon Heidis hjemmeside" data-i18n-alt="gallery-image-contact-alt" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3 data-i18n="gallery-contact-title">Kontakt</h3>
+								<p data-i18n="gallery-contact-copy">Find os · kontakt</p>
+							</div>
+
+							<span>04</span>
+						</div>
+					</article>
+
+					<article class="portfolio-gallery-item">
+						<div class="portfolio-gallery-image">
+							<img src="privatpolitikimg.png" alt="Privatlivspolitikken på Salon Heidis hjemmeside" data-i18n-alt="gallery-image-privacy-alt" loading="lazy" fetchpriority="low" decoding="async" />
+						</div>
+
+						<div class="portfolio-gallery-caption">
+							<div>
+								<h3 data-i18n="gallery-privacy-title">Privatlivspolitik</h3>
+								<p data-i18n="gallery-privacy-copy">Information · struktur</p>
+							</div>
+
+							<span>05</span>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<div class="case-project-meta" id="om">
+				<div class="case-meta-header">
+					<p class="case-story-kicker case-meta-kicker" data-i18n="contribution-kicker">Mit bidrag</p>
+					<p class="case-meta-lead" data-i18n="contribution-lead">Et kort overblik over min rolle i projektet og de konkrete områder, jeg stod for.</p>
+				</div>
+				<div class="case-meta-grid">
+					<article class="case-meta-item case-contribution-section">
+						
+						<ul class="case-contribution-list">
+							<li class="contribution-card contribution-card-design">
+								<span class="contribution-icon" aria-hidden="true">✦</span>
+								<div>
+									<strong data-i18n="contribution-design-title">Design</strong>
+									<p data-i18n="contribution-design-copy">Udarbejdelse af nyt visuelt design med fokus på et moderne udtryk.</p>
+								</div>
+							</li>
+							<li class="contribution-card contribution-card-development">
+								<span class="contribution-icon" aria-hidden="true">↗</span>
+								<div>
+									<strong data-i18n="contribution-dev-title">Frontend-udvikling</strong>
+									<p data-i18n="contribution-dev-copy">Opbygning af den nye hjemmeside i HTML, CSS og JavaScript.</p>
+								</div>
+							</li>
+							<li class="contribution-card contribution-card-ux">
+								<span class="contribution-icon" aria-hidden="true">▦</span>
+								<div>
+									<strong data-i18n="contribution-ux-title">Struktur &amp; UX</strong>
+									<p data-i18n="contribution-ux-copy">Ny informationsstruktur og optimeret brugeroplevelse på tværs af enheder.</p>
+								</div>
+							</li>
+							<li class="contribution-card contribution-card-coordination">
+								<span class="contribution-icon" aria-hidden="true">⌁</span>
+								<div>
+									<strong data-i18n="contribution-coordination-title">Projektkoordinering</strong>
+									<p data-i18n="contribution-coordination-copy">Dialog med kunden og koordinering med webbureau frem til implementering.</p>
+								</div>
+							</li>
+						</ul>
+					</article>
+				</div>
+			</div>
+
+			<section class="case-final-cta" aria-labelledby="case-final-title">
+				<div class="case-final-cta-copy">
+						<p class="case-story-kicker case-final-kicker" data-i18n="final-cta-kicker">Se det færdige resultat</p>
+						<h3 id="case-final-title" data-i18n-html="final-cta-title"><span class="case-final-line">Salon Heidi er implementeret</span><span class="case-final-line">og kan besøges her</span></h3>
+					</div>
+
+					<div class="case-final-cta-actions">
+						<a href="https://salonheidiodense.dk/" class="case-home-link" target="_blank" rel="noopener" data-i18n="final-cta-link">Besøg hjemmesiden ↗</a>
+					</div>
+			</section>
+
+		
+					
+
+				
+
+		<section class="concept-section" id="koncept" aria-labelledby="koncept-title">
+			<div class="concept-section-inner">
+				<p class="concept-kicker" data-i18n="concept-kicker">Konceptprojekter</p>
+				<h3 id="koncept-title" class="concept-title" data-i18n="concept-title">Egenudviklede sider </h3>
+				<p class="concept-lead" data-i18n="concept-lead">De her sider er egne konceptprojekter, som jeg bygger ved siden af kundeopgaver. De er ikke leveret til kunder, men viser min stil og hvilke typer websites, jeg også kan lave.</p>
+				<div class="concept-grid">
+					<article class="concept-item">
+						<h4>North Note</h4>
+						<p data-i18n="concept-northnote-copy">Musikskole-koncept med fokus på en rolig stemning og et inspirerende læringsmiljø. Strukturen gør det nemt at få overblik og tage kontakt.</p>
+						<a href="https://andersknielsencontact.github.io/Mine-projekter/music/" target="_blank" rel="noopener" data-i18n="concept-link">Se koncept</a>
+					</article>
+					<article class="concept-item">
+						<h4>Haircut Salon</h4>
+						<p data-i18n="concept-haircut-copy">Designkoncept til en moderne frisørsalon. Layoutet er brugervenligt og visuelt skarpt med fokus på at fremhæve ydelser, skabe en indbydende atmosfære og opbygge tillid.</p>
+						<a href="https://andersknielsencontact.github.io/Mine-projekter/fris%C3%B8r/" target="_blank" rel="noopener" data-i18n="concept-link">Se koncept</a>
+					</article>
+				</div>
+			</div>
+		</section>
+
+	
+	</main>
+	<div class="gallery-lightbox" id="gallery-lightbox" hidden aria-hidden="true">
+		<div class="gallery-lightbox-backdrop" data-lightbox-close></div>
+		<div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Forstørret screenshot" data-i18n-aria-label="lightbox-dialog-label">
+			<button class="gallery-lightbox-close" type="button" data-lightbox-close aria-label="Luk stor visning" data-i18n="lightbox-close" data-i18n-aria-label="lightbox-close-aria">Luk</button>
+			<div class="gallery-lightbox-stage" id="gallery-lightbox-stage"></div>
+		</div>
+	</div>
+</body>
+</html>
