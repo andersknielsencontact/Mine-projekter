@@ -345,6 +345,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    if (window.innerWidth <= 640) {
+      document.body.classList.remove('hero-logo-hidden');
+      return;
+    }
+
     const heroRect = heroSection.getBoundingClientRect();
     const headerHeight = document.querySelector('.hero-header')?.offsetHeight || 0;
     const heroIsActive = heroRect.bottom > headerHeight + 24;
